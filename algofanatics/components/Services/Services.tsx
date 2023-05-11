@@ -8,10 +8,24 @@ const Services = () => {
             What we offer
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-10  mt-20 px-0 lg:px-10 ">
-        <div className="h-[260px] w-[355px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
-        <Image src="/assets/services/1.svg" alt="skill" width={88} height={88} />
-        <h3 className="text-base lg:text-xl max-w-xs lg:max-w-lg lg:font-bold leading-6 py-3 font-bold">
+        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-10 lg:mt-20 mt-5 px-0 lg:px-10 ">
+          <div className="h-[260px] w-[355px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
+            <Image
+              src="/assets/services/1.svg"
+              alt="skill"
+              width={88}
+              height={88}
+              className="lg:block hidden"
+            />
+            <Image
+              src="/assets/services/1.svg"
+              alt="skill"
+              width={61}
+              height={56}
+              className="lg:hidden block"
+            />
+
+            <h3 className="text-base lg:text-xl max-w-xs lg:max-w-lg lg:font-bold leading-6 py-3 font-bold">
               Backend Development Resources and Roadmap
             </h3>
             <p className="text-sm leading-6 lg:text-base lg:max-w-sm xl:max-w-fit lg:leading-8">
@@ -20,8 +34,21 @@ const Services = () => {
             </p>
           </div>
           <div className="h-[260px] w-[355px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
-          <Image src="/assets/services/2.svg" alt="skill" width={88} height={88} />
-          <h3 className="text-base lg:text-xl max-w-xs lg:max-w-lg lg:font-bold leading-6 py-3 font-bold">
+            <Image
+              src="/assets/services/2.svg"
+              alt="skill"
+              width={88}
+              height={88}
+              className="lg:block hidden"
+            />
+            <Image
+              src="/assets/services/2.svg"
+              alt="skill"
+              width={61}
+              height={56}
+              className="lg:hidden block"
+            />{" "}
+            <h3 className="text-base lg:text-xl max-w-xs lg:max-w-lg lg:font-bold leading-6 py-3 font-bold">
               Frontend Development Resources and Roadmap{" "}
             </h3>
             <p className="text-sm leading-6 lg:text-base lg:max-w-sm xl:max-w-fit lg:leading-8">
@@ -30,8 +57,21 @@ const Services = () => {
             </p>
           </div>{" "}
           <div className="h-[260px] w-[355px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
-          <Image src="/assets/services/3.svg" alt="skill" width={88} height={88} />
-          <h3 className="text-base lg:text-xl max-w-xs lg:max-w-lg lg:font-bold leading-6 py-3 font-bold">
+            <Image
+              src="/assets/services/3.svg"
+              alt="skill"
+              width={88}
+              height={88}
+              className="lg:block hidden"
+            />
+            <Image
+              src="/assets/services/3.svg"
+              alt="skill"
+              width={61}
+              height={56}
+              className="lg:hidden block"
+            />{" "}
+            <h3 className="text-base lg:text-xl max-w-xs lg:max-w-lg lg:font-bold leading-6 py-3 font-bold">
               Algorithm Resources and Roadmap
             </h3>
             <p className="text-sm leading-6 lg:text-base lg:max-w-sm xl:max-w-fit lg:leading-8">
@@ -41,7 +81,20 @@ const Services = () => {
             </p>
           </div>
           <div className="h-[260px] w-[355px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
-            <Image src="/assets/services/4.svg" alt="skill" width={88} height={88} />
+            <Image
+              src="/assets/services/4.svg"
+              alt="skill"
+              width={88}
+              height={88}
+              className="lg:block hidden"
+            />
+            <Image
+              src="/assets/services/4.svg"
+              alt="skill"
+              width={61}
+              height={56}
+              className="lg:hidden block"
+            />{" "}
             <h3 className="text-base lg:text-xl max-w-xs lg:max-w-lg lg:font-bold leading-6 py-3 font-bold">
               System Design Resources and Roadmap
             </h3>
