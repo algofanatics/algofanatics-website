@@ -3,11 +3,11 @@ import Image from "next/image";
 const About = () => {
   return (
     <main className="lg:bg-services bg-white">
-      <section className="container lg:hidden block mx-auto pt-16 px-5">
+      <section className="container lg:hidden block mx-auto pt-20 px-5">
         <div>
           <h1 className="text-3xl font-bold">About Us</h1>
         </div>
-        <div className="py-7">
+        <div className="py-7 flex justify-center items-center">
           <Image
             src="/assets/about/about.svg"
             alt="about us"

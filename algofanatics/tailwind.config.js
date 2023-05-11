@@ -15,6 +15,7 @@ module.exports = {
       "avatar":"92E3A93B",
       "career":"#A6A6A6",
       "background":"#E7E5E5",
+      "primary":"#47D7AC",
       "services":"#F7F7F8",
       "backend":"#92E3A9",
       "frontend":"#0000001A",

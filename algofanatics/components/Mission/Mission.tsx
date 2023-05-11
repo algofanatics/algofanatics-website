@@ -4,7 +4,7 @@ import React from "react";
 const Mission = () => {
   return (
     <main>
-      <section className="lg:pt-28 pt-16 px-5 container mx-auto flex items-center flex-col lg:flex-row">
+      <section className="lg:pt-28 pt-20 px-5 container mx-auto grid place-items-center place-content-center grid-cols-1 lg:grid-cols-2">
         <div className="lg:block hidden">
           <Image
             src="/assets/header/mission.svg"

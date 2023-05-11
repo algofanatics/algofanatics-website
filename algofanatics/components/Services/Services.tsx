@@ -4,12 +4,12 @@ const Services = () => {
     <main className="lg:bg-services">
       <section className="container mx-auto px-5 pt-10 lg:py-28">
         <div>
-          <h1 className="text-3xl font-work lg:text-4xl font-semibold text-start lg:text-center">
+          <h1 className="text-3xl font-work lg:text-4xl font-semibold text-center lg:text-center">
             What we offer
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-10 lg:mt-20 mt-5 px-0 lg:px-10 ">
-          <div className="h-[260px] w-[355px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
+        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-14 gap-x-5 lg:mt-20 mt-10 px-0 xl:px-10 ">
+          <div className="h-[260px] w-[335px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
             <Image
               src="/assets/services/1.svg"
               alt="skill"
@@ -33,7 +33,7 @@ const Services = () => {
               of various programming languages. Learn to work with databases
             </p>
           </div>
-          <div className="h-[260px] w-[355px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
+          <div className="h-[260px] w-[335px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
             <Image
               src="/assets/services/2.svg"
               alt="skill"
@@ -56,7 +56,7 @@ const Services = () => {
               use popular frontend frameworks like React, Vue, and Angular
             </p>
           </div>{" "}
-          <div className="h-[260px] w-[355px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
+          <div className="h-[260px] w-[335px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
             <Image
               src="/assets/services/3.svg"
               alt="skill"
@@ -80,7 +80,7 @@ const Services = () => {
               problem-solving on websites like LeetCode or HackerRank
             </p>
           </div>
-          <div className="h-[260px] w-[355px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
+          <div className="h-[260px] w-[335px]  lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col rounded-lg justify-center shadow-md cardBorder ">
             <Image
               src="/assets/services/4.svg"
               alt="skill"

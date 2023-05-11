@@ -9,7 +9,7 @@ import Team from "@/components/Team/Team";
 export default function Home() {
   return (
     <main className="overflow-x-hidden overflow-y-hidden font-nunito">
-      {/* <Navbar /> */}
+      <Navbar />
       <Header />
       <Services/>
       <Mission/>

@@ -4,7 +4,7 @@ const Team = () => {
   return (
     <main>
         <div className="container mx-auto">
-      <section className=" lg:pt-28 pt-16 px-5">
+      <section className=" lg:pt-28 pt-20 px-5">
         <h1 className="text-center md:text-3xl font-bold  text-2xl lg:text-5xl lg:font-semibold">
           Meet The Team of Experts
         </h1>
