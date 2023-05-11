@@ -9,7 +9,7 @@ const Team = () => {
           Meet The Team of Experts
         </h1>
       </section>
-      <section className="grid pt-20 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-20 place-items-center">
+      <section className="grid lg:pt-20 pt-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-20 place-items-center">
         <div className="flex-col flex justify-center items-center">
           <div className="h-40 w-40  bg-green-100 rounded-full"></div>
           <h3 className="pt-3 pb-1 font-bold text-2xl">Samson Ajulor</h3>
