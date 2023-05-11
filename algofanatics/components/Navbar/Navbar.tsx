@@ -12,7 +12,7 @@ const Navbar = () => {
             alt=""
             width={153}
             height={65}
-            className="hidden lg:block"
+            className="hidden lg:block cursor-pointer"
           />
           <div className="lg:hidden flex">
             <Image
@@ -20,17 +20,17 @@ const Navbar = () => {
               alt=""
               width={84}
               height={34}
-              className="block lg:hidden"
+              className="block lg:hidden cursor-pointer"
             />
           </div>
         </div>
-        <ul className="lg:flex justify-between w-52  hidden">
+        <ul className="lg:flex justify-between w-52 cursor-pointer  hidden">
           <li>Home</li>
           <li>About</li>
           <li>Blog</li>
         </ul>
         <div>
-          <button className="w-[129px] h-[35px] bg-primary lg:block hidden rounded-full">
+          <button className="w-[129px] h-[35px] cursor-pointer bg-primary lg:block hidden rounded-full">
             Contact Us
           </button>
         </div>

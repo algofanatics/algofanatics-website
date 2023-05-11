@@ -5,6 +5,7 @@ import Services from "@/components/Services/Services";
 import Mission from "@/components/Mission/Mission";
 import About from "@/components/About/About";
 import Team from "@/components/Team/Team";
+import Form from "@/components/Form/Form";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Mission/>
       <About/>
       <Team/>
+      <Form/>
       <Footer />
     </main>
   );
