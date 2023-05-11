@@ -14,8 +14,8 @@ const Mission = () => {
           />
         </div>
 
-        <div className="lg:pl-20 text-justify lg:max-w-xl font-normal w-full">
-          <h1 className="text-3xl lg:text-4xl font-work font-semibold">
+        <div className="lg:pl-20 text-justify flex flex-col justify-center lg:items-center lg:max-w-xl font-normal w-full">
+          <h1 className="text-3xl lg:text-5xl py-2 font-work font-semibold">
             Our Mission
           </h1>
           <p className="py-3 lg:text-lg font-nunito text-base md:text-lg leading-10">

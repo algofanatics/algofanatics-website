@@ -3,11 +3,11 @@ import Image from "next/image";
 const About = () => {
   return (
     <main className="lg:bg-services bg-white">
-      <section className="container lg:hidden block mx-auto pt-20 px-5">
+      <section className="container lg:hidden  mx-auto pt-20 px-5 flex flex-col justify-center lg:items-center">
         <div>
           <h1 className="text-3xl font-bold">About Us</h1>
         </div>
-        <div className="py-7 flex justify-center items-center">
+        <div className="py-7 ">
           <Image
             src="/assets/about/about.svg"
             alt="about us"
@@ -16,7 +16,7 @@ const About = () => {
           />
         </div>
         <div>
-          <p className="first-letter:text-3xl md:text-lg text-sm leading-7">
+          <p className="first-letter:text-3xl md:text-lg text-base leading-8">
             At Algofanatics, we understand the challenges that aspiring
             developers face in the tech industry, including the need to gain
             experience and build a network of industry connections
@@ -27,7 +27,7 @@ const About = () => {
       <section className="container lg:block hidden mx-auto mt-28 px-5">
         <div className="flex justify-between items-center py-16">
           <div>
-            <h1 className="text-5xl font-semibold">About Us</h1>
+            <h1 className="text-5xl font-work font-semibold">About Us</h1>
             <div>
               <div className="py-8">
                 <Image

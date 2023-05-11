@@ -15,7 +15,7 @@ export default function Home() {
       <Mission/>
       <About/>
       <Team/>
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }
