@@ -7,7 +7,7 @@ const FormComponent = () => {
       </div>
       <div className="flex flex-col py-6">
         <label className="py-2">Email</label>
-        <input className="w-[230px] h-[40px] lg:w-[342px] md:h-12 md:w-[342px]  rounded-md border" />
+        <input className="w-[230px] h-[40px] lg:w-[342px] md:h-12 md:w-[342px] rounded-md border" />
       </div>
       <div className="flex flex-col">
         <label className="py-2">Phone no.</label>
@@ -19,7 +19,7 @@ const FormComponent = () => {
         <input className="w-[230px] h-10 lg:w-[342px] md:w-[342px] md:h-12  rounded-md border" />
       </div>
       <div className="flex items-center justify-center ">
-        <button className=" w-[230px] h-10 lg:w-[342px]  bg-grey  text-lg md:h-14 rounded-full">Send a Message</button>
+        <button className="shadow-black shadow-lg w-[230px] h-10 lg:w-[342px]  bg-grey  text-lg md:h-14 rounded-full">Send a Message</button>
       </div>
     </form>
   );

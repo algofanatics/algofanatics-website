@@ -5,8 +5,8 @@ const Header = () => {
     <main className="">
       <div className="flex px-5 md:pt-10 pt-16  overflow-x-hidden container mx-auto flex-col md:flex-row lg:items-center  items-start justify-start">
         <div className="lg:w-[1200px] w-full xl:w-7/12">
-          <div className="font-semibold w-full font-work flex flex-col text-2xl md:text-2xl lg:text-5xl leading-9">
-            <div className="flex items-center">
+          <div className="font-semibold w-full font-work flex flex-col text-2xl xs:text-2xl md:text-2xl lg:text-5xl leading-9">
+            <div className="flex lg:items-center">
               <h1 className="">Build Your</h1>
               <div className="-mt-10 ml-2 lg:block hidden">
                 <Image
@@ -20,7 +20,7 @@ const Header = () => {
                 <Image
                   src="/assets/header/algo2.svg"
                   alt="algorithm"
-                  width={175}
+                  width={120}
                   height={50}
                 />
               </div>
@@ -32,7 +32,7 @@ const Header = () => {
             struggling developers face when navigating the market space
           </p>
           <div>
-          <button className="lg:text-xl text-sm font-normal shadow-black lg:w-[265px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
+          <button className="shadow-lg lg:text-xl text-sm font-normal shadow-black lg:w-[265px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
               Get Started
             </button>
           </div>
