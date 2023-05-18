@@ -23,7 +23,7 @@ const Team = () => {
 
           <div className="flex-col flex justify-center items-center">
             <div className="h-40 w-40 bg-green-100 rounded-full"></div>
-            <h3 className="pt-3 pb-1 font-bold text-2xl">Lolade Otemade</h3>
+            <h3 className="pt-3 pb-1 font-bold text-2xl">Ololade Otemade</h3>
             <p className="text-xl text-career">Frontend Developer</p>
           </div>
           <div className="flex-col flex justify-center items-center">
