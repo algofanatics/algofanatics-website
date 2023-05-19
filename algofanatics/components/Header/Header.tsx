@@ -5,7 +5,7 @@ const Header = () => {
     <main className="">
       <div className="flex px-5 md:pt-10 pt-16  overflow-x-hidden container mx-auto flex-col md:flex-row lg:items-center  items-start justify-start">
         <div className="lg:w-[1200px] w-full xl:w-7/12">
-          <div className="font-semibold w-full font-work flex flex-col text-2xl xs:text-2xl md:text-2xl lg:text-5xl leading-9">
+          <div className="font-semibold w-full font-work flex flex-col text-2xl md:text-2xl lg:text-5xl leading-9">
             <div className="flex lg:items-center">
               <h1 className="">Build Your</h1>
               <div className="-mt-10 ml-2 lg:block hidden">
@@ -16,7 +16,7 @@ const Header = () => {
                   height={91}
                 />
               </div>
-              <div className="-mt-5 ml-2 lg:hidden block">
+              <div className="-mt-4 ml-2 lg:hidden block">
                 <Image
                   src="/assets/header/algo2.svg"
                   alt="algorithm"

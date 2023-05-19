@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -7,6 +8,7 @@ const Navbar = () => {
     <nav className="bg-black py-3 ">
       <div className="container mx-auto flex px-5 justify-between items-center text-white">
         <div>
+          <Link href="/">
           <Image
             src="/assets/navbar/Logo.svg"
             alt=""
@@ -14,6 +16,7 @@ const Navbar = () => {
             height={65}
             className="hidden lg:block cursor-pointer"
           />
+          </Link>
           <div className="lg:hidden flex">
             <Image
               src="/assets/navbar/Logo.svg"
