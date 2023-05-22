@@ -58,7 +58,7 @@ const About = () => {
               />
             </div>
             <p className="max-w-lg first-letter:text-3xl text-base leading-7">
-              That's why we make our services accessible to anyone who wants to learn and grow in the
+              That's why we offer resources to anyone who wants to learn and grow in the
               industry.
             </p>
           </div>
