@@ -16,12 +16,16 @@ const Team = () => {
             role="Backend Developer"
             image="/assets/team/samson.svg"
             alt="Samson"
+            twitter="https://twitter.com/samsonajulor"
+            linkedin="https://linkedin.com/in/samsonajulor"
           />
             <TeamComponent
             name="Jessica Joseph"
             role="Frontend Developer"
             image="/assets/team/jessica.svg"
             alt="Jessica"
+            twitter="https://twitter.com/forJessica_sake"
+            linkedin="https://www.linkedin.com/in/jessica-joseph-/"
           />
          
           <TeamComponent
@@ -29,18 +33,24 @@ const Team = () => {
             role="Frontend Developer"
             image="/assets/team/lolade.svg"
             alt="Ololade"
+            twitter="/"
+            linkedin="/"
           />
           <TeamComponent
             name="Foluso Kayode"
             role="Fullstack Developer"
             image="/assets/team/folu.svg"
             alt="Foluso"
+            twitter="/"
+            linkedin="/"
           />
            <TeamComponent
             name="Nobei Joan"
             role="Product Designer"
             image="/assets/team/joan.svg"
             alt="Joan"
+            twitter="/"
+            linkedin="/"
           />
         
           <TeamComponent
@@ -48,6 +58,8 @@ const Team = () => {
             role="Backend Developer"
             image="/assets/team/mujeeb.svg"
             alt="Mujeeb"
+            twitter="/"
+            linkedin="/"
           />
         </section>
       </div>
