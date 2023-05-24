@@ -59,7 +59,7 @@ const Team = () => {
             image="/assets/team/mujeeb.svg"
             alt="Mujeeb"
             twitter="/"
-            linkedin="/"
+            linkedin="https://www.linkedin.com/in/mujeeb-adebowale-794762199"
           />
         </section>
       </div>
