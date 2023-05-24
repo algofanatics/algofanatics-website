@@ -33,8 +33,8 @@ const Team = () => {
             role="Frontend Developer"
             image="/assets/team/lolade.svg"
             alt="Ololade"
-            twitter="/"
-            linkedin="/"
+            twitter="https://twitter.com/cavemann__"
+            linkedin="https://www.linkedin.com/in/ololade-otemade-72959613a/"
           />
           <TeamComponent
             name="Foluso Kayode"
@@ -49,8 +49,8 @@ const Team = () => {
             role="Product Designer"
             image="/assets/team/joan.svg"
             alt="Joan"
-            twitter="/"
-            linkedin="/"
+            twitter="/https://twitter.com/nobei_joan"
+            linkedin="/https://www.linkedin.com/in/joan-nobei-2704b6227"
           />
         
           <TeamComponent
