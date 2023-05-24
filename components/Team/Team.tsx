@@ -41,8 +41,8 @@ const Team = () => {
             role="Fullstack Developer"
             image="/assets/team/folu.svg"
             alt="Foluso"
-            twitter="/"
-            linkedin="/"
+            twitter="/https://twitter.com/folusokayode"
+            linkedin="/https://www.linkedin.com/in/folusokayodefavour/"
           />
            <TeamComponent
             name="Nobei Joan"
