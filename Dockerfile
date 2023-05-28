@@ -5,19 +5,12 @@ FROM node:16
 WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the working directory
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the files to the working directory
 COPY . .
 
-# Build the app
-RUN npm run build
+# Install dependencies
+RUN yarn
 
-# Start the app
-RUN npm start
+# RUN yarn build
 
 # set port to 80
 
@@ -25,4 +18,4 @@ RUN npm start
 # EXPOSE 80
 
 # start app
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
