@@ -5,11 +5,18 @@ FROM node:16
 WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the working directory
-COPY . .
+COPY package*.json ./
 
 # Install dependencies
+RUN npm install
+
+# Copy the rest of the files to the working directory
+COPY . .
+
+# Build the app
 RUN npm run build
 
+# Start the app
 RUN npm start
 
 # set port to 80
