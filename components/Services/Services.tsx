@@ -10,7 +10,7 @@ const Services = () => {
             What we offer
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-14 gap-x-5  lg:mt-20 mt-5 px-0 xl:px-10 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-y-10 gap-x-5  lg:mt-20 mt-5 px-0 xl:px-10 ">
           <Card
             image="/assets/services/1.svg"
             image2="/assets/services/1.svg"
