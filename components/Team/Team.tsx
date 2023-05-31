@@ -5,7 +5,7 @@ const Team = () => {
   return (
     <main>
       <div className="container mx-auto">
-        <section className=" lg:pt-28 pt-20 px-5">
+        <section className=" lg:pt-28 pt-0 lg:px-8 px-5">
           <h1 className="text-center font-work md:text-3xl font-semibold  text-2xl lg:text-5xl lg:font-semibold">
             Meet The Team of Experts
           </h1>
@@ -41,8 +41,8 @@ const Team = () => {
             role="Fullstack Developer"
             image="/assets/team/folu.svg"
             alt="Foluso"
-            twitter="/https://twitter.com/folusokayode"
-            linkedin="/https://www.linkedin.com/in/folusokayodefavour/"
+            twitter="https://twitter.com/folusokayode"
+            linkedin="https://www.linkedin.com/in/folusokayodefavour/"
           />
            <TeamComponent
             name="Nobei Joan"

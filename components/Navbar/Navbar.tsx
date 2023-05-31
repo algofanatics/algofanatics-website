@@ -6,7 +6,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 const Navbar = () => {
   return (
     <nav className="bg-black py-3 ">
-      <div className="container mx-auto flex px-5 justify-between items-center text-white">
+      <div className="container mx-auto flex px-8 justify-between items-center text-white">
         <div>
           <Link href="/">
           <Image
