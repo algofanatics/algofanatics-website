@@ -3,13 +3,17 @@ import Image from "next/image";
 const About = () => {
   return (
     <main className="lg:bg-services bg-white">
-      <section className="container mx-auto pt-20 lg:pt-28 px-5 py-16">
-        <div>
-          <h1 className="text-3xl lg:text-5xl font-work font-semibold">About Us</h1>
+      <section className="container mx-auto lg:pt-28 lg:px-8 px-5 py-20">
+      <div>
+          <h1 className="text-3xl lg:text-5xl lg:hidden block font-work font-semibold">About Us</h1>
         </div>
-        <div className="flex lg:flex-row flex-col-reverse lg:justify-between lg:items-center">
-         <div className="">
-
+      
+        <div className="flex lg:flex-row flex-col-reverse lg:justify-evenly lg:items-center">
+         <div>
+         <div>
+          <h1 className="text-3xl lg:text-5xl font-work font-semibold hidden lg:block">About Us</h1>
+        </div>
+        
           <p className="lg:max-w-md py-8 text-lg leading-9 first-letter:text-3xl">
             At Algofanatics, we understand the challenges that aspiring
             developers face in the tech industry, including the need to gain
