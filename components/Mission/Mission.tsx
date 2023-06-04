@@ -4,7 +4,7 @@ import React from "react";
 const Mission = () => {
   return (
     <main>
-      <section className="lg:pt-28 pt-20 px-5 container mx-auto grid place-items-center place-content-center grid-cols-1 lg:grid-cols-2">
+      <section className="lg:pt-28 pt-20 lg:px-8 px-5 container mx-auto grid place-items-center place-content-center grid-cols-1 lg:grid-cols-2">
         <div className="lg:block hidden">
           <Image
             src="/assets/header/mission.svg"
@@ -24,7 +24,7 @@ const Mission = () => {
             navigate the ever-changing landscape of the software development
             market.
           </p>
-          <ul className="list-disc font-nunito px-2 py-4 lg:text-base md:text-base text-base leading-10 ">
+          <ul className="list-disc font-nunito px-4 py-4 lg:text-base md:text-base text-base leading-10 ">
             <li>
               We believe that every developer, regardless of their background or
               experience, has the potential to succeed in this industry

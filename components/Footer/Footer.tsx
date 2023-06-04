@@ -4,7 +4,7 @@ import { AiOutlineTwitter } from "react-icons/ai";
 const Footer = () => {
   return (
     <footer className="bg-primary mt-16 lg:mt-24 py-7">
-      <nav className="container mx-auto px-5 flex items-center justify-between">
+      <nav className="container mx-auto lg:px-8 px-5 flex items-center justify-between">
         <Image
           src="/assets/footer/Footer.svg"
           alt="algofanatics logo"
