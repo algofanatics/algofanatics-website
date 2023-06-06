@@ -22,12 +22,15 @@ module.exports = {
       "algorithm":"#473BF01A",
       "systemDesign":"##FFA50026", 
       "cardBorder":"#F3F4F5",
-     
+      "signin":"#EDFFFA",
+      "signinText":"#A4E0B5",
+      "Text":"#B0B0B0",
     },
   
     fontFamily:{
       nunito: ["Nunito", "sans-serif"],
       work: ["Work Sans", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
     },},
   },
   plugins: [],
