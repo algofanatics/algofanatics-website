@@ -49,8 +49,8 @@ const Team = () => {
             role="Product Designer"
             image="/assets/team/joan.svg"
             alt="Joan"
-            twitter="/https://twitter.com/nobei_joan"
-            linkedin="/https://www.linkedin.com/in/joan-nobei-2704b6227"
+            twitter="https://twitter.com/nobei_joan"
+            linkedin="https://www.linkedin.com/in/joan-nobei-2704b6227"
           />
         
           <TeamComponent
