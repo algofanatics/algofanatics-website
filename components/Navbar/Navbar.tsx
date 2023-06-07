@@ -3,10 +3,39 @@ import Link from "next/link";
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { TfiClose } from "react-icons/tfi";
+import { DownOutlined } from "@ant-design/icons";
+import type { MenuProps } from "antd";
+import { Dropdown, Space } from "antd";
+
+const items: MenuProps["items"] = [
+  {
+    label: (
+      <a href="" className="hover:text-primary">
+        Backend Development
+      </a>
+    ),
+    key: "0",
+  },
+  {
+    label: (
+      <a href="" className="hover:text-primary">
+        Frontend Development
+      </a>
+    ),
+    key: "1",
+  },
+  {
+    label: <a href="">Algorithms</a>,
+    key: "2",
+  },
+  {
+    label: <a href="">System Design</a>,
+    key: "3",
+  },
+];
 
 const Navbar = () => {
   const [navigation, setNavigation] = React.useState(false);
-
   return (
     <nav className="bg-black py-3 ">
       <div className="container mx-auto flex lg:px-8 px-5 justify-between items-center text-white">
@@ -40,7 +69,14 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="/"> Blog </a>
+            <Dropdown menu={{ items }} trigger={["click"]}>
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  Blog
+                  <DownOutlined className="text-sm" />
+                </Space>
+              </a>
+            </Dropdown>
           </li>
         </ul>
 
