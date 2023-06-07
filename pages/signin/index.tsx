@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
@@ -47,10 +48,17 @@ const index = () => {
               className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
               placeholder="Enter email or user name"
             />
+
+            <div className="relative flex mt-7">
             <input
-              className="bg-signin w-full h-16 rounded-lg mt-7 placeholder:text-signinText px-5"
+              className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
               placeholder="Password"
             />
+               <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
+                <AiOutlineEyeInvisible className="text-backend" />
+              </div>
+             </div>
+
             <p className="flex justify-end text-Text text-sm pt-4">
               Forgot password?
             </p>

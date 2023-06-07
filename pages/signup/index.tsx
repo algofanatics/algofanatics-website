@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
@@ -45,29 +46,43 @@ function index() {
           <div className="lg:max-w-sm md:max-w-lg max-w-md">
             <h1 className="text-3xl py-7 font-medium">Sign up</h1>
             <input
-              className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
+              className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
               placeholder="Enter Email"
             />
+
             <input
-              className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5 my-5"
+              className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-4"
               placeholder="Create User name"
             />
             <input
-              className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
+              className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
               placeholder="Contact number"
             />
-            <input
-              className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5 my-5"
-              placeholder="Password"
-            />
-            <input
-              className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
-              placeholder="Confrim Password"
-            />
-            <button className="bg-black w-full  text-white font-medium h-16 rounded-lg my-5">
+
+            <div className="relative my-4">
+              <input
+                className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
+                placeholder=" Password"
+              />
+              <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
+                <AiOutlineEyeInvisible className="text-backend" />
+              </div>
+            </div>
+
+            <div className="relative">
+              <input
+                className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
+                placeholder="Confrim Password"
+              />
+              <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
+                <AiOutlineEyeInvisible className="text-backend" />
+              </div>
+            </div>
+
+            <button className="bg-black w-full  text-white font-medium h-16 rounded-lg my-4">
               Register
             </button>
-            <p className="flex justify-center text-Text items-center my-5">
+            <p className="flex justify-center text-Text items-center my-4">
               Or continue with
             </p>
 
@@ -80,7 +95,6 @@ function index() {
                 <FcGoogle className="w-7 h-7" />
               </div>
             </div>
-
           </div>
         </section>
       </div>

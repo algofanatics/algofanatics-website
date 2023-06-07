@@ -24,6 +24,7 @@ module.exports = {
       "cardBorder":"#F3F4F5",
       "signin":"#EDFFFA",
       "signinText":"#A4E0B5",
+      "signup":"#EDF5F3",
       "Text":"#B0B0B0",
     },
   
