@@ -1,3 +1,5 @@
+import Button from "../Micro/Button/Button";
+
 const FormComponent = () => {
   return (
     <form className="flex flex-col py-10">
@@ -19,7 +21,7 @@ const FormComponent = () => {
         <input className="w-[280px] h-20 md:w-[400px] md:h-20  rounded-md border placeholder:px-3" placeholder="e.g  John Doe"/>
       </div>
       <div className="flex items-center justify-center ">
-        <button className="shadow-black shadow-lg w-[280px] h-10 md:w-[400px]  bg-grey  text-lg md:h-14 rounded-full">Send a Message</button>
+        <Button className="shadow-black shadow-lg w-[280px] h-10 md:w-[400px] bg-grey text-lg md:h-14 rounded-full">Send a Message</Button>
       </div>
     </form>
   );

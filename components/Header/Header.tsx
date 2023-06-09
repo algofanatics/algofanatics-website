@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "../Micro/Button/Button";
 
 const Header = () => {
   return (
@@ -32,9 +33,9 @@ const Header = () => {
             struggling developers face when navigating the market space
           </p>
           <div>
-          <button className="shadow-lg lg:text-xl text-sm font-normal shadow-black lg:w-[265px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
+          <Button className="shadow-lg lg:text-xl text-sm font-normal shadow-black lg:w-[265px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
               Get Started
-            </button>
+            </Button>
           </div>
         </div>
         <div className="md:flex md-w-6/12 hidden  justify-center items-center">

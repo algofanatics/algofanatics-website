@@ -6,11 +6,12 @@ import { TfiClose } from "react-icons/tfi";
 import { DownOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
+import Button from "../Micro/Button/Button";
 
 const items: MenuProps["items"] = [
   {
     label: (
-      <a href="" className="hover:text-primary">
+      <a href="/blog" className="hover:text-primary">
         Backend Development
       </a>
     ),
@@ -18,18 +19,18 @@ const items: MenuProps["items"] = [
   },
   {
     label: (
-      <a href="" className="hover:text-primary">
+      <a href="/blog" className="hover:text-primary">
         Frontend Development
       </a>
     ),
     key: "1",
   },
   {
-    label: <a href="">Algorithms</a>,
+    label: <a href="/blog">Algorithms</a>,
     key: "2",
   },
   {
-    label: <a href="">System Design</a>,
+    label: <a href="/blog">System Design</a>,
     key: "3",
   },
 ];
@@ -96,13 +97,13 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#blog"> Blog </a>
+            <a href="/blog"> Blog </a>
           </li>
         </ul>
         <div>
-          <button className="w-[129px] h-[35px] cursor-pointer bg-primary lg:block hidden rounded-full">
+          <Button className="w-[129px] h-[35px] cursor-pointer bg-primary lg:block hidden rounded-full">
             Contact Us
-          </button>
+          </Button>
         </div>
         <div
           className="lg:hidden block"
