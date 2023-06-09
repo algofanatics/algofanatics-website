@@ -106,15 +106,15 @@ const index = () => {
   
 
   return (
-    <main className="font-work bg-blog">
+    <main className="font-work bg-blog overflow-x-hidden">
       <Navbar />
-      <div className="p-10">
+      <div className="lg:p-10 p-5">
         <h1 className="text-5xl font-semibold">Blog</h1>
         <div className="border-2 w-14 my-1 rounded-lg border-primary"></div>
 
         <section className="py-8 flex items-center">
           <BsFilter className="w-9 h-9 mr-2" />
-          <select className="w-72 border h-10 rounded px-1"
+          <select className="w-72 border h-10 rounded px-1 md:block hidden"
           value={filterBlog}
           onChange={(e)=>setFilteredBlog(e.target.value)}
           >
