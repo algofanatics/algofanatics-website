@@ -19,7 +19,7 @@ const index = () => {
       image: "/assets/blog/random.svg",
       time: "5 mins read",
       date: "March 12, 2022",
-      title: "Creating Engaging User Interfaces",
+      title: "Creating the blog Interface with random data",
       tag: "Frontend development",
       author: "Joan Nobei",
       id: 1,
@@ -46,7 +46,7 @@ const index = () => {
       image: "/assets/blog/random.svg",
       time: "5 mins read",
       date: "March 12, 2022",
-      title: "Creating Engaging User Interfaces",
+      title: "Creating the blog Interface with random data",
       tag: "Frontend development",
       author: "Joan Nobei",
       id: 4,
@@ -64,7 +64,7 @@ const index = () => {
       image: "/assets/blog/random.svg",
       time: "5 mins read",
       date: "March 12, 2022",
-      title: "Creating Engaging User Interfaces",
+      title: "Creating the blog Interface with random data",
       tag: "Frontend development",
       author: "Joan Nobei",
       id: 6,
@@ -82,7 +82,7 @@ const index = () => {
       image: "/assets/blog/random.svg",
       time: "5 mins read",
       date: "March 12, 2022",
-      title: "Sorting Algorithms: From Bubble Sort to Quick Sort",
+      title: "Creating the blog Interface with random data",
       tag: "Backend development",
       author: "Joan Nobei",
       id: 8,
@@ -106,9 +106,9 @@ const index = () => {
   
 
   return (
-    <main className="font-work bg-blog overflow-x-hidden">
+    <main className=" bg-blog overflow-x-hidden">
       <Navbar />
-      <div className="lg:p-10 p-5">
+      <div className="lg:p-10 p-5 font-work">
         <h1 className="text-5xl font-semibold">Blog</h1>
         <div className="border-2 w-14 my-1 rounded-lg border-primary"></div>
 

@@ -38,7 +38,7 @@ const items: MenuProps["items"] = [
 const Navbar = () => {
   const [navigation, setNavigation] = React.useState(false);
   return (
-    <nav className="bg-black py-3 ">
+    <nav className="bg-black py-3">
       <div className="container mx-auto flex lg:px-8 px-5 justify-between items-center text-white">
         <div>
           <Link href="/">

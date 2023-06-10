@@ -10,7 +10,7 @@ export const Card = ({ blogDetails }: { blogDetails: Blog[] }) => {
   return (
     <div className=" grid xl:grid-cols-3 lg:grid-cols-2 gap-5 rounded-sm cursor-pointer">
       {blogDetails.map((blog) => (
-        <div className="rounded-sm bg-white" key={blog.id}>
+        <Link href={`/blog/${blog.title}`} className="rounded-sm bg-white" key={blog.id}>
           <section>
             <img src={blog.image} className="w-full" alt="blog cover" />
           </section>
@@ -44,7 +44,7 @@ export const Card = ({ blogDetails }: { blogDetails: Blog[] }) => {
               </div>
             </div>
           </section>
-        </div>
+        </Link>
       ))}
     </div>
   );
