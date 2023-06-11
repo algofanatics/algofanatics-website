@@ -10,12 +10,7 @@ COPY . .
 # Install dependencies
 RUN yarn
 
-# RUN yarn build
-
-# set port to 80
-
-# Expose port 80
-# EXPOSE 80
+RUN yarn build
 
 # start app
-CMD ["yarn", "dev"]
+CMD ["yarn", "start"]
