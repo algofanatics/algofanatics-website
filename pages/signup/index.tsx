@@ -28,7 +28,8 @@ function index() {
       </Link>
 
       <div className="flex lg:flex-row flex-col justify-between">
-        <section className="lg:w-5/12 w-full flex-col lg:justify-end py-20 md:py-0 lg:h-screen hidden lg:flex">
+       
+        <section className="lg:w-5/12 w-full flex-col py-20 md:py-0 lg:h-screen hidden lg:flex">
           <div className="flex lg:items-center items-start lg:pl-5 w-full md:justify-center">
             <div className="flex flex-col justify-center md:pt-56 pt-16">
               <h1 className="font-semibold text-5xl">Sign Up to </h1>
@@ -68,7 +69,7 @@ function index() {
           </div>
         </section>
 
-        <section className="lg:w-5/12 flex flex-col lg:justify-center lg:h-screen">
+        <section className="lg:w-5/12 flex flex-col lg:h-screen">
           <div className="lg:max-w-sm max-w-full">
             <h1 className="text-3xl py-7 font-medium hidden lg:block">
               Sign up
