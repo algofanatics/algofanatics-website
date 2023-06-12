@@ -19,7 +19,8 @@ const index = () => {
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
 
   //async function for login post request
-  const handleLogin = async () => {
+  const handleLogin = async (e:React.FormEvent) => {
+    e.preventDefault()
     //regex for email verification
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
     if (!isValidEmail) {
@@ -100,7 +101,7 @@ const index = () => {
           </div>
         </section>
 
-        <section className="lg:w-5/12  flex flex-col">
+        <form className="lg:w-5/12  flex flex-col" onSubmit={handleLogin}>
           <div className="lg:max-w-sm max-w-full">
             <h1 className="text-3xl py-7 font-medium hidden lg:block">
               Sign in
@@ -108,6 +109,7 @@ const index = () => {
             <input
               className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
               placeholder="Enter email"
+              required
               type="email"
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
@@ -116,6 +118,7 @@ const index = () => {
               <input
                 className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
                 placeholder="Password"
+                required
                 type="password"
                 value={user.password}
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
@@ -127,16 +130,10 @@ const index = () => {
             <p className="flex justify-end text-Text text-sm pt-4">
               Forgot password?
             </p>
-            <Button
-              onClick={handleLogin}
-              className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10"
-            >
+            <Button className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10">
               Login
             </Button>
-            <Button
-              onClick={handleLogin}
-              className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10"
-            >
+            <Button className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
               Sign In
             </Button>
             <p className="flex justify-center text-Text items-center">
@@ -153,7 +150,7 @@ const index = () => {
               </div>
             </div>
           </div>
-        </section>
+        </form>
       </div>
     </main>
   );

@@ -23,15 +23,15 @@ function index() {
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
 
   //async function for signup post request
-  const handleSignUp = async () => {
-
+  const handleSignUp = async (e:React.FormEvent) => {
+    e.preventDefault();
     //regex for email verification
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
     if (!isValidEmail) {
       toast.warning(" Invalid email address");
     } else if (password !== details.password) {
       toast.error("Passwords do not match");
-    } else if (!(password.length >=8)) {
+    } else if (!(password.length >= 8)) {
       toast.error("Password must contain 8 characters");
     } else {
       try {
@@ -40,7 +40,7 @@ function index() {
           //details object as post body
           details
         );
-        toast.success(`Your account has been created`);
+        toast.success("Verification mail sent! Please check your inbox");
         return res.data;
       } catch (error: any) {
         toast.error(error.response.data.responseMessage);
@@ -111,13 +111,14 @@ function index() {
         </section>
 
         <section className="lg:w-5/12 flex flex-col lg:h-screen">
-          <div className="lg:max-w-sm max-w-full">
+          <form className="lg:max-w-sm max-w-full" onSubmit={handleSignUp}>
             <h1 className="text-3xl py-7 font-medium hidden lg:block">
               Sign up
             </h1>
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
               placeholder="Enter Email"
+              required
               value={details.email}
               onChange={(e) =>
                 setDetails({ ...details, email: e.target.value })
@@ -126,6 +127,7 @@ function index() {
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-4"
               placeholder="Create username"
+              required
               value={details.username}
               onChange={(e) =>
                 setDetails({ ...details, username: e.target.value })
@@ -134,6 +136,7 @@ function index() {
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
               placeholder="Contact number"
+              required
               type="number"
             />
 
@@ -141,6 +144,7 @@ function index() {
               <input
                 className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
                 placeholder=" Password"
+                required
                 type="password"
                 value={details.password}
                 onChange={(e) =>
@@ -157,6 +161,7 @@ function index() {
                 className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
                 placeholder="Confrim Password"
                 type="password"
+                required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -165,16 +170,10 @@ function index() {
               </div>
             </div>
 
-            <Button
-              onClick={handleSignUp}
-              className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10"
-            >
+            <Button className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10">
               Sign Up
             </Button>
-            <Button
-              onClick={handleSignUp}
-              className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10"
-            >
+            <Button className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
               Sign Up
             </Button>
             <p className="flex justify-center text-Text items-center my-4">
@@ -190,7 +189,7 @@ function index() {
                 <FcGoogle className="w-7 h-7" />
               </div>
             </div>
-          </div>
+          </form>
         </section>
       </div>
     </main>
