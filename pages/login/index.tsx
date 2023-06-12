@@ -35,7 +35,7 @@ const index = () => {
         toast.success(`Welcome back! ${res?.data.details.username}`);
         return res.data;
       } catch (error: any) {
-        toast.error("Incorrect Email or Password");
+        toast.error(error.response.data.responseMessage);
         return error.response.data;
       }
     }
