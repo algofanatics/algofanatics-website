@@ -5,8 +5,27 @@ import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
+import axios from "axios";
 
 function index() {
+  const handleSignUp = async () => {
+    try {
+      const res = await axios.post(
+        "https://api.algofanatics.com/v1.0/auth/signup",
+        {
+          email: "jessicajoseph1807@gmail.com",
+          username: "jess",
+          password: "12345678",
+        }
+      );
+      return res.data;
+    } catch (error: any) {
+      return error.response.data;
+    }
+  };
+
+  console.log(process.env.ALGOFANATICS_BASE_URL)
+
   return (
     <main className="font-poppins container mx-auto pt-10 px-6">
       <Link href="/" className="lg:block hidden">
@@ -28,7 +47,6 @@ function index() {
       </Link>
 
       <div className="flex lg:flex-row flex-col justify-between">
-       
         <section className="lg:w-5/12 w-full flex-col py-20 md:py-0 lg:h-screen hidden lg:flex">
           <div className="flex lg:items-center items-start lg:pl-5 w-full md:justify-center">
             <div className="flex flex-col justify-center md:pt-56 pt-16">
@@ -78,7 +96,6 @@ function index() {
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
               placeholder="Enter Email"
             />
-
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-4"
               placeholder="Create User name"
@@ -108,10 +125,16 @@ function index() {
               </div>
             </div>
 
-            <Button className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10">
+            <Button
+              onClick={handleSignUp}
+              className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10"
+            >
               Sign Up
             </Button>
-            <Button className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
+            <Button
+              onClick={handleSignUp}
+              className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10"
+            >
               Sign Up
             </Button>
             <p className="flex justify-center text-Text items-center my-4">

@@ -1,12 +1,44 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
-import Link from "next/link";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const index = () => {
+  //user login object
+  const [user, setUser] = React.useState({
+    email: "",
+    password: "",
+  });
+
+  const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
+
+  //async function for login post request
+  const handleLogin = async () => {
+    //regex for email verification
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
+    if (!isValidEmail) {
+      toast.warning(" Invalid email address");
+    } else {
+      try {
+        const res = await axios.post(
+          baseURL + "/auth/login",
+          //user object as post body
+          user
+        );
+        toast.success(`Welcome back! ${res?.data.details.username}`);
+        return res.data;
+      } catch (error: any) {
+        toast.error("Incorrect Email or Password");
+        return error.response.data;
+      }
+    }
+  };
+
   return (
     <main className="font-poppins container mx-auto pt-10 px-6">
       <Link href="/" className="lg:block hidden">
@@ -72,16 +104,24 @@ const index = () => {
             <h1 className="text-3xl py-7 font-medium hidden lg:block">
               Sign in
             </h1>
+
             <input
               className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
-              placeholder="Enter email or user name"
+              placeholder="Enter email"
+              type="email"
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
 
             <div className="relative flex mt-7">
               <input
                 className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
                 placeholder="Password"
+                type="password"
+                value={user.password}
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
+
               <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
                 <AiOutlineEyeInvisible className="text-backend" />
               </div>
@@ -90,10 +130,16 @@ const index = () => {
             <p className="flex justify-end text-Text text-sm pt-4">
               Forgot password?
             </p>
-            <Button className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10">
+            <Button
+              onClick={handleLogin}
+              className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10"
+            >
               Login
             </Button>
-            <Button className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
+            <Button
+              onClick={handleLogin}
+              className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10"
+            >
               Sign In
             </Button>
             <p className="flex justify-center text-Text items-center">
