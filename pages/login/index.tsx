@@ -8,13 +8,13 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
-
 type Props ={
   email: string,
   password: string | number,
 }
 
 const index = () => {
+
   //user login object
   const [user, setUser] = React.useState<Props>({
     email: "",
@@ -27,15 +27,17 @@ const index = () => {
   //async function for login post request
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+
     //regex for email verification
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
     if (!isValidEmail) {
       toast.warning(" Invalid email address");
-    } else {
+    } 
+    
+    else {
       try {
         const res = await axios.post(
           baseURL + "/auth/login",
-          //user object as post body
           user
         );
         toast.success(`Welcome back ${res?.data.details.username}`);
