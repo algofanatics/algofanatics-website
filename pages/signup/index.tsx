@@ -16,6 +16,7 @@ type Props ={
 }
 
 function index() {
+
   //user signup object
   const [details, setDetails] = React.useState<Props>({
     email: "",
@@ -23,10 +24,7 @@ function index() {
     password: "",
   });
 
-  //router intialization
   const router = useRouter();
-
-  //pasword confirmation
   const [password, setPassword] = React.useState("");
 
   //base URL
@@ -34,20 +32,27 @@ function index() {
 
   //async function for signup post request
   const handleSignUp = async (e: React.FormEvent) => {
+
+    //prevent default submission
     e.preventDefault();
+
     //regex for email verification
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
     if (!isValidEmail) {
       toast.warning(" Invalid email address");
-    } else if (password !== details.password) {
+    } 
+
+    //pasword check
+    else if (password !== details.password) {
       toast.error("Passwords do not match");
-    } else if (!(password.length >= 8)) {
-      toast.error("Password must contain 8 characters");
-    } else {
+    }  else if (password.length < 8) {
+      toast.error("Password must be at least 8 characters long");
+    }
+    
+    else {
       try {
         const res = await axios.post(
           baseURL + "/auth/signup",
-          //details object as post body
           details
         );
         toast.success("Verification mail sent! Please check your inbox");
@@ -56,7 +61,6 @@ function index() {
         }, 3500);
       } catch (error: any) {
         toast.error(error.response.data.responseMessage);
-        return error.response.data;
       }
     }
   };
