@@ -20,6 +20,7 @@ const index = () => {
 
   //async function for login post request
   const handleLogin = async (e:React.FormEvent) => {
+
     e.preventDefault()
     //regex for email verification
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
@@ -32,7 +33,7 @@ const index = () => {
           //user object as post body
           user
         );
-        toast.success(`Welcome back! ${res?.data.details.username}`);
+        toast.success(`Welcome back ${res?.data.details.username}`);
         return res.data;
       } catch (error: any) {
         toast.error(error.response.data.responseMessage);

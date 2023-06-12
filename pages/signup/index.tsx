@@ -7,6 +7,7 @@ import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 function index() {
   //user signup object
@@ -16,6 +17,9 @@ function index() {
     password: "",
   });
 
+  //router intialization
+  const router = useRouter()
+
   //pasword confirmation
   const [password, setPassword] = React.useState("");
 
@@ -24,6 +28,7 @@ function index() {
 
   //async function for signup post request
   const handleSignUp = async (e:React.FormEvent) => {
+    
     e.preventDefault();
     //regex for email verification
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
@@ -41,7 +46,9 @@ function index() {
           details
         );
         toast.success("Verification mail sent! Please check your inbox");
-        return res.data;
+        setTimeout(()=>{
+          router.push("/login")
+        }, 3500)
       } catch (error: any) {
         toast.error(error.response.data.responseMessage);
         return error.response.data;
