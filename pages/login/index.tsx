@@ -19,9 +19,8 @@ const index = () => {
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
 
   //async function for login post request
-  const handleLogin = async (e:React.FormEvent) => {
-
-    e.preventDefault()
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
     //regex for email verification
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
     if (!isValidEmail) {
@@ -72,9 +71,9 @@ const index = () => {
                 <p className="">If you don’t have an account register.</p>
                 <p>
                   You can{" "}
-                  <span className="text-primary font-semibold">
+                  <Link href="/signup" className="text-primary font-semibold">
                     Register here!
-                  </span>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -96,8 +95,10 @@ const index = () => {
           <div className="pt-5 text-sm md:text-base">
             <p>If you don’t have an account register</p>
             <p className="py-2">
-              You can{" "}
-              <span className="text-primary font-semibold">Register here!</span>
+            You can You can{" "}
+            <Link href="/signup" className="text-primary font-semibold">
+              Register here!
+            </Link>
             </p>
           </div>
         </section>
