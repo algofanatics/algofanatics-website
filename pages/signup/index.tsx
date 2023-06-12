@@ -6,25 +6,48 @@ import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function index() {
+  //user signup object
+  const [details, setDetails] = React.useState({
+    email: "",
+    username: "",
+    password: "",
+  });
+
+  //pasword confirmation
+  const [password, setPassword] = React.useState("");
+
+  //base URL
+  const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
+
+  //async function for signup post request
   const handleSignUp = async () => {
-    try {
-      const res = await axios.post(
-        "https://api.algofanatics.com/v1.0/auth/signup",
-        {
-          email: "jessicajoseph1807@gmail.com",
-          username: "jess",
-          password: "12345678",
-        }
-      );
-      return res.data;
-    } catch (error: any) {
-      return error.response.data;
+
+    //regex for email verification
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
+    if (!isValidEmail) {
+      toast.warning(" Invalid email address");
+    } else if (password !== details.password) {
+      toast.error("Passwords do not match");
+    } else if (!(password.length >=8)) {
+      toast.error("Password must contain 8 characters");
+    } else {
+      try {
+        const res = await axios.post(
+          baseURL + "/auth/signup",
+          //details object as post body
+          details
+        );
+        toast.success(`Your account has been created`);
+        return res.data;
+      } catch (error: any) {
+        toast.error(error.response.data.responseMessage);
+        return error.response.data;
+      }
     }
   };
-
-  console.log(process.env.ALGOFANATICS_BASE_URL)
 
   return (
     <main className="font-poppins container mx-auto pt-10 px-6">
@@ -95,20 +118,34 @@ function index() {
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
               placeholder="Enter Email"
+              value={details.email}
+              onChange={(e) =>
+                setDetails({ ...details, email: e.target.value })
+              }
             />
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-4"
-              placeholder="Create User name"
+              placeholder="Create username"
+              value={details.username}
+              onChange={(e) =>
+                setDetails({ ...details, username: e.target.value })
+              }
             />
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
               placeholder="Contact number"
+              type="number"
             />
 
             <div className="relative my-4">
               <input
                 className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
                 placeholder=" Password"
+                type="password"
+                value={details.password}
+                onChange={(e) =>
+                  setDetails({ ...details, password: e.target.value })
+                }
               />
               <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
                 <AiOutlineEyeInvisible className="text-backend" />
@@ -119,6 +156,9 @@ function index() {
               <input
                 className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
                 placeholder="Confrim Password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
                 <AiOutlineEyeInvisible className="text-backend" />

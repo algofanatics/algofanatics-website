@@ -15,6 +15,7 @@ const index = () => {
     password: "",
   });
 
+  //base URL
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
 
   //async function for login post request
@@ -104,7 +105,6 @@ const index = () => {
             <h1 className="text-3xl py-7 font-medium hidden lg:block">
               Sign in
             </h1>
-
             <input
               className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
               placeholder="Enter email"
@@ -112,7 +112,6 @@ const index = () => {
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
-
             <div className="relative flex mt-7">
               <input
                 className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
@@ -121,12 +120,10 @@ const index = () => {
                 value={user.password}
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
               />
-
               <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
                 <AiOutlineEyeInvisible className="text-backend" />
               </div>
             </div>
-
             <p className="flex justify-end text-Text text-sm pt-4">
               Forgot password?
             </p>
