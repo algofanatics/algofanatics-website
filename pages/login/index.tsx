@@ -1,16 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
+import { toast } from "react-toastify";
+import Button from "@/components/Micro/Button/Button";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import Button from "@/components/Micro/Button/Button";
-import axios from "axios";
-import { toast } from "react-toastify";
+
+
+type Props ={
+  email: string,
+  password: string | number,
+}
 
 const index = () => {
   //user login object
-  const [user, setUser] = React.useState({
+  const [user, setUser] = React.useState<Props>({
     email: "",
     password: "",
   });

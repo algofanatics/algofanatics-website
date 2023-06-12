@@ -1,17 +1,23 @@
 import React from "react";
 import Image from "next/image";
-import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { BsFacebook, BsApple } from "react-icons/bs";
-import { FcGoogle } from "react-icons/fc";
-import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import { AiOutlineEyeInvisible } from "react-icons/ai";
+import { BsFacebook, BsApple } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
+import Button from "@/components/Micro/Button/Button";
+
+type Props ={
+  email: string,
+  username: string | number,
+  password: string | number,
+}
 
 function index() {
   //user signup object
-  const [details, setDetails] = React.useState({
+  const [details, setDetails] = React.useState<Props>({
     email: "",
     username: "",
     password: "",
