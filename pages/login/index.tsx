@@ -8,38 +8,38 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 
-type Props ={
-  email: string,
-  password: string | number,
-}
+type Props = {
+  email: string;
+  password: string | number;
+};
 
 const index = () => {
-
   //user login object
   const [user, setUser] = React.useState<Props>({
     email: "",
     password: "",
   });
 
+  //form state
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
+
   //base URL
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
 
+  //regex for email verification
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
+
   //async function for login post request
   const handleLogin = async (e: React.FormEvent) => {
+    //prevent default submission
     e.preventDefault();
+    setIsSubmitted(true);
 
-    //regex for email verification
-    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
     if (!isValidEmail) {
       toast.warning(" Invalid email address");
-    } 
-    
-    else {
+    } else {
       try {
-        const res = await axios.post(
-          baseURL + "/auth/login",
-          user
-        );
+        const res = await axios.post(baseURL + "/auth/login", user);
         toast.success(`Welcome back ${res?.data.details.username}`);
         return res.data;
       } catch (error: any) {
@@ -103,10 +103,10 @@ const index = () => {
           <div className="pt-5 text-sm md:text-base">
             <p>If you don’t have an account register</p>
             <p className="py-2">
-            You can You can{" "}
-            <Link href="/signup" className="text-primary font-semibold">
-              Register here!
-            </Link>
+              You can You can{" "}
+              <Link href="/signup" className="text-primary font-semibold">
+                Register here!
+              </Link>
             </p>
           </div>
         </section>
@@ -117,13 +117,21 @@ const index = () => {
               Sign in
             </h1>
             <input
-              className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"
-              placeholder="Enter email"
+              className={`${
+                isSubmitted && !isValidEmail
+                  ? "border-danger bg-dangerBackground border-2"
+                  : ""
+              } bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5`}
+              placeholder="Enter Email"
               required
-              type="email"
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
+
+            {isSubmitted && !isValidEmail ? (
+              <p className="text-danger text-sm py-2">Invalid email address</p>
+            ) : null}
+
             <div className="relative flex mt-7">
               <input
                 className="bg-signin w-full h-16 rounded-lg placeholder:text-signinText px-5"

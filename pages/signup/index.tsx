@@ -42,6 +42,7 @@ function index() {
 
   //form state
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+  
   //async function for signup post request
   const handleSignUp = async (e: React.FormEvent) => {
     //prevent default submission
@@ -53,7 +54,7 @@ function index() {
       toast.warning(" Invalid email address");
     } else if (!numberPattern || !letterPattern || !specialCharPattern) {
       toast.error(
-        "Your password should contain uppercace, special character & number"
+        "Password should contain uppercace, special character & number"
       );
     } else if (passCheck) {
       toast.error("Passwords do not match");
@@ -65,7 +66,7 @@ function index() {
         toast.success("Verification mail sent! Please check your inbox");
         setTimeout(() => {
           router.push("/login");
-        }, 3500);
+        }, 3000);
       } catch (error: any) {
         toast.error(error.response.data.responseMessage);
         return error;
@@ -154,6 +155,11 @@ function index() {
                 setDetails({ ...details, email: e.target.value })
               }
             />
+
+            {isSubmitted && !isValidEmail ? (
+              <p className="text-danger text-sm py-2">Invalid email address</p>
+            ) : null}
+
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-5"
               placeholder="Create username"
