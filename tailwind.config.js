@@ -28,6 +28,10 @@ module.exports = {
         signup: "#EDF5F3",
         Text: "#B0B0B0",
         recent: "#DDDCDC",
+        danger: "#EB5757",
+        dangerBackground: "#FFF3F2",
+
+        
       },
       fontFamily: {
         nunito: ["Nunito", "sans-serif"],

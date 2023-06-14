@@ -9,14 +9,13 @@ import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
 
-type Props ={
-  email: string,
-  username: string | number,
-  password: string | number,
-}
+type Props = {
+  email: string;
+  username: string | number;
+  password: any;
+};
 
 function index() {
-
   //user signup object
   const [details, setDetails] = React.useState<Props>({
     email: "",
@@ -30,37 +29,46 @@ function index() {
   //base URL
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
 
+  //regrx for password match
+  const numberPattern = /\d/.test(details?.password);
+  const letterPattern = /[a-zA-Z]/.test(details?.password);
+  const specialCharPattern = /[^a-zA-Z0-9]/.test(details?.password);
+
+  //pasword check
+  const passCheck = password !== details.password;
+
+  //regex for email verification
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
+
+  //form state
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
   //async function for signup post request
   const handleSignUp = async (e: React.FormEvent) => {
-
     //prevent default submission
     e.preventDefault();
+    setIsSubmitted(true);
 
-    //regex for email verification
-    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
+    //
     if (!isValidEmail) {
       toast.warning(" Invalid email address");
-    } 
-
-    //pasword check
-    else if (password !== details.password) {
+    } else if (!numberPattern || !letterPattern || !specialCharPattern) {
+      toast.error(
+        "Your password should contain uppercace, special character & number"
+      );
+    } else if (passCheck) {
       toast.error("Passwords do not match");
-    }  else if (password.length < 8) {
+    } else if (password.length < 8) {
       toast.error("Password must be at least 8 characters long");
-    }
-    
-    else {
+    } else {
       try {
-        const res = await axios.post(
-          baseURL + "/auth/signup",
-          details
-        );
+        const res = await axios.post(baseURL + "/auth/signup", details);
         toast.success("Verification mail sent! Please check your inbox");
         setTimeout(() => {
           router.push("/login");
         }, 3500);
       } catch (error: any) {
         toast.error(error.response.data.responseMessage);
+        return error;
       }
     }
   };
@@ -134,7 +142,11 @@ function index() {
               Sign up
             </h1>
             <input
-              className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
+              className={`${
+                isSubmitted && !isValidEmail
+                  ? "border-danger bg-dangerBackground border-2"
+                  : ""
+              } bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5`}
               placeholder="Enter Email"
               required
               value={details.email}
@@ -143,7 +155,7 @@ function index() {
               }
             />
             <input
-              className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-4"
+              className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-5"
               placeholder="Create username"
               required
               value={details.username}
@@ -158,25 +170,39 @@ function index() {
               type="number"
             />
 
-            <div className="relative my-4">
+            <div className="relative">
               <input
-                className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
-                placeholder=" Password"
+                className={`${
+                  isSubmitted && passCheck
+                    ? "border-danger bg-dangerBackground border-2"
+                    : ""
+                } bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-5`}
+                placeholder="Enter Password"
                 required
-                type="password"
                 value={details.password}
-                onChange={(e) =>
-                  setDetails({ ...details, password: e.target.value })
-                }
+                onChange={(e) => {
+                  setDetails({ ...details, password: e.target.value });
+                }}
               />
               <div className="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none">
                 <AiOutlineEyeInvisible className="text-backend" />
               </div>
             </div>
+            {isSubmitted &&
+            (!numberPattern || !letterPattern || !specialCharPattern) ? (
+              <p className="text-danger text-sm pb-2">
+                Your password should contain uppercase, special character, and
+                number
+              </p>
+            ) : null}
 
             <div className="relative">
               <input
-                className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
+                className={`${
+                  isSubmitted && passCheck
+                    ? "border-danger bg-dangerBackground border-2 placeholder:text-backend"
+                    : ""
+                } bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5`}
                 placeholder="Confrim Password"
                 type="password"
                 required
@@ -187,6 +213,12 @@ function index() {
                 <AiOutlineEyeInvisible className="text-backend" />
               </div>
             </div>
+
+            {isSubmitted && passCheck ? (
+              <p className="text-danger text-sm py-2">
+                Password does not match
+              </p>
+            ) : null}
 
             <Button className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10">
               Sign Up
