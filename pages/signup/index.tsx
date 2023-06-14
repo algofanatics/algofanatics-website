@@ -229,7 +229,7 @@ function index() {
             <Button className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10">
               Sign Up
             </Button>
-            <Button className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
+            <Button className="bg-grey w-full lg:hidden block shadow-black text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
               Sign Up
             </Button>
             <p className="flex justify-center text-Text items-center my-4">

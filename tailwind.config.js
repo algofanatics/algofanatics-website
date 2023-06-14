@@ -30,8 +30,6 @@ module.exports = {
         recent: "#DDDCDC",
         danger: "#EB5757",
         dangerBackground: "#FFF3F2",
-
-        
       },
       fontFamily: {
         nunito: ["Nunito", "sans-serif"],

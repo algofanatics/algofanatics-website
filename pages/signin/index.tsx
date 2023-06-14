@@ -145,13 +145,14 @@ const index = () => {
                 <AiOutlineEyeInvisible className="text-backend" />
               </div>
             </div>
-            <p className="flex justify-end text-Text text-sm pt-4">
+            <Link href="/forgotpassword" className="flex justify-end text-Text text-sm pt-4">
               Forgot password?
-            </p>
+            </Link>
+
             <Button className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10">
               Login
             </Button>
-            <Button className="bg-grey w-full lg:hidden block text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
+            <Button className="bg-grey w-full lg:hidden block shadow-black text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
               Sign In
             </Button>
             <p className="flex justify-center text-Text items-center">

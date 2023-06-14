@@ -31,14 +31,12 @@ function index() {
         <section className="lg:w-5/12 w-full flex-col py-20  lg:h-screen hidden lg:flex">
           <div className="flex lg:items-center items-start lg:pl-5 w-full md:justify-center">
             <div className="flex flex-col justify-center pt-16">
-              <h1 className="font-semibold text-5xl">Forgot Password</h1>
+              <h1 className="font-semibold text-5xl">Successful</h1>
               <div className="py-5">
-                <p>If you already have an account </p>
+                <p>Password reset Successful</p>
                 <p>
                   You can{" "}
-                  <span className="text-primary font-semibold">
-                    Recover Your Password here!
-                  </span>
+                  <span className="text-primary font-bold">Login here !</span>
                 </p>
               </div>
             </div>
@@ -55,19 +53,15 @@ function index() {
         </section>
 
         <section className="lg:w-5/12 flex flex-col lg:h-screen">
-          <div className="lg:max-w-sm max-w-full">
-            <h1 className="lg:text-3xl text-2xl font-semibold block lg:pt-0 pt-8">
-              Forgotten Password{" "}
+          <div className="lg:max-w-sm  max-w-full lg:pt-0 pt-8">
+            <h1 className="lg:text-3xl text-2xl font-semibold block">
+              Successful{" "}
             </h1>
-            <p className="text-sm text-gray-500 py-4">
-              Please enter the email assigned to your account for password
-              recovery.
+            <p className="text-sm w-full text-gray-500 py-4">
+              Password reset successful. Please continue to login{" "}
             </p>
-            <input
-              className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
-              placeholder="Enter Email"
-            />
-            <Button className="bg-grey w-full  shadow-black text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
+
+            <Button className="bg-grey w-full shadow-black text-black shadow-lg text-lg font-medium h-14 rounded-full my-4">
               Continue
             </Button>
           </div>
