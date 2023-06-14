@@ -1,8 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { BsFacebook, BsApple } from "react-icons/bs";
-import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
 
@@ -54,10 +51,30 @@ function index() {
             <p className="text-sm w-full text-gray-500 py-4">
               Please enter the verification code sent to s*****@gmail.com
             </p>
-            <input
-              className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
-              placeholder="Enter Email"
-            />
+
+            <div className="flex justify-between py-4 w-11/12">
+              <input
+                type="text"
+                maxLength={1}
+                className="bg-signup w-16 h-16 rounded-lg placeholder:text-backend px-5"
+              />
+              <input
+                type="text"
+                maxLength={1}
+                className="bg-signup w-16 h-16 rounded-lg placeholder:text-backend px-5"
+              />
+              <input
+                type="text"
+                maxLength={1}
+                className="bg-signup w-16 h-16 rounded-lg placeholder:text-backend px-5"
+              />
+              <input
+                type="text"
+                maxLength={1}
+                className="bg-signup w-16 h-16 rounded-lg placeholder:text-backend px-5"
+              />
+            </div>
+
             <Button className="bg-grey w-full shadow-black  text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
               Continue
             </Button>
