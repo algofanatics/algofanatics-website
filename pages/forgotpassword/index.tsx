@@ -1,8 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { BsFacebook, BsApple } from "react-icons/bs";
-import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
 

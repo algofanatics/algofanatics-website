@@ -8,6 +8,7 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
+import UsePost from "@/hooks/UsePost";
 
 type Props = {
   email: string;
@@ -25,52 +26,47 @@ function index() {
 
   const router = useRouter();
   const [password, setPassword] = React.useState("");
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
 
-  //base URL
+  //API Endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
+  const endPoint = baseURL + "/auth/signup";
 
-  //regrx for password match
+  //regrx for password match and email verification
   const numberPattern = /\d/.test(details?.password);
   const letterPattern = /[a-zA-Z]/.test(details?.password);
   const specialCharPattern = /[^a-zA-Z0-9]/.test(details?.password);
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
 
   //pasword check
   const passCheck = password !== details.password;
 
-  //regex for email verification
-  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
-
-  //form state
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
-  
-  //async function for signup post request
   const handleSignUp = async (e: React.FormEvent) => {
     //prevent default submission
     e.preventDefault();
     setIsSubmitted(true);
 
-    //
     if (!isValidEmail) {
       toast.warning(" Invalid email address");
-    } else if (!numberPattern || !letterPattern || !specialCharPattern) {
+    } else if (
+      !numberPattern ||
+      !letterPattern ||
+      !specialCharPattern ||
+      password.length < 8
+    ) {
       toast.error(
-        "Password should contain uppercace, special character & number"
+        "Password must be at least 8 characters and should contain uppercace, special character & number"
       );
     } else if (passCheck) {
       toast.error("Passwords do not match");
-    } else if (password.length < 8) {
-      toast.error("Password must be at least 8 characters long");
     } else {
-      try {
-        const res = await axios.post(baseURL + "/auth/signup", details);
-        toast.success("Verification mail sent! Please check your inbox");
-        setTimeout(() => {
-          router.push("/login");
-        }, 3000);
-      } catch (error: any) {
-        toast.error(error.response.data.responseMessage);
-        return error;
-      }
+      //calling post hook
+      UsePost(
+        details,
+        "Verification mail sent! Please check your inbox",
+        endPoint,
+        "/signin"
+      );
     }
   };
 

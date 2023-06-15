@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import axios from "axios";
 import { toast } from "react-toastify";
 import Button from "@/components/Micro/Button/Button";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
+import UsePost from "@/hooks/UsePost";
 
 type Props = {
   email: string;
@@ -20,32 +20,25 @@ const index = () => {
     password: "",
   });
 
-  //form state
   const [isSubmitted, setIsSubmitted] = React.useState(false);
-
-  //base URL
+  
+  //API Endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
+  const endPoint = baseURL + "/auth/login";
 
   //regex for email verification
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
 
-  //async function for login post request
+
   const handleLogin = async (e: React.FormEvent) => {
-    //prevent default submission
     e.preventDefault();
     setIsSubmitted(true);
 
     if (!isValidEmail) {
       toast.warning(" Invalid email address");
     } else {
-      try {
-        const res = await axios.post(baseURL + "/auth/login", user);
-        toast.success(`Welcome back ${res?.data.details.username}`);
-        return res.data;
-      } catch (error: any) {
-        toast.error(error.response.data.responseMessage);
-        return error.response.data;
-      }
+      //calling Post hook
+      UsePost(user, "Welcome back", endPoint, "/");
     }
   };
 
@@ -145,7 +138,10 @@ const index = () => {
                 <AiOutlineEyeInvisible className="text-backend" />
               </div>
             </div>
-            <Link href="/forgotpassword" className="flex justify-end text-Text text-sm pt-4">
+            <Link
+              href="/forgotpassword"
+              className="flex justify-end text-Text text-sm pt-4"
+            >
               Forgot password?
             </Link>
 
