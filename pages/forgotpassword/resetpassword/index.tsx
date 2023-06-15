@@ -4,6 +4,8 @@ import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
 
 function index() {
+ 
+
   return (
     <main className="font-poppins container mx-auto pt-10 px-6">
       <Link href="/" className="lg:block hidden">

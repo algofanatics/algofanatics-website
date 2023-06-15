@@ -2,8 +2,29 @@ import React from "react";
 import Image from "next/image";
 import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
+import UsePost from "@/hooks/UsePost";
 
 function index() {
+  //global user object to recover forgotten password
+  const [user, setUser] = React.useState({
+    email: "",
+  });
+
+  //endpoint
+  const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
+  const endPoint = baseURL + "/auth/token";
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    //post requets to get token
+    UsePost(
+      user,
+      "You are one step away from recovering your password",
+      endPoint,
+      "/forgotpassword/resetpassword"
+    );
+  };
+
   return (
     <main className="font-poppins container mx-auto pt-10 px-6">
       <Link href="/" className="lg:block hidden">
@@ -52,7 +73,7 @@ function index() {
         </section>
 
         <section className="lg:w-5/12 flex flex-col lg:h-screen">
-          <div className="lg:max-w-sm max-w-full">
+          <form className="lg:max-w-sm max-w-full" onSubmit={handleSubmit}>
             <h1 className="lg:text-3xl text-2xl font-semibold block lg:pt-0 pt-8">
               Forgotten Password{" "}
             </h1>
@@ -63,11 +84,13 @@ function index() {
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
               placeholder="Enter Email"
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
             <Button className="bg-grey w-full  shadow-black text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
               Continue
             </Button>
-          </div>
+          </form>
         </section>
       </div>
     </main>
