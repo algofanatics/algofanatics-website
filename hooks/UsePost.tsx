@@ -1,6 +1,5 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useRouter } from "next/router";
 
 const UsePost = async (user: object, success: string, endPoint: string, route:string) => {
   try {
