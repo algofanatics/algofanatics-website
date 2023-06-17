@@ -37,7 +37,7 @@ const index = () => {
       toast.warning(" Invalid email address");
     } else {
       //calling Post hook
-      UsePost(user, "Welcome back", endPoint, "/");
+      UsePost(user, "Welcome back!", endPoint, "/");
     }
   };
 
