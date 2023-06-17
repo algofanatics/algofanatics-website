@@ -21,10 +21,7 @@ function index() {
     username: "",
     password: "",
   });
-
-  const [password, setPassword] = React.useState("");
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
-
+  
   //API Endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/auth/signup";
@@ -36,6 +33,8 @@ function index() {
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
 
   //pasword check
+  const [password, setPassword] = React.useState("");
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
   const passCheck = password !== details.password;
 
   const handleSignUp = async (e: React.FormEvent) => {
@@ -57,7 +56,6 @@ function index() {
     } else if (passCheck) {
       toast.error("Passwords do not match");
     } else {
-      //calling post hook
       UsePost(
         details,
         "Verification mail sent! Please check your inbox",
@@ -148,10 +146,6 @@ function index() {
                 setDetails({ ...details, email: e.target.value })
               }
             />
-
-            {isSubmitted && !isValidEmail ? (
-              <p className="text-danger text-sm py-2">Invalid email address</p>
-            ) : null}
 
             <input
               className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-5"

@@ -13,12 +13,11 @@ function index() {
     email: "",
   });
 
-  const router = useRouter()
-
   //endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/auth/token";
   const [loading, setLoading] = React.useState(false);
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

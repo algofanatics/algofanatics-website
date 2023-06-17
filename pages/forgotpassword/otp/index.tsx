@@ -9,9 +9,7 @@ import { useRouter } from "next/router";
 
 function index() {
   const [values, setValues] = React.useState<string>("");
-
   const OTP = getCookie("token");
-
   const router = useRouter();
 
   const handleVerify = () => {

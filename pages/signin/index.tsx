@@ -19,15 +19,14 @@ const index = () => {
     email: "",
     password: "",
   });
-
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
   
   //API Endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/auth/login";
-
+  
   //regex for email verification
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
