@@ -29,7 +29,6 @@ const index = () => {
   //regex for email verification
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
 
-
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
@@ -156,7 +155,7 @@ const index = () => {
             </p>
 
             <div className="flex justify-center items-center py-5">
-              <div className="flex justify-between w-28">
+            <div className="grid place-items-center grid-cols-3 w-32">
                 <BsFacebook className="w-7 h-7 text-blue-600" />
                 <div className="bg-black w-7 h-7 flex items-center justify-center rounded-full">
                   <BsApple className="text-white w-4 h-4" />

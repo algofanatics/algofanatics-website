@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
 
-type Props ={
+type Props = {
   className: string;
   children: string;
-  onClick?: () => Promise<any>;
-}
+  onClick?: () => void;
+  disabled?:boolean
+};
 
-const Button = ({ className, children, onClick }: Props) => {
+const Button = ({ className, children, onClick, disabled}: Props) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button disabled={disabled} className={className} onClick={onClick}>
       {children}
     </button>
   );

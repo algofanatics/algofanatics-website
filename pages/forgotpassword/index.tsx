@@ -1,8 +1,11 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
-import UsePost from "@/hooks/UsePost";
+import { setCookie } from "cookies-next";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 function index() {
   //global user object to recover forgotten password
@@ -10,20 +13,29 @@ function index() {
     email: "",
   });
 
+  const router = useRouter()
+
   //endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/auth/token";
+  const [loading, setLoading] = React.useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    //post requets to get token
-    UsePost(
-      user,
-      "You are one step away from recovering your password",
-      endPoint,
-      "/forgotpassword/resetpassword"
-    );
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await axios.post(endPoint, user);
+      setCookie("token", res?.data.details.tempToken);
+      toast.success(`You are one step away from recovering your password`);
+      setTimeout(() => router.push("/forgotpassword/otp"), 3000);
+    } catch (error: any) {
+      toast.error(error?.response?.data.responseMessage);
+      return error.response.data;
+    }
+    setLoading(false);
   };
+
+  setCookie("email", user.email)
 
   return (
     <main className="font-poppins container mx-auto pt-10 px-6">
@@ -87,7 +99,10 @@ function index() {
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
-            <Button className="bg-grey w-full  shadow-black text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
+            <Button
+              disabled={loading === true || user.email === ""}
+              className="bg-grey w-full  shadow-black text-black shadow-lg text-lg font-medium h-16 rounded-full my-10"
+            >
               Continue
             </Button>
           </form>

@@ -1,8 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { AiOutlineEyeInvisible } from "react-icons/ai";
-import { BsFacebook, BsApple } from "react-icons/bs";
-import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
 import Link from "next/link";
 
@@ -36,7 +33,9 @@ function index() {
                 <p>Password reset Successful</p>
                 <p>
                   You can{" "}
-                  <span className="text-primary font-bold">Login here !</span>
+                  <span className="text-primary font-bold cursor-pointer">
+                    <Link href="/signin">Login here !</Link>
+                  </span>
                 </p>
               </div>
             </div>
@@ -61,9 +60,12 @@ function index() {
               Password reset successful. Please continue to login{" "}
             </p>
 
-            <Button className="bg-grey w-full shadow-black text-black shadow-lg text-lg font-medium h-14 rounded-full my-4">
-              Continue
-            </Button>
+            <Link href="/signin" legacyBehavior>
+              <Button className="bg-grey w-full shadow-black text-black shadow-lg text-lg font-medium h-14 rounded-full my-4">
+                Continue
+              </Button>
+            </Link>
+
           </div>
         </section>
       </div>

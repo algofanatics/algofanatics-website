@@ -1,9 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import axios from "axios";
 import { toast } from "react-toastify";
-import { useRouter } from "next/router";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
@@ -24,7 +22,6 @@ function index() {
     password: "",
   });
 
-  const router = useRouter();
   const [password, setPassword] = React.useState("");
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
@@ -100,7 +97,7 @@ function index() {
                 <p className="">If you already have an account </p>
                 <p>
                   You can{" "}
-                  <Link href="/login" className="text-primary font-semibold">
+                  <Link href="/signin" className="text-primary font-semibold">
                     Login here!
                   </Link>
                 </p>
@@ -126,7 +123,7 @@ function index() {
             <p>If you don’t have an account register</p>
             <p className="py-2">
               You can{" "}
-              <Link href="/login" className="text-primary font-semibold">
+              <Link href="/signin" className="text-primary font-semibold">
                 Login here!
               </Link>{" "}
             </p>
@@ -233,7 +230,7 @@ function index() {
             </p>
 
             <div className="flex justify-center items-center py-5">
-              <div className="flex justify-between w-28">
+            <div className="grid place-items-center grid-cols-3 w-32">
                 <BsFacebook className="w-7 h-7 text-blue-600" />
                 <div className="bg-black w-7 h-7 flex items-center justify-center rounded-full">
                   <BsApple className="text-white w-4 h-4" />

@@ -6,7 +6,7 @@ const Header = () => {
     <main className="">
       <div className="flex lg:px-8 px-5 md:py-14 py-12 overflow-x-hidden container mx-auto flex-col md:flex-row lg:items-center  items-start justify-start">
         <div className="lg:w-[1200px] w-full xl:w-7/12">
-          <div className="font-semibold w-full font-work flex flex-col text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-9">
+          <div className="font-semibold w-full font-work flex flex-col text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-9">
             <div className="flex lg:items-center">
               <h1 className="">Build Your</h1>
               <div className="-mt-8 ml-2 lg:block hidden">
