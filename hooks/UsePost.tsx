@@ -12,7 +12,7 @@ const UsePost = async (
     toast.success(`${success}`);
     setTimeout(() => (window.location.href = route), 2800);
   } catch (error: any) {
-    toast.error(error.response.data.responseMessage);
+    toast.error(error?.response?.data.responseMessage);
     return error.response.data;
   }
 };

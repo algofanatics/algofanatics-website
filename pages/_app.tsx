@@ -2,12 +2,17 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient()
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className="font-work">
-      <Component {...pageProps} />
-
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
+      
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -19,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
         draggable
         pauseOnHover
         theme="dark"
-      />{" "}
+      />
     </div>
   );
 }
