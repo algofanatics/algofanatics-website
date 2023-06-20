@@ -29,7 +29,7 @@ const Otp = ({
   const inputs = Array.from({ length }).map((_, index: number) => (
     <div
       key={index}
-      className={`border bg-gray-100 border-primary rounded-md h-16 w-16 md:w-16 md:h-16 flex items-center justify-center ${
+      className={`border bg-gray-100 border-primary rounded-md h-10 w-10 md:w-16 md:h-16 flex items-center justify-center ${
         each.length === index && "!border-primary-dark border-3"
       }`}
     >

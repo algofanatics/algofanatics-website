@@ -157,7 +157,7 @@ function index() {
               }
             />
             <input
-              className="bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5"
+              className="bg-signup input w-full h-16 rounded-lg placeholder:text-backend px-5"
               placeholder="Contact number"
               required
               type="number"
@@ -171,6 +171,7 @@ function index() {
                     : ""
                 } bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-5`}
                 placeholder="Enter Password"
+                type="password"
                 required
                 value={details.password}
                 onChange={(e) => {
@@ -235,6 +236,15 @@ function index() {
           </form>
         </section>
       </div>
+      <style>
+        {`
+           input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+  }
+        `}
+      </style>
     </main>
   );
 }

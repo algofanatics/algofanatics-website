@@ -75,6 +75,7 @@ function index() {
               value={values}
               onChange={(value: string) => setValues(value)}
               length={6}
+              className=""
             />
 
             <Button
