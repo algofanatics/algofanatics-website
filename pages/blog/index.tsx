@@ -106,7 +106,7 @@ const index = () => {
   
 
   return (
-    <main className=" bg-blog overflow-x-hidden">
+    <main className=" bg-blog container mx-auto overflow-x-hidden">
       <Navbar />
       <div className="lg:p-10 p-5 font-work">
         <h1 className="text-5xl font-semibold">Blog</h1>
