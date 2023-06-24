@@ -1,6 +1,5 @@
 import { useQuery } from "react-query";
 import axios from "axios";
-import { toast } from "react-toastify";
 
 const UseFetch = (endpoint: string, header?: object) => {
   const { isLoading, error, data } = useQuery("repodata", () =>
