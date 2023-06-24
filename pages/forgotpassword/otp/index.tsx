@@ -11,7 +11,8 @@ function index() {
   const [values, setValues] = React.useState<string>("");
   const OTP = getCookie("token");
   const router = useRouter();
-
+  //endpoint
+  const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const handleVerify = () => {
     if (OTP === values) {
       toast.success("OTP verified successfully!");

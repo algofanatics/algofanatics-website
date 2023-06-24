@@ -6,7 +6,8 @@ import Button from "@/components/Micro/Button/Button";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-import UsePost from "@/hooks/UsePost";
+import UsePost from "@/hooks/post/UsePost";
+import { setCookie } from "cookies-next";
 
 type Props = {
   email: string;
@@ -14,29 +15,34 @@ type Props = {
 };
 
 const index = () => {
-  //user login object
   const [user, setUser] = React.useState<Props>({
     email: "",
     password: "",
   });
-  
+
   //API Endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/auth/login";
-  
+
   //regex for email verification
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
+  const { handlePost } = UsePost(
+    user,
+    "Welcome back!",
+    endPoint,
+    "/admin"
+  );
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-
     if (!isValidEmail) {
       toast.warning(" Invalid email address");
     } else {
-      //calling Post hook
-      UsePost(user, "Welcome back!", endPoint, "/");
+      handlePost(user);
+      setCookie("userEmail", user.email);
     }
   };
 
@@ -154,7 +160,7 @@ const index = () => {
             </p>
 
             <div className="flex justify-center items-center py-5">
-            <div className="grid place-items-center grid-cols-3 w-32">
+              <div className="grid place-items-center grid-cols-3 w-32">
                 <BsFacebook className="w-7 h-7 text-blue-600" />
                 <div className="bg-black w-7 h-7 flex items-center justify-center rounded-full">
                   <BsApple className="text-white w-4 h-4" />

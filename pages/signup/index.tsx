@@ -6,7 +6,7 @@ import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
-import UsePost from "@/hooks/UsePost";
+import UsePost from "@/hooks/post/UsePost";
 
 type Props = {
   email: string;
@@ -14,31 +14,33 @@ type Props = {
   password: any;
 };
 
-function index() {
-  //user signup object
+const index = () => {
   const [details, setDetails] = React.useState<Props>({
     email: "",
     username: "",
     password: "",
   });
-  
-  //API Endpoint
-  const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
-  const endPoint = baseURL + "/auth/signup";
+  const [password, setPassword] = React.useState("");
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
 
   //regrx for password match and email verification
   const numberPattern = /\d/.test(details?.password);
   const letterPattern = /[a-zA-Z]/.test(details?.password);
   const specialCharPattern = /[^a-zA-Z0-9]/.test(details?.password);
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details?.email);
-
-  //pasword check
-  const [password, setPassword] = React.useState("");
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
   const passCheck = password !== details.password;
 
+  //API Endpoint
+  const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
+  const endPoint = baseURL + "/auth/signup";
+  const { handlePost } = UsePost(
+    details,
+    "Verification mail sent! Please check your inbox",
+    endPoint,
+    "/signin"
+  );
+
   const handleSignUp = async (e: React.FormEvent) => {
-    //prevent default submission
     e.preventDefault();
     setIsSubmitted(true);
 
@@ -56,12 +58,7 @@ function index() {
     } else if (passCheck) {
       toast.error("Passwords do not match");
     } else {
-      UsePost(
-        details,
-        "Verification mail sent! Please check your inbox",
-        endPoint,
-        "/signin"
-      );
+      handlePost(details);
     }
   };
 
@@ -225,7 +222,7 @@ function index() {
             </p>
 
             <div className="flex justify-center items-center py-5">
-            <div className="grid place-items-center grid-cols-3 w-32">
+              <div className="grid place-items-center grid-cols-3 w-32">
                 <BsFacebook className="w-7 h-7 text-blue-600" />
                 <div className="bg-black w-7 h-7 flex items-center justify-center rounded-full">
                   <BsApple className="text-white w-4 h-4" />
@@ -247,6 +244,6 @@ function index() {
       </style>
     </main>
   );
-}
+};
 
 export default index;

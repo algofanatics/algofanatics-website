@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getCookie } from "cookies-next";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { toast } from "react-toastify";
-import UsePost from "@/hooks/UsePost";
+import UsePost from "@/hooks/post/UsePost";
 
 type Props = {
   password: any;
@@ -14,7 +14,6 @@ type Props = {
 };
 
 function index() {
-
   const [details, setDetails] = React.useState<Props>({
     password: "",
     tempToken: getCookie("token"),
@@ -28,16 +27,19 @@ function index() {
   const numberPattern = /\d/.test(details?.password);
   const letterPattern = /[a-zA-Z]/.test(details?.password);
   const specialCharPattern = /[^a-zA-Z0-9]/.test(details?.password);
-
-  //pasword check
   const passCheck = password !== details.password;
 
   //API Endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/auth/password";
+  const { handlePost } = UsePost(
+    details,
+    "Password successfully changed!",
+    endPoint,
+    "/success"
+  );
 
   const handleReset = async (e: React.FormEvent) => {
-    //prevent default submission
     e.preventDefault();
     setIsSubmitted(true);
 
@@ -53,13 +55,7 @@ function index() {
     } else if (passCheck) {
       toast.error("Passwords do not match");
     } else {
-      //calling post hook
-      UsePost(
-        details,
-        "Password successfully changed!",
-        endPoint,
-        "/success"
-      );
+      handlePost(details);
     }
   };
 
@@ -107,7 +103,10 @@ function index() {
           </div>
         </section>
 
-        <form className="lg:w-5/12 flex flex-col lg:h-screen" onSubmit={handleReset}>
+        <form
+          className="lg:w-5/12 flex flex-col lg:h-screen"
+          onSubmit={handleReset}
+        >
           <div className="lg:max-w-sm  max-w-full lg:pt-0 pt-8">
             <h1 className="lg:text-3xl text-2xl font-semibold block">
               Reset Password{" "}

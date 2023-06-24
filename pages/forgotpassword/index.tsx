@@ -99,7 +99,7 @@ function index() {
               onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
             <Button
-              disabled={loading === true || user.email === ""}
+              disabled={loading === true && user.email === ""}
               className="bg-grey w-full  shadow-black text-black shadow-lg text-lg font-medium h-16 rounded-full my-10"
             >
               Continue
