@@ -1,21 +1,19 @@
 # Use a Node.js image as the base image
 FROM node:16
 
-# Set the working directory
-# WORKDIR /
+# Create app directory
+WORKDIR /usr/src/app
 
-# Copy the package.json and package-lock.json files to the working directory
-COPY . .
+# Install app dependencies
+COPY package*.json ./
 
-# Install dependencies
 RUN npm install
-
+# If you are building your code for production
 RUN npm run build
 
-# set port to 80
+# Bundle app source
+COPY . .
 
-# Expose port 80
-# EXPOSE 80
+# EXPOSE 8080
+CMD [ "npm", "start" ]
 
-# start app
-CMD ["npm", "start"]
