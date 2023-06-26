@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
 import { TbShare3 } from "react-icons/tb";

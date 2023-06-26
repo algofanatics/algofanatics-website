@@ -14,7 +14,7 @@ type Props = {
   password: string | number;
 };
 
-const index = () => {
+const Index = () => {
   const [user, setUser] = React.useState<Props>({
     email: "",
     password: "",
@@ -175,4 +175,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
