@@ -7,16 +7,16 @@ WORKDIR /usr/src/app
 RUN cd /usr/src/app
 
 # Install app dependencies
-COPY package*.json ./
+COPY . ./
 
-RUN npm install
+RUN yarn
 
 # Bundle app source
 COPY . .
 
 # If you are building your code for production
-RUN npm run build
+RUN yarn build
 
 # EXPOSE 8080
-CMD [ "npm", "run", "dev" ]
+CMD [ "yarn", "start" ]
 
