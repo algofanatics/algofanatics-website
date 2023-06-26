@@ -1,8 +1,6 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import React from "react";
-import { TbShare3 } from "react-icons/tb";
-import { IoDownloadOutline } from "react-icons/io5";
 import Button from "../../Button/Button";
 
 export type blogType = {

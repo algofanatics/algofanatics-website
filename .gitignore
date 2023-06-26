@@ -39,5 +39,6 @@ next-env.d.ts
 .vscode
 
 # lock files
+## do not remove these. The are used to ensure that multiple people can work on the same project without conflicts and also to ensure that the build process is managed correctly by the CI server.
 package-lock.json
 yarn.lock
