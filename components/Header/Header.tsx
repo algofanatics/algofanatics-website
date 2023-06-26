@@ -1,18 +1,19 @@
 import Image from "next/image";
+import Button from "../Micro/Button/Button";
 
 const Header = () => {
   return (
     <main className="">
-      <div className="flex px-5 md:pt-10 pt-16  overflow-x-hidden container mx-auto flex-col md:flex-row lg:items-center  items-start justify-start">
+      <div className="flex lg:px-8 px-5 md:py-14 py-12 overflow-x-hidden container mx-auto flex-col md:flex-row lg:items-center  items-start justify-start">
         <div className="lg:w-[1200px] w-full xl:w-7/12">
-          <div className="font-semibold w-full font-work flex flex-col text-2xl md:text-2xl lg:text-5xl leading-9">
+          <div className="font-semibold w-full font-work flex flex-col text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-9">
             <div className="flex lg:items-center">
               <h1 className="">Build Your</h1>
-              <div className="-mt-10 ml-2 lg:block hidden">
+              <div className="-mt-8 ml-2 lg:block hidden">
                 <Image
                   src="/assets/header/algo.svg"
                   alt="algorithm"
-                  width={300}
+                  width={250}
                   height={91}
                 />
               </div>
@@ -20,8 +21,8 @@ const Header = () => {
                 <Image
                   src="/assets/header/algo2.svg"
                   alt="algorithm"
-                  width={120}
-                  height={50}
+                  width={150}
+                  height={30}
                 />
               </div>
             </div>
@@ -32,20 +33,20 @@ const Header = () => {
             struggling developers face when navigating the market space
           </p>
           <div>
-          <button className="shadow-lg lg:text-xl text-sm font-normal shadow-black lg:w-[265px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
+          <Button className="shadow-lg lg:text-xl text-sm font-normal shadow-black lg:w-[280px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
               Get Started
-            </button>
+            </Button>
           </div>
         </div>
-        <div className="md:flex md-w-6/12 hidden py-10  justify-center items-center">
+        <div className="md:flex md-w-6/12 hidden  justify-center items-center">
           <Image
             src={"/assets/header/header.svg"}
-            width={836}
+            width={750}
             height={641}
             alt="header"
           />
         </div>
-        <div className="md:hidden block  py-10">
+        <div className="md:hidden pt-10 flex ">
           <Image
             src={"/assets/header/header2.svg"}
             width={850}
