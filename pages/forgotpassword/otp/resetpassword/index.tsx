@@ -13,7 +13,7 @@ type Props = {
   email: any;
 };
 
-function index() {
+function Index() {
   const [details, setDetails] = React.useState<Props>({
     password: "",
     tempToken: getCookie("token"),
@@ -172,4 +172,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

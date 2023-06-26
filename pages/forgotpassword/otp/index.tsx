@@ -7,7 +7,7 @@ import Otp from "@/components/Micro/Otp/Otp";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
-function index() {
+function Index() {
   const [values, setValues] = React.useState<string>("");
   const OTP = getCookie("token");
   const router = useRouter();
@@ -97,4 +97,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

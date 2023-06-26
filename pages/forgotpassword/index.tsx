@@ -7,7 +7,7 @@ import { setCookie } from "cookies-next";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-function index() {
+function Index() {
   //global user object to recover forgotten password
   const [user, setUser] = React.useState({
     email: "",
@@ -111,4 +111,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
