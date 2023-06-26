@@ -8,9 +8,9 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies
-RUN yarn
+RUN npm run
 
-# RUN yarn build
+RUN npm run build
 
 # set port to 80
 
@@ -18,4 +18,4 @@ RUN yarn
 # EXPOSE 80
 
 # start app
-CMD ["yarn", "dev"]
+CMD ["npm", "start"]
