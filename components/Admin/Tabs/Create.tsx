@@ -1,6 +1,6 @@
 import Button from "@/components/Micro/Button/Button";
 import UsePost from "@/hooks/post/UsePost";
-import React, { FormEventHandler } from "react";
+import React from "react";
 import { getCookie } from "cookies-next";
 
 type Props = {
@@ -26,7 +26,7 @@ const Create = () => {
     newBlog,
     "New blog post added successfully!",
     endPoint,
-    "/admin",
+    "/admin?tab=blog",
     {
       headers: {
         Authorization: `Bearer ${details?.token}`,

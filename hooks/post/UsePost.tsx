@@ -1,6 +1,6 @@
 import { useMutation } from "react-query";
 import axios from "axios";
-import { setCookie } from "cookies-next";
+import { getCookie, setCookie } from "cookies-next";
 import { toast } from "react-toastify";
 
 const UsePost = (
@@ -19,6 +19,7 @@ const UsePost = (
       const data = await postMutation.mutateAsync(user);
       toast.success(`${success}`);
       setCookie("details", data?.details);
+      localStorage.setItem("details", data?.details);
       setTimeout(() => (route ? (window.location.href = route) : null), 2800);
     } catch (error: any) {
       toast.error(error?.response?.data.responseMessage);

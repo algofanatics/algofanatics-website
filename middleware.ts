@@ -3,9 +3,10 @@ import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   const requestedPath = request.nextUrl.pathname;
-  const isLoggedIn = request.cookies.get("userEmail");
+  const isLoggedInCookie = request.cookies.get("details");
+  const isLoggedIn = isLoggedInCookie ? JSON.parse(isLoggedInCookie.value) : null;
 
-  if (requestedPath === "/admin" && !isLoggedIn) {
+  if (requestedPath === "/admin" && !isLoggedIn?.token) {
     return NextResponse.redirect(new URL("/signin", request.url));
   }
 }
@@ -13,3 +14,4 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: "/admin",
 };
+

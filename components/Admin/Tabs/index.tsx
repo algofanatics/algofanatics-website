@@ -9,6 +9,7 @@ import { BiBookAlt, BiVideoOff } from "react-icons/bi";
 import { IoIosSettings } from "react-icons/io";
 import { AiFillDatabase } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
+import { getCookie } from "cookies-next";
 
 export type TabsTypes = {
   title: React.ReactNode;
@@ -84,6 +85,15 @@ const Tabs = () => {
     return <TabComponent />;
   }, [CurrentTab]);
 
+  //prevent hydration
+  const [userName, setUserName]= React.useState("")
+  const response = getCookie("details");
+  const details = typeof response === "string" ? JSON.parse(response) : null;
+  React.useEffect(() => {
+    const userName = details?.username;
+    setUserName(userName)
+  }, [userName]);
+
   return (
     <main className="container mx-auto grid flex-grow w-full gap-x-1  md:grid-cols-4 rounded-xl ">
       <section className="bg-white mb-5 w-full p-8">
@@ -110,7 +120,7 @@ const Tabs = () => {
           <div className="flex space-x-5 items-center">
             <RxAvatar className="text-2xl" />
             <div className="flex flex-col">
-              <p className="text-lg font-semibold">John Doe</p>
+              {userName && <p className="text-lg font-semibold">{userName}</p>}
               <p className="text-sm text-Text">Admin</p>
             </div>
           </div>

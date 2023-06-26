@@ -3,17 +3,16 @@ import { BsFilter } from "react-icons/bs";
 import { Card, Recent } from "@/components/Micro/Blog/Card/Card";
 import Navbar from "@/components/Navbar/Navbar";
 import UseFetch from "@/hooks/get/UseFetch";
-import { getCookie } from "cookies-next";
+import { useContext } from "react";
+import { userInfoContext } from "../_app";
 
 const index = () => {
+  const userInformation = useContext(userInfoContext);
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/blog";
-  const response = getCookie("details");
-  const details = typeof response === "string" ? JSON.parse(response) : null;
-
   const { data } = UseFetch(endPoint, {
     headers: {
-      Authorization: `Bearer ${details?.token}`,
+      Authorization: `Bearer ${userInformation?.token}`,
     },
   });
 
@@ -39,10 +38,10 @@ const index = () => {
 
         <section className="flex justify-between">
           <div className="lg:w-8/12 w-6/12">
-            <Card blogDetails={data?.details} />
+            {data && <Card blogDetails={data?.details} />}
           </div>
           <div className="lg:w-4/12 w-6/12 text-xl font-semibold pl-10">
-            <Recent blogDetails={data?.details} />
+            {data && <Recent blogDetails={data?.details} />}
           </div>
         </section>
       </div>
