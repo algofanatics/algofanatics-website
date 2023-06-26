@@ -8,11 +8,12 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
-# If you are building your code for production
-RUN npm run build
 
 # Bundle app source
 COPY . .
+
+# If you are building your code for production
+RUN npm run build
 
 # EXPOSE 8080
 CMD [ "npm", "start" ]
