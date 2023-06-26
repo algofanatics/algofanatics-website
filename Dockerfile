@@ -4,17 +4,19 @@ FROM node:16
 # Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
-COPY . ./
+# Copy package.json to the app directory
+COPY package.json .
 
+# Install dependencies using yarn
 RUN yarn
 
-# Bundle app source
+# Copy all files from the current directory to the app directory
 COPY . .
 
-# If you are building your code for production
-RUN yarn build
+# Expose port 3000
+EXPOSE 3000
 
-# EXPOSE 8080
-CMD [ "yarn", "start" ]
+# Run the command "yarn start" when the container starts
+CMD ["yarn", "start"]
+
 
