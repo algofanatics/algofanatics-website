@@ -2,7 +2,7 @@
 FROM node:16
 
 # Set the working directory
-WORKDIR /
+# WORKDIR /
 
 # Copy the package.json and package-lock.json files to the working directory
 COPY . .
