@@ -7,6 +7,7 @@ import Button from "@/components/Micro/Button/Button";
 import axios from "axios";
 import UseFetch from "@/hooks/get/UseFetch";
 import { getCookie } from "cookies-next";
+import Link from "next/link";
 
 const Blog = () => {
   //API Endpoint
@@ -14,14 +15,11 @@ const Blog = () => {
   const endPoint = baseURL + "/blog";
   const response = getCookie("details");
   const details = typeof response === "string" ? JSON.parse(response) : null;
-
   const { data } = UseFetch(endPoint, {
     headers: {
       Authorization: `Bearer ${details?.token}`,
     },
   });
-  console.log(data?.details);
-
   return (
     <main className="py-5">
       <div className="flex justify-between items-center">
@@ -38,9 +36,11 @@ const Blog = () => {
           />
         </div>
         <div className="flex justify-end w-full">
-          <Button className="bg-grey w-44 hidden md:block shadow-black text-black shadow-lg text-base font-medium h-10  rounded-full my-4">
-            Add new post
-          </Button>
+          <Link href="/admin?tab=create">
+            <Button className="bg-grey w-44 hidden md:block shadow-black text-black shadow-lg text-base font-medium h-10  rounded-full my-4">
+              Add new post
+            </Button>
+          </Link>
         </div>
       </div>
       <div>

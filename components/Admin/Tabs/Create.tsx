@@ -26,7 +26,7 @@ const Create = () => {
     newBlog,
     "New blog post added successfully!",
     endPoint,
-    "/admin",
+    "/admin?tab=blog",
     {
       headers: {
         Authorization: `Bearer ${details?.token}`,

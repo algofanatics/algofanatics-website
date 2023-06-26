@@ -10,7 +10,7 @@ export type TextFieldProps = {
   length?: number;
 };
 
-const Otp = ({
+const PinInput = ({
   className,
   onChange,
   value,
@@ -70,4 +70,4 @@ const Otp = ({
   );
 };
 
-export default Otp;
+export default PinInput;
