@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <main className="lg:bg-services bg-white">
+    <main className="lg:bg-services bg-white" id="about">
       <section className="container mx-auto lg:pt-28 lg:px-8 px-5 py-20">
       <div>
           <h1 className="text-3xl lg:text-5xl lg:hidden block font-work font-semibold">About Us</h1>
