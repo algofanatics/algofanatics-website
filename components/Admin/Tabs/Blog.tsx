@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
-import { blogType } from "@/components/Micro/Blog/Card/Card";
+import React from "react";
 import { Card } from "@/components/Micro/Blog/Card/Card";
 import { BsFilter } from "react-icons/bs";
-import { RxAvatar } from "react-icons/rx";
 import Button from "@/components/Micro/Button/Button";
-import axios from "axios";
 import UseFetch from "@/hooks/get/UseFetch";
 import { getCookie } from "cookies-next";
 import Link from "next/link";
