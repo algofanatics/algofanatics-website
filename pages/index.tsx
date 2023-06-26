@@ -9,14 +9,14 @@ import Form from "@/components/Form/Form";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden  font-nunito">
+    <main className="overflow-hidden font-nunito">
       <Navbar />
       <Header />
-      <Services/>
-      <Mission/>
-      <About/>
-      <Team/>
-      <Form/>
+      <Services />
+      <Mission />
+      <About />
+      <Team />
+      <Form />
       <Footer />
     </main>
   );

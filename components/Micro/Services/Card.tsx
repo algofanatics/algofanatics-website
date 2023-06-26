@@ -10,9 +10,7 @@ type Props = {
 
 const Card = ({ image, image2, course, description }: Props) => {
   return (
-    <div
-      className="h-[260px] w-[335px] lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col  justify-center lg:border-4 border-2 rounded-md border-cardBorder   cursor-pointer"
-    >
+    <div className="h-[260px] w-80 lg:w-[477px] lg:h-[343px] lg:p-5 p-3 px-5 flex flex-col  justify-center lg:border-4 border-2 rounded-md border-cardBorder   cursor-pointer">
       <Image
         src={image}
         alt="skill"

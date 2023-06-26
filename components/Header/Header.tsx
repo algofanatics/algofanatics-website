@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Button from "../Micro/Button/Button";
 
 const Header = () => {
   return (
     <main className="">
       <div className="flex lg:px-8 px-5 md:py-14 py-12 overflow-x-hidden container mx-auto flex-col md:flex-row lg:items-center  items-start justify-start">
         <div className="lg:w-[1200px] w-full xl:w-7/12">
-          <div className="font-semibold w-full font-work flex flex-col text-3xl md:text-3xl lg:text-4xl xl:text-5xl leading-9">
+          <div className="font-semibold w-full font-work flex flex-col text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-9">
             <div className="flex lg:items-center">
               <h1 className="">Build Your</h1>
               <div className="-mt-8 ml-2 lg:block hidden">
@@ -32,9 +33,9 @@ const Header = () => {
             struggling developers face when navigating the market space
           </p>
           <div>
-          <button className="shadow-lg lg:text-xl text-sm font-normal shadow-black lg:w-[265px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
+          <Button className="shadow-lg lg:text-xl text-sm font-normal shadow-black lg:w-[280px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
               Get Started
-            </button>
+            </Button>
           </div>
         </div>
         <div className="md:flex md-w-6/12 hidden  justify-center items-center">
