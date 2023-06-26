@@ -37,6 +37,7 @@ const ResetPassword = () => {
     details,
     "Password successfully changed!",
     endPoint,
+    "/success"
   );
 
   const handleReset = async (e: React.FormEvent) => {

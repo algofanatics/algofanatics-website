@@ -22,7 +22,6 @@ export const Card = ({ blogDetails }: { blogDetails: blogType[] }) => {
     year: "numeric",
   };
   const detailsArray = Array.isArray(blogDetails) ? blogDetails : [];
-  console.log(detailsArray);
   return (
     <article className=" grid grid-cols-1 xl:grid-cols-3 py-2 lg:grid-cols-2 gap-5 rounded-sm cursor-pointer">
       {blogDetails &&
