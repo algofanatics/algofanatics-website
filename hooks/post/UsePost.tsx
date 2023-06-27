@@ -1,6 +1,6 @@
 import { useMutation } from "react-query";
 import axios from "axios";
-import { getCookie, setCookie } from "cookies-next";
+import { setCookie } from "cookies-next";
 import { toast } from "react-toastify";
 
 const UsePost = (

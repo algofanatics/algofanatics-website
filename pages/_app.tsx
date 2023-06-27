@@ -11,12 +11,12 @@ type UserInfo = {
   token: string | null;
   username: string;
 };
-
 export const userInfoContext = React.createContext<UserInfo | null>(null);
+
 export default function App({ Component, pageProps }: AppProps) {
   const userDetails = getCookie("details");
   const details = typeof userDetails === "string" ? JSON.parse(userDetails) : null;
-  const [userInformation, setUserInformation] = React.useState(details);
+  const [userInformation, setUserInformation] = React.useState(details || null);
 
   return (
     <userInfoContext.Provider value={userInformation}>

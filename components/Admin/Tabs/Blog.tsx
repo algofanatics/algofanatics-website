@@ -3,20 +3,20 @@ import { Card } from "@/components/Micro/Blog/Card/Card";
 import { BsFilter } from "react-icons/bs";
 import Button from "@/components/Micro/Button/Button";
 import UseFetch from "@/hooks/get/UseFetch";
-import { getCookie } from "cookies-next";
 import Link from "next/link";
+import { userInfoContext } from "@/pages/_app";
 
 const Blog = () => {
-  //API Endpoint
+  const userInformation = React.useContext(userInfoContext);
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/blog";
-  const response = getCookie("details");
-  const details = typeof response === "string" ? JSON.parse(response) : null;
+
   const { data } = UseFetch(endPoint, {
     headers: {
-      Authorization: `Bearer ${details?.token}`,
+      Authorization: `Bearer ${userInformation?.token}`,
     },
   });
+
   return (
     <main className="py-5">
       <div className="flex justify-between items-center">
@@ -41,7 +41,7 @@ const Blog = () => {
         </div>
       </div>
       <div>
-        <Card blogDetails={data?.details} />
+        {data && <Card blogDetails={data?.details} />}
       </div>
     </main>
   );

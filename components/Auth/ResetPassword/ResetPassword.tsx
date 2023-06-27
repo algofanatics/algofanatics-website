@@ -6,7 +6,6 @@ import { getCookie } from "cookies-next";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { toast } from "react-toastify";
 import UsePost from "@/hooks/post/UsePost";
-import { useRouter } from "next/router";
 
 type Props = {
   password: any;
