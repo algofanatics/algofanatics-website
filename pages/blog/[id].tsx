@@ -8,14 +8,15 @@ const id = () => {
   const router = useRouter();
   const { id } = router.query;
   const userInformation = React.useContext(userInfoContext);
-  const endPoint =
-    process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL + `/blog?blogId=${id}`;
+  const endPoint = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL + `/blog?blogId=${id}`;
 
   const { data } = UseFetch(endPoint, {
     headers: {
       Authorization: `Bearer ${userInformation?.token}`,
     },
   });
+
+  console.log("dynamic blog", data)
 
   return (
     <article className="mx-auto container p-10">
