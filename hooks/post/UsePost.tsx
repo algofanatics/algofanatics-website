@@ -19,6 +19,7 @@ const UsePost = (
       const data = await postMutation.mutateAsync(user);
       toast.success(`${success}`);
       setCookie("details", data?.details);
+      localStorage.setItem("details", data?.details);
       setTimeout(() => (route ? (window.location.href = route) : null), 2800);
     } catch (error: any) {
       toast.error(error?.response?.data.responseMessage);

@@ -1,7 +1,8 @@
 import Button from "@/components/Micro/Button/Button";
 import UsePost from "@/hooks/post/UsePost";
-import React, { FormEventHandler } from "react";
+import React from "react";
 import { getCookie } from "cookies-next";
+import { userInfoContext } from "@/pages/_app";
 
 type Props = {
   title: string;
@@ -10,26 +11,24 @@ type Props = {
 };
 
 const Create = () => {
+  const userInformation = React.useContext(userInfoContext);
   const [newBlog, setNewBlog] = React.useState<Props>({
     title: "",
     content: "",
     tag: [],
   });
-
   //API Endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/blog";
-  const response = getCookie("details");
-  const details = typeof response === "string" ? JSON.parse(response) : null;
 
   const { handlePost } = UsePost(
     newBlog,
     "New blog post added successfully!",
     endPoint,
-    "/admin",
+    "/admin?tab=blog",
     {
       headers: {
-        Authorization: `Bearer ${details?.token}`,
+        Authorization: `Bearer ${userInformation?.token}`,
       },
     }
   );

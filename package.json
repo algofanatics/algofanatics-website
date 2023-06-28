@@ -18,6 +18,7 @@
     "dotenv": "^16.1.4",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
+    "markdown-it": "^13.0.1",
     "next": "13.4.1",
     "postcss": "8.4.23",
     "react": "18.2.0",
@@ -28,5 +29,8 @@
     "swr": "^2.1.5",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.2.3"
   }
 }

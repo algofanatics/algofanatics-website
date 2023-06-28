@@ -9,6 +9,7 @@ import { BiBookAlt, BiVideoOff } from "react-icons/bi";
 import { IoIosSettings } from "react-icons/io";
 import { AiFillDatabase } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
+import { userInfoContext } from "@/pages/_app";
 
 export type TabsTypes = {
   title: React.ReactNode;
@@ -59,6 +60,13 @@ const TabsComponent: any = {
 
 const Tabs = () => {
   const router = useRouter();
+  const userInformation = React.useContext(userInfoContext);
+
+  //to prevent hydration error
+  const [information, setInformation] = React.useState<any>(null);
+  React.useEffect(() => {
+    setInformation(userInformation);
+  }, [userInformation]);
 
   const handleTabChange = (tab: string) => {
     router.replace(
@@ -110,8 +118,10 @@ const Tabs = () => {
           <div className="flex space-x-5 items-center">
             <RxAvatar className="text-2xl" />
             <div className="flex flex-col">
-              <p className="text-lg font-semibold">John Doe</p>
-              <p className="text-sm text-Text">Admin</p>
+              {information && (
+                <p className="text-lg font-semibold">{information?.username}</p>
+              )}
+              <p className="text-sm text-Text">{information?.isAdmin ? "Admin" : "User"}</p>
             </div>
           </div>
         </nav>

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { AiOutlineTwitter } from "react-icons/ai";
 
 const Footer = () => {
   return (
