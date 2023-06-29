@@ -1,7 +1,6 @@
 import Button from "@/components/Micro/Button/Button";
 import UsePost from "@/hooks/post/UsePost";
 import React from "react";
-import { getCookie } from "cookies-next";
 import { userInfoContext } from "@/pages/_app";
 
 type Props = {
@@ -17,7 +16,6 @@ const Create = () => {
     content: "",
     tag: [],
   });
-  //API Endpoint
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/blog";
 
@@ -41,11 +39,15 @@ const Create = () => {
   return (
     <main>
       <div className="">
-        <form className="grid-cols-1 grid" onSubmit={handleSubmit}>
-          <label className="flex flex-col">
+        <div className="w-full xl:hidden">
+          <h1 className="text-3xl font-bold">Blog</h1>
+          <div className="border-2 border-primary w-10"></div>
+        </div>
+        <form className="grid-cols-1 pt-5 grid" onSubmit={handleSubmit}>
+          <label className="flex text-xl flex-col">
             Title
             <input
-              className="h-12 rounded-md my-2 p-3 placeholder:text-sm"
+              className="h-14 placeholder:text-Text rounded-md my-2 p-3 placeholder:text-sm"
               placeholder="e.g 5 ways to stay on top of your game in Tech"
               value={newBlog.title}
               onChange={(e) =>
@@ -53,10 +55,10 @@ const Create = () => {
               }
             />
           </label>
-          <label className="flex flex-col py-5">
+          <label className="flex flex-col text-lg py-5">
             Add Tags
             <select
-              className="h-12 rounded-md my-2 p-3 text-sm"
+              className="h-14 text-Text rounded-md my-2 p-3 text-sm"
               placeholder="e.g Backend"
               value={newBlog.tag}
               onChange={(e) =>
@@ -72,10 +74,10 @@ const Create = () => {
               <option value="algorithm">algorithm</option>
             </select>
           </label>
-          <label className="flex flex-col">
+          <label className="flex text-lg flex-col">
             Content
             <textarea
-              className="rounded-md my-2 placeholder:text-sm p-5 min-h-[80vh]"
+              className=" placeholder:text-Text rounded-md my-2 placeholder:text-sm p-5 min-h-[80vh]"
               placeholder="Start typing here....."
               value={newBlog.content}
               onChange={(e) =>

@@ -7,8 +7,8 @@ import Create from "./Create";
 import Image from "next/image";
 import { BiBookAlt, BiVideoOff } from "react-icons/bi";
 import { IoIosSettings } from "react-icons/io";
-import { AiFillDatabase } from "react-icons/ai";
-import { RxAvatar } from "react-icons/rx";
+import { AiFillDatabase, AiOutlineClose } from "react-icons/ai";
+import { RxAvatar, RxHamburgerMenu } from "react-icons/rx";
 import { userInfoContext } from "@/pages/_app";
 
 export type TabsTypes = {
@@ -61,6 +61,7 @@ const TabsComponent: any = {
 const Tabs = () => {
   const router = useRouter();
   const userInformation = React.useContext(userInfoContext);
+  const [tabNavigation, setTabNavigation] = React.useState<boolean>(false);
 
   //to prevent hydration error
   const [information, setInformation] = React.useState<any>(null);
@@ -93,25 +94,59 @@ const Tabs = () => {
   }, [CurrentTab]);
 
   return (
-    <main className="container mx-auto grid flex-grow w-full gap-x-1  md:grid-cols-4 rounded-xl ">
-      <section className="bg-white mb-5 w-full p-8">
-        <Image
-          src="/assets/navbar/Logo2.svg"
-          alt="algofanatics logo"
-          width={155}
-          height={65}
-        />
-        <ul className="flex items-center py-10 space-x-5 cursor-pointer md:flex-col md:items-start md:space-x-0">
+    <main className="2xl:container 2xl:mx-auto grid flex-grow w-full gap-x-1  md:grid-cols-4 rounded-xl ">
+      <section className=" mb-5 md:bg-white bg-black w-full p-5">
+        <div className="items-center md:flex hidden justify-between">
+          <Image
+            src="/assets/navbar/Logo2.svg"
+            alt="algofanatics logo"
+            width={155}
+            height={65}
+          />
+        </div>
+
+        <div className="items-center md:hidden text-white w-full flex justify-between">
+          <div
+            onClick={() => setTabNavigation(!tabNavigation)}
+            className="text-3xl"
+          >
+            {!tabNavigation ? <RxHamburgerMenu /> : <AiOutlineClose />}
+          </div>
+          <Image
+            src="/assets/navbar/logoM.svg"
+            alt="algofanatics logo"
+            width={155}
+            height={65}
+            className="w-24 h-10 md:w-40 md:h-16"
+          />
+          <Image
+            src="/assets/avartar.svg"
+            alt="algofanatics logo"
+            width={46}
+            height={46}
+          />
+        </div>
+        <ul
+          className={` flex md:pt-10 h-full md:h-fit md:static absolute px-5 left-0 top-[86px] w-8/12 bg-white  cursor-pointer flex-col md:items-start md:space-x-0 ${
+            !tabNavigation ? "hidden md:block" : "block"
+          }`}
+        >
           {tabs.map((tab) => (
-            <div key={tab.query} onClick={() => handleTabChange(tab.query)}>
+            <div
+              key={tab.query}
+              onClick={() => {
+                handleTabChange(tab.query);
+                setTabNavigation(false);
+              }}
+            >
               <li className="py-4 text-gray-400 text-xl">{tab.title}</li>
             </div>
           ))}
         </ul>
       </section>
 
-      <section className="w-full h-full p-8 md:px-5 md:col-span-3">
-        <nav className="flex justify-between items-center pb-5">
+      <section className="w-full h-full md:p-5 px-5 py-2 md:px-5 md:col-span-3">
+        <nav className="xl:flex hidden justify-between items-center pb-5">
           <h1 className="text-3xl font-semibold py-4">
             {CurrentTab.charAt(0).toUpperCase() + CurrentTab.slice(1)}
           </h1>
@@ -121,11 +156,13 @@ const Tabs = () => {
               {information && (
                 <p className="text-lg font-semibold">{information?.username}</p>
               )}
-              <p className="text-sm text-Text">{information?.isAdmin ? "Admin" : "User"}</p>
+              <p className="text-sm text-Text">
+                {information?.isAdmin ? "Admin" : "User"}
+              </p>
             </div>
           </div>
         </nav>
-        <div>
+        <div className="font-nunito">
           <Component />
         </div>
       </section>

@@ -32,7 +32,7 @@ export const Card = ({ blogDetails }: { blogDetails: blogType[] }) => {
             key={blog.id}
           >
             <section>
-              <img src={blog.image} className="w-full" alt="blog cover" />
+              <img src="/assets/blog/random.svg" className="w-full" alt="blog cover" />
             </section>
 
             <div className="p-2">
@@ -68,7 +68,7 @@ export const Card = ({ blogDetails }: { blogDetails: blogType[] }) => {
                 </p>
               </div>
 
-              <div className="space-x-3">
+              <div className="space-x-3 py-1">
               <Button className="h-8 bg-teal-100 rounded-md text-sm w-16">Edit</Button>
                 <Button className="h-8 bg-danger rounded-md text-sm w-16">Delete</Button>
                 <Button className="h-8 bg-algorithm rounded-md text-sm w-20">Unpublish</Button>

@@ -5,6 +5,7 @@ import Button from "@/components/Micro/Button/Button";
 import UseFetch from "@/hooks/get/UseFetch";
 import Link from "next/link";
 import { userInfoContext } from "@/pages/_app";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const Blog = () => {
   const userInformation = React.useContext(userInfoContext);
@@ -63,29 +64,41 @@ const Blog = () => {
   }, [searchBox]);
 
   return (
-    <main className="py-5">
-      <div className="flex justify-between items-center">
-        <div className="py-8 items-center xl:flex hidden">
-          <BsFilter className="w-9 h-9 mr-2" />
-          <select
-            className="w-72 border h-10 rounded px-1 md:block hidden"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          >
-            <option value="">All</option>
-            <option value="frontend">Frontend development</option>
-            <option value="backend">Backend development</option>
-          </select>
-          <input
-            placeholder="Search"
-            className="w-72 border ml-5 h-10 rounded px-4"
-            value={searchBox}
-            onChange={(e) => setSearchBox(e.target.value)}
-          />
+    <main className="">
+      <div className="w-full xl:hidden">
+        <h1 className="text-3xl font-bold">Blog</h1>
+        <div className="border-2 border-primary w-10"></div>
+        <Link href="/admin?tab=create">
+          <Button className="flex justify-center h-11 w-40 rounded-full text-sm items-center shadow-lg shadow-black bg-grey my-8">
+            <AiOutlinePlus /> Add new blog
+          </Button>
+        </Link>
+      </div>
+
+      <div className="flex xl:items-center justify-between xl:py-0 py-3">
+        <div className="xl:py-8 xl:items-center w-full flex flex-col xl:flex-row">
+          <BsFilter className="w-9 h-9 mr-2 xl:block hidden" />
+          <div className="">
+            <select
+              className=" h-10 w-full xl:w-72 bg-gray-100 border rounded px-1"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            >
+              <option value="">All</option>
+              <option value="frontend">Frontend development</option>
+              <option value="backend">Backend development</option>
+            </select>
+            <input
+              placeholder="Search"
+              className="w-full  xl:w-72 border bg-gray-100 my-3 xl:my-0 xl:ml-5 h-10 rounded px-4"
+              value={searchBox}
+              onChange={(e) => setSearchBox(e.target.value)}
+            />
+          </div>
         </div>
-        <div className="flex justify-end w-full">
+        <div className="hidden justify-end xl:flex">
           <Link href="/admin?tab=create">
-            <Button className="bg-grey w-44 hidden md:block shadow-black text-black shadow-lg text-base font-medium h-10  rounded-full my-4">
+            <Button className="bg-grey w-44 md:block shadow-black text-black shadow-lg text-base font-medium h-10  rounded-full my-4">
               Add new post
             </Button>
           </Link>
