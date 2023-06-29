@@ -151,13 +151,17 @@ const Tabs = () => {
             {CurrentTab.charAt(0).toUpperCase() + CurrentTab.slice(1)}
           </h1>
           <div className="flex space-x-5 items-center">
-            <RxAvatar className="text-2xl" />
-            <div className="flex flex-col">
+          <Image
+            src="/assets/avartar.svg"
+            alt="algofanatics logo"
+            width={46}
+            height={46}
+          />            <div className="flex flex-col">
               {information && (
                 <p className="text-lg font-semibold">{information?.username}</p>
               )}
               <p className="text-sm text-Text">
-                {information?.isAdmin ? "Admin" : "User"}
+                {information?.isAdmin ? "Admin" : ""}
               </p>
             </div>
           </div>
