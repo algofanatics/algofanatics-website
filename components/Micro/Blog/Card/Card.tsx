@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Button from "../../Button/Button";
 
-export type blogType = {
+export type BlogType = {
   image: string;
   time: string;
   title: string;
@@ -15,17 +15,21 @@ export type blogType = {
   createdAt: string;
 };
 
-export const Card = ({ blogDetails }: { blogDetails: blogType[] }) => {
+type Props = {
+  blogDetails: BlogType[];
+};
+
+
+export const Card = ({ blogDetails }: Props) => {
   const options: Intl.DateTimeFormatOptions = {
     day: "numeric",
     month: "long",
     year: "numeric",
   };
-  const detailsArray = Array.isArray(blogDetails) ? blogDetails : [];
   return (
     <article className="grid grid-cols-1 lg:grid-cols-3 py-2 md:grid-cols-2 gap-5 rounded-sm cursor-pointer w-full">
-      {blogDetails &&
-        detailsArray?.map((blog) => (
+      {Array.isArray(blogDetails)  &&
+        blogDetails?.map((blog) => (
           <Link
             href={`/blog/${blog.id}`}
             className="rounded-sm w-full bg-white"
@@ -80,7 +84,7 @@ export const Card = ({ blogDetails }: { blogDetails: blogType[] }) => {
   );
 };
 
-export const Recent = ({ blogDetails }: { blogDetails: blogType[] }) => {
+export const Recent = ({ blogDetails }: Props) => {
   return (
     <section>
       <h1 className="border-b border-primary">Recent Stories</h1>
