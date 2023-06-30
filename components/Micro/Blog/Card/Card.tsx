@@ -19,16 +19,15 @@ type Props = {
   blogDetails: BlogType[];
 };
 
-
+const options: Intl.DateTimeFormatOptions = {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+};
 export const Card = ({ blogDetails }: Props) => {
-  const options: Intl.DateTimeFormatOptions = {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  };
   return (
     <article className="grid grid-cols-1 lg:grid-cols-3 py-2 md:grid-cols-2 gap-5 rounded-sm cursor-pointer w-full">
-      {Array.isArray(blogDetails)  &&
+      {Array.isArray(blogDetails) &&
         blogDetails?.map((blog) => (
           <Link
             href={`/blog/${blog.id}`}
@@ -36,7 +35,11 @@ export const Card = ({ blogDetails }: Props) => {
             key={blog.id}
           >
             <section>
-              <img src="/assets/blog/random.svg" className="w-full" alt="blog cover" />
+              <img
+                src="/assets/blog/random.svg"
+                className="w-full"
+                alt="blog cover"
+              />
             </section>
 
             <div className="p-2">
@@ -73,9 +76,15 @@ export const Card = ({ blogDetails }: Props) => {
               </div>
 
               <div className="space-x-3 py-1">
-              <Button className="h-8 bg-teal-100 rounded-md text-sm w-16">Edit</Button>
-                <Button className="h-8 bg-danger rounded-md text-sm w-16">Delete</Button>
-                <Button className="h-8 bg-algorithm rounded-md text-sm w-20">Unpublish</Button>
+                <Button className="h-8 bg-teal-100 rounded-md text-sm w-16">
+                  Edit
+                </Button>
+                <Button className="h-8 bg-danger rounded-md text-sm w-16">
+                  Delete
+                </Button>
+                <Button className="h-8 bg-algorithm rounded-md text-sm w-20">
+                  Unpublish
+                </Button>
               </div>
             </section>
           </Link>
@@ -88,18 +97,25 @@ export const Recent = ({ blogDetails }: Props) => {
   return (
     <section>
       <h1 className="border-b border-primary">Recent Stories</h1>
-      {Array.isArray(blogDetails) && blogDetails?.map((blog) => (
-        <Link href={`/blog/${blog.id}`} key={blog.id}>
-          <div className="py-3">
-            <h2 className="text-base font-semibold">{blog.title}</h2>
-            <div className="text-base text-career flex justify-between py-3">
-              <p>{blog.author}</p>
-              <p>{blog.date}</p>
+      {Array.isArray(blogDetails) &&
+        blogDetails?.map((blog) => (
+          <Link href={`/blog/${blog.id}`} key={blog.id}>
+            <div className="py-3">
+              <h2 className="text-base font-semibold">{blog.title}</h2>
+              <div className="text-Text text-sm items-center flex justify-between py-3">
+                <p className=""> author string</p>
+                <p className="font-medium py-2 text-Text">
+                  {blog.createdAt &&
+                    new Date(blog.createdAt).toLocaleDateString(
+                      "en-US",
+                      options
+                    )}
+                </p>{" "}
+              </div>
+              <hr />
             </div>
-            <hr />
-          </div>
-        </Link>
-      ))}
+          </Link>
+        ))}
     </section>
   );
 };

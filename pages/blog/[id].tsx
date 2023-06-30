@@ -36,7 +36,7 @@ const id = () => {
           },
         })
         .then((res) => {
-          setRelatedPosts(res?.data?.details?.slice(0, 4));
+          setRelatedPosts(res?.data?.details?.slice(-4));
         })
         .catch((error) => {
           toast.error(error);
@@ -53,7 +53,7 @@ const id = () => {
   return (
     <main className="bg-blog">
       <Navbar />
-      <article className=" mx-auto container flex flex-col w-full lg:items-center lg:justify-center md:p-10 p-5">
+      <article className="mx-auto container flex flex-col w-full lg:items-center lg:justify-center md:p-10 p-5">
         <div className=" md:max-w-4xl max-w-full ">
           {isLoading && <h1>Loading</h1>}
           {singleBlog?.details && (
@@ -66,7 +66,7 @@ const id = () => {
                   {singleBlog?.details.title}
                 </h1>
                 <div className="flex justify-between items-center w-full border-b border-gray-200 py-2 ">
-                  <div className="flex justify-between text-grayBlack w-5/12 md:w-4/12 text-sm items-center">
+                  <div className="flex justify-between text-grayBlack w-7/12 md:w-[32%] text-sm items-center">
                     <p>4 mins read</p>
                     <div className="h-1 w-1 bg-black rounded-full"></div>
                     <p>
@@ -89,7 +89,7 @@ const id = () => {
                   alt="blog cover"
                 />
                 <div
-                  className="overflow-x-hidden prose font-work md:prose-h1:text-3xl prose-h1-text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base max-w-full text-justify py-5"
+                  className="overflow-x-hidden font-nunito  prose md:prose-h1:text-3xl prose-h1:text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base max-w-full text-justify py-5"
                   dangerouslySetInnerHTML={
                     typeof singleBlog?.details?.content === "string"
                       ? { __html: md().render(singleBlog?.details.content) }
@@ -117,7 +117,7 @@ const id = () => {
               </div>
 
               <div className="flex justify-between items-center w-full border-b border-gray-200 py-5 ">
-                <div className="flex justify-between text-grayBlack w-3/12 md:w-4/12 text-sm items-center">
+                <div className="flex justify-between text-grayBlack w-7/12 md:w-[32%] text-sm items-center">
                   <p>4 mins read</p>
                   <div className="h-1 w-1 bg-black rounded-full"></div>
                   <p>
