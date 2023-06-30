@@ -8,7 +8,7 @@ import Image from "next/image";
 import { BiBookAlt, BiVideoOff } from "react-icons/bi";
 import { IoIosSettings } from "react-icons/io";
 import { AiFillDatabase, AiOutlineClose } from "react-icons/ai";
-import { RxAvatar, RxHamburgerMenu } from "react-icons/rx";
+import {  RxHamburgerMenu } from "react-icons/rx";
 import { userInfoContext } from "@/pages/_app";
 import Footer from "@/components/Footer/Footer";
 
