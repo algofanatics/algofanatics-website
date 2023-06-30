@@ -8,9 +8,10 @@ import Image from "next/image";
 import { BiBookAlt, BiVideoOff } from "react-icons/bi";
 import { IoIosSettings } from "react-icons/io";
 import { AiFillDatabase, AiOutlineClose } from "react-icons/ai";
-import {  RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { userInfoContext } from "@/pages/_app";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 
 export type TabsTypes = {
   title: React.ReactNode;
@@ -99,12 +100,14 @@ const Tabs = () => {
       <div className="grid flex-grow w-full gap-x-1  md:grid-cols-4">
         <section className=" mb-5 md:bg-white bg-black w-full p-5">
           <div className="items-center md:flex hidden justify-between">
-            <Image
-              src="/assets/navbar/Logo2.svg"
-              alt="algofanatics logo"
-              width={155}
-              height={65}
-            />
+            <Link href="/">
+              <Image
+                src="/assets/navbar/Logo2.svg"
+                alt="algofanatics logo"
+                width={155}
+                height={65}
+              />
+            </Link>
           </div>
 
           <div className="items-center md:hidden text-white w-full flex justify-between">

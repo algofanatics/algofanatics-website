@@ -92,7 +92,7 @@ export const Recent = ({ blogDetails }: Props) => {
             <div className="py-3">
               <h2 className="text-base font-semibold">{blog.title}</h2>
               <div className="text-Text text-sm items-center flex justify-between py-3">
-                <p className=""> author string</p>
+                <p className=""> author name</p>
                 <p className="font-medium py-2 text-Text">
                   {blog.createdAt &&
                     new Date(blog.createdAt).toLocaleDateString(
