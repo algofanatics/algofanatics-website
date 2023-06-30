@@ -7,7 +7,6 @@ import Navbar from "@/components/Navbar/Navbar";
 import { HiArrowLeft } from "react-icons/hi";
 import { RiShareForwardLine } from "react-icons/ri";
 import { BsDownload, BsFillTagFill } from "react-icons/bs";
-import { Card } from "@/components/Micro/Blog/Card/Card";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { IdCard } from "@/components/Micro/Blog/Card/IdCard";
@@ -37,7 +36,6 @@ const id = () => {
           },
         })
         .then((res) => {
-          console.log("All", res?.data?.details?.slice(0, 4));
           setRelatedPosts(res?.data?.details?.slice(0, 4));
         })
         .catch((error) => {

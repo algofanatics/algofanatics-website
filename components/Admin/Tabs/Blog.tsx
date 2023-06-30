@@ -6,6 +6,7 @@ import UseFetch from "@/hooks/get/UseFetch";
 import Link from "next/link";
 import { userInfoContext } from "@/pages/_app";
 import { AiOutlinePlus } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const Blog = () => {
   const userInformation = React.useContext(userInfoContext);
@@ -36,7 +37,7 @@ const Blog = () => {
         const data = await res.json();
         setFiltered(data);
       } catch (error: any) {
-        console.log(error.message);
+        toast.error(error.message)
       }
     };
     searchFetch();
@@ -57,7 +58,7 @@ const Blog = () => {
         const data = await res.json();
         setFiltered(data);
       } catch (error: any) {
-        console.log(error.message);
+        toast.error(error.message);
       }
     };
     searchBoxFetch();

@@ -1,11 +1,12 @@
 import React from "react";
 import { BsFilter } from "react-icons/bs";
-import { Card, Recent } from "@/components/Micro/Blog/Card/Card";
+import { Recent } from "@/components/Micro/Blog/Card/Card";
 import Navbar from "@/components/Navbar/Navbar";
 import UseFetch from "@/hooks/get/UseFetch";
 import { useContext } from "react";
 import { userInfoContext } from "@/pages/_app";
 import { IdCard } from "../Micro/Blog/Card/IdCard";
+import { toast } from "react-toastify";
 
 const Blog = () => {
   const userInformation = useContext(userInfoContext);
@@ -36,7 +37,7 @@ const Blog = () => {
         const data = await res.json();
         setFiltered(data);
       } catch (error: any) {
-        console.log(error.message);
+        toast.error(error.message);
       }
     };
     searchFetch();
@@ -57,7 +58,7 @@ const Blog = () => {
         const data = await res.json();
         setFiltered(data);
       } catch (error: any) {
-        console.log(error.message);
+        toast.error(error.message);
       }
     };
     searchBoxFetch();
@@ -91,7 +92,9 @@ const Blog = () => {
 
         <section className="flex justify-between">
           <div className="xl:w-9/12 w-full">
-            <div>{data && <IdCard blogDetails={filtered?.details}  prop="3"/>}</div>
+            <div>
+              {data && <IdCard blogDetails={filtered?.details} prop="3" />}
+            </div>
           </div>
           <div className="xl:w-3/12 xl:block hidden text-xl font-semibold pl-10">
             {data && <Recent blogDetails={data?.details} />}
