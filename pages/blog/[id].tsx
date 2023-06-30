@@ -12,6 +12,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { IdCard } from "@/components/Micro/Blog/Card/IdCard";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 
 const id = () => {
   const router = useRouter();
@@ -54,18 +55,20 @@ const id = () => {
   return (
     <main className="bg-blog">
       <Navbar />
-      <article className="mx-auto container flex flex-col lg:items-center lg:justify-center md:p-10 p-5">
+      <article className=" mx-auto container flex flex-col w-full lg:items-center lg:justify-center md:p-10 p-5">
         <div className=" md:max-w-4xl max-w-full ">
           {isLoading && <h1>Loading</h1>}
           {singleBlog?.details && (
             <div>
               <div>
-                <HiArrowLeft className="text-4xl" />
-                <h1 className="text-5xl font-bold py-10">
+                <Link href="/blog">
+                  <HiArrowLeft className="text-3xl" />
+                </Link>
+                <h1 className="text-4xl font-bold py-10">
                   {singleBlog?.details.title}
                 </h1>
                 <div className="flex justify-between items-center w-full border-b border-gray-200 py-2 ">
-                  <div className="flex justify-between text-grayBlack w-3/12 md:w-5/12 items-center">
+                  <div className="flex justify-between text-grayBlack w-5/12 md:w-4/12 text-sm items-center">
                     <p>4 mins read</p>
                     <div className="h-1 w-1 bg-black rounded-full"></div>
                     <p>
@@ -75,7 +78,7 @@ const id = () => {
                         ).toLocaleDateString("en-US", options)}
                     </p>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center text-xl">
                     <RiShareForwardLine />
                     <BsDownload className="ml-4" />
                   </div>
@@ -88,7 +91,7 @@ const id = () => {
                   alt="blog cover"
                 />
                 <div
-                  className="overflow-x-hidden"
+                  className="overflow-x-hidden prose font-work md:prose-h1:text-3xl prose-h1-text-2xl prose-h2:text-xl prose-h3:text-lg prose-h4:text-base max-w-full text-justify py-5"
                   dangerouslySetInnerHTML={
                     typeof singleBlog?.details?.content === "string"
                       ? { __html: md().render(singleBlog?.details.content) }
@@ -96,8 +99,8 @@ const id = () => {
                   }
                 />
               </div>
-              <div className="flex">
-                <BsFillTagFill />
+              <div className="flex items-center">
+                <BsFillTagFill className="text-xl" />
 
                 {singleBlog?.details?.tags && singleBlog.details.tags[0] && (
                   <p
@@ -108,18 +111,35 @@ const id = () => {
                           singleBlog.details.tags[0] === "algorithms"
                         ? "bg-systemDesign"
                         : "bg-signin"
-                    } rounded-md p-1 text-xs ml-3 w-fit`}
+                    } rounded-md p-2 text-sm ml-3 w-fit`}
                   >
                     {singleBlog.details.tags[0]}
                   </p>
                 )}
+              </div>
+
+              <div className="flex justify-between items-center w-full border-b border-gray-200 py-5 ">
+                <div className="flex justify-between text-grayBlack w-3/12 md:w-4/12 text-sm items-center">
+                  <p>4 mins read</p>
+                  <div className="h-1 w-1 bg-black rounded-full"></div>
+                  <p>
+                    {singleBlog?.details.createdAt &&
+                      new Date(
+                        singleBlog?.details.createdAt
+                      ).toLocaleDateString("en-US", options)}
+                  </p>
+                </div>
+                <div className="flex items-center text-xl">
+                  <RiShareForwardLine />
+                  <BsDownload className="ml-4" />
+                </div>
               </div>
             </div>
           )}
           <div>
             <h1 className="text-xl py-4 w-full">Related Posts</h1>
             {Array.isArray(relatedPosts) && (
-              <IdCard blogDetails={relatedPosts} />
+              <IdCard blogDetails={relatedPosts} prop="2" />
             )}
           </div>
         </div>

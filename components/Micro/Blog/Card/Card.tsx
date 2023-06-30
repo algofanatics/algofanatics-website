@@ -89,7 +89,7 @@ export const Recent = ({ blogDetails }: Props) => {
     <section>
       <h1 className="border-b border-primary">Recent Stories</h1>
       {Array.isArray(blogDetails) && blogDetails?.map((blog) => (
-        <Link href="/blog" key={blog.id}>
+        <Link href={`/blog/${blog.id}`} key={blog.id}>
           <div className="py-3">
             <h2 className="text-base font-semibold">{blog.title}</h2>
             <div className="text-base text-career flex justify-between py-3">
