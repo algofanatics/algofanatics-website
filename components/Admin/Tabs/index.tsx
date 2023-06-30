@@ -10,6 +10,7 @@ import { IoIosSettings } from "react-icons/io";
 import { AiFillDatabase, AiOutlineClose } from "react-icons/ai";
 import { RxAvatar, RxHamburgerMenu } from "react-icons/rx";
 import { userInfoContext } from "@/pages/_app";
+import Footer from "@/components/Footer/Footer";
 
 export type TabsTypes = {
   title: React.ReactNode;
@@ -94,82 +95,90 @@ const Tabs = () => {
   }, [CurrentTab]);
 
   return (
-    <main className="2xl:container 2xl:mx-auto grid flex-grow w-full gap-x-1  md:grid-cols-4 rounded-xl ">
-      <section className=" mb-5 md:bg-white bg-black w-full p-5">
-        <div className="items-center md:flex hidden justify-between">
-          <Image
-            src="/assets/navbar/Logo2.svg"
-            alt="algofanatics logo"
-            width={155}
-            height={65}
-          />
-        </div>
-
-        <div className="items-center md:hidden text-white w-full flex justify-between">
-          <div
-            onClick={() => setTabNavigation(!tabNavigation)}
-            className="text-3xl"
-          >
-            {!tabNavigation ? <RxHamburgerMenu /> : <AiOutlineClose />}
+    <main className="2xl:container 2xl:mx-auto">
+      <div className="grid flex-grow w-full gap-x-1  md:grid-cols-4">
+        <section className=" mb-5 md:bg-white bg-black w-full p-5">
+          <div className="items-center md:flex hidden justify-between">
+            <Image
+              src="/assets/navbar/Logo2.svg"
+              alt="algofanatics logo"
+              width={155}
+              height={65}
+            />
           </div>
-          <Image
-            src="/assets/navbar/logoM.svg"
-            alt="algofanatics logo"
-            width={155}
-            height={65}
-            className="w-24 h-10 md:w-40 md:h-16"
-          />
-          <Image
-            src="/assets/avartar.svg"
-            alt="algofanatics logo"
-            width={46}
-            height={46}
-          />
-        </div>
-        <ul
-          className={` flex md:pt-10 h-full md:h-fit md:static absolute px-5 left-0 top-[86px] w-8/12 bg-white  cursor-pointer flex-col md:items-start md:space-x-0 ${
-            !tabNavigation ? "hidden md:block" : "block"
-          }`}
-        >
-          {tabs.map((tab) => (
+
+          <div className="items-center md:hidden text-white w-full flex justify-between">
             <div
-              key={tab.query}
-              onClick={() => {
-                handleTabChange(tab.query);
-                setTabNavigation(false);
-              }}
+              onClick={() => setTabNavigation(!tabNavigation)}
+              className="text-3xl"
             >
-              <li className="py-4 text-gray-400 text-xl">{tab.title}</li>
+              {!tabNavigation ? <RxHamburgerMenu /> : <AiOutlineClose />}
             </div>
-          ))}
-        </ul>
-      </section>
-
-      <section className="w-full h-full md:p-5 px-5 py-2 md:px-5 md:col-span-3">
-        <nav className="xl:flex hidden justify-between items-center pb-5">
-          <h1 className="text-3xl font-semibold py-4">
-            {CurrentTab.charAt(0).toUpperCase() + CurrentTab.slice(1)}
-          </h1>
-          <div className="flex space-x-5 items-center">
-          <Image
-            src="/assets/avartar.svg"
-            alt="algofanatics logo"
-            width={46}
-            height={46}
-          />            <div className="flex flex-col">
-              {information && (
-                <p className="text-lg font-semibold">{information?.username}</p>
-              )}
-              <p className="text-sm text-Text">
-                {information?.isAdmin ? "Admin" : ""}
-              </p>
-            </div>
+            <Image
+              src="/assets/navbar/logoM.svg"
+              alt="algofanatics logo"
+              width={155}
+              height={65}
+              className="w-24 h-10 md:w-40 md:h-16"
+            />
+            <Image
+              src="/assets/avartar.svg"
+              alt="algofanatics logo"
+              width={46}
+              height={46}
+            />
           </div>
-        </nav>
-        <div className="font-nunito">
-          <Component />
-        </div>
-      </section>
+          <ul
+            className={` flex md:pt-10 h-full md:h-fit md:static absolute px-5 left-0 top-[86px] w-8/12 bg-white  cursor-pointer flex-col md:items-start md:space-x-0 ${
+              !tabNavigation ? "hidden md:block" : "block"
+            }`}
+          >
+            {tabs.map((tab) => (
+              <div
+                key={tab.query}
+                onClick={() => {
+                  handleTabChange(tab.query);
+                  setTabNavigation(false);
+                }}
+              >
+                <li className="py-4 text-gray-400 text-xl">{tab.title}</li>
+              </div>
+            ))}
+          </ul>
+        </section>
+
+        <section className="w-full h-full md:p-5 px-5 py-2 md:px-5 md:col-span-3">
+          <nav className="xl:flex hidden justify-between items-center pb-5">
+            <h1 className="text-3xl font-semibold py-4">
+              {CurrentTab.charAt(0).toUpperCase() + CurrentTab.slice(1)}
+            </h1>
+            <div className="flex space-x-5 items-center">
+              <Image
+                src="/assets/avartar.svg"
+                alt="algofanatics logo"
+                width={46}
+                height={46}
+              />{" "}
+              <div className="flex flex-col">
+                {information && (
+                  <p className="text-lg font-semibold">
+                    {information?.username}
+                  </p>
+                )}
+                <p className="text-sm text-Text">
+                  {information?.isAdmin ? "Admin" : ""}
+                </p>
+              </div>
+            </div>
+          </nav>
+          <div className="font-nunito">
+            <Component />
+          </div>
+        </section>
+      </div>
+      <footer className="md:hidden block">
+        <Footer />
+      </footer>
     </main>
   );
 };

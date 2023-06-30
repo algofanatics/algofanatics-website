@@ -23,12 +23,12 @@ export const Card = ({ blogDetails }: { blogDetails: blogType[] }) => {
   };
   const detailsArray = Array.isArray(blogDetails) ? blogDetails : [];
   return (
-    <article className=" grid grid-cols-1 xl:grid-cols-3 py-2 lg:grid-cols-2 gap-5 rounded-sm cursor-pointer">
+    <article className="grid grid-cols-1 lg:grid-cols-3 py-2 md:grid-cols-2 gap-5 rounded-sm cursor-pointer w-full">
       {blogDetails &&
         detailsArray?.map((blog) => (
           <Link
             href={`/blog/${blog.id}`}
-            className="rounded-sm bg-white"
+            className="rounded-sm w-full bg-white"
             key={blog.id}
           >
             <section>
