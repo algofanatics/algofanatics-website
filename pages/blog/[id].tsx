@@ -10,7 +10,7 @@ const id = () => {
   const userInformation = React.useContext(userInfoContext);
   const endPoint = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL + `/blog?blogId=${id}`;
 
-  const { data } = UseFetch(endPoint, {
+  const { data, isLoading } = UseFetch(endPoint, {
     headers: {
       Authorization: `Bearer ${userInformation?.token}`,
     },
@@ -20,6 +20,7 @@ const id = () => {
 
   return (
     <article className="mx-auto container p-10">
+      { isLoading && <h1>Loading</h1>}
       {data?.details && (
         <div>
           <h1 className="text-3xl">{data?.details.title}</h1>
@@ -27,7 +28,7 @@ const id = () => {
             className="overflow-x-hidden"
             dangerouslySetInnerHTML={
               typeof data?.details?.content === "string"
-                ? { __html: md().render(data.details.content) }
+                ? { __html: md().render(data?.details.content) }
                 : { __html: "" }
             }
           />

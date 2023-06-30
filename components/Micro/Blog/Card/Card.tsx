@@ -84,7 +84,7 @@ export const Recent = ({ blogDetails }: { blogDetails: blogType[] }) => {
   return (
     <section>
       <h1 className="border-b border-primary">Recent Stories</h1>
-      {blogDetails?.map((blog) => (
+      {Array.isArray(blogDetails) && blogDetails?.map((blog) => (
         <Link href="/blog" key={blog.id}>
           <div className="py-3">
             <h2 className="text-base font-semibold">{blog.title}</h2>
