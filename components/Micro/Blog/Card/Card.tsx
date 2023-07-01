@@ -41,9 +41,9 @@ const calculateReadingTime = (content: string) => {
 export const Card = ({ blogDetails }: Props) => {
   console.log(blogDetails);
   return (
-    <article className="grid grid-cols-1 lg:grid-cols-3  py-2 md:grid-cols-2 gap-5 rounded-sm cursor-pointer w-full">
+    <article className="grid grid-cols-1 lg:grid-cols-3 py-2 sm:grid-cols-2 gap-5 rounded-sm cursor-pointer w-full">
       {Array.isArray(blogDetails) &&
-        blogDetails?.map((blog) => (
+        blogDetails?.slice().reverse().map((blog) => (
           <Link
             href={`/blog/${blog.id}`}
             className="rounded-md w-full bg-white"
@@ -131,7 +131,7 @@ export const IdCard = ({ blogDetails, prop }: Props & { prop: string }) => {
   };
   return (
     <article
-      className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${prop} gap-6 cursor-pointer w-full`}
+      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${prop} gap-6 cursor-pointer w-full`}
     >
       {Array.isArray(blogDetails) &&
         blogDetails

@@ -10,7 +10,7 @@ import Footer from "../Footer/Footer";
 const Blog = () => {
   const userInformation = useContext(userInfoContext);
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
-  const endPoint = baseURL + "/blog";
+  const endPoint = baseURL + "/auth/blog";
   const { data } = UseFetch(endPoint, {
     headers: {
       Authorization: `Bearer ${userInformation?.token}`,
@@ -26,7 +26,7 @@ const Blog = () => {
     const searchFetch = async () => {
       try {
         const res = await fetch(
-          process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL + `/blog?tag=${search}`,
+          process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL + `/auth/blog?tag=${search}`,
           {
             headers: {
               Authorization: `Bearer ${userInformation?.token}`,
@@ -47,7 +47,7 @@ const Blog = () => {
       try {
         const res = await fetch(
           process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL +
-            `/blog?tag=${searchBox}`,
+            `/auth/blog?tag=${searchBox}`,
           {
             headers: {
               Authorization: `Bearer ${userInformation?.token}`,

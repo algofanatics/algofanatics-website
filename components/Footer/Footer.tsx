@@ -11,21 +11,27 @@ const Footer = () => {
           height={36}
           className="cursor-pointer "
         />
-        <div className="flex lg:w-40 w-28">
+        <div className="flex lg:w-44">
           <Image
-          src="/assets/footer/twitter.svg"
-          alt="algofanatics logo"
-          width={35}
-          height={35}      
-          className="cursor-pointer "
-          />   
-              
+            src="/assets/footer/twitter.svg"
+            alt="algofanatics logo"
+            width={35}
+            height={35}
+            className="cursor-pointer "
+          />
           <Image
-          src="/assets/footer/linkedin.svg"
-          alt="algofanatics logo"
-          width={35}
-          height={35}          
-          className="ml-6 cursor-pointer "
+            src="/assets/footer/linkedin.svg"
+            alt="algofanatics logo"
+            width={35}
+            height={35}
+            className="ml-6 cursor-pointer "
+          />
+          <Image
+            src="/assets/footer/facebook.svg"
+            alt="algofanatics logo"
+            width={35}
+            height={35}
+            className="ml-6 cursor-pointer "
           />
         </div>
       </nav>
