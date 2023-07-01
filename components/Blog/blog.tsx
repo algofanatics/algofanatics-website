@@ -1,12 +1,11 @@
 import React from "react";
 import { BsFilter } from "react-icons/bs";
-import { Recent } from "@/components/Micro/Blog/Card/Card";
+import { IdCard, Recent } from "@/components/Micro/Blog/Card/Card";
 import Navbar from "@/components/Navbar/Navbar";
 import UseFetch from "@/hooks/get/UseFetch";
 import { useContext } from "react";
 import { userInfoContext } from "@/pages/_app";
-import { IdCard } from "../Micro/Blog/Card/IdCard";
-import { toast } from "react-toastify";
+import Footer from "../Footer/Footer";
 
 const Blog = () => {
   const userInformation = useContext(userInfoContext);
@@ -37,7 +36,7 @@ const Blog = () => {
         const data = await res.json();
         setFiltered(data);
       } catch (error: any) {
-        toast.error(error.message);
+        return error.message;
       }
     };
     searchFetch();
@@ -58,7 +57,7 @@ const Blog = () => {
         const data = await res.json();
         setFiltered(data);
       } catch (error: any) {
-        toast.error(error.message);
+        return error.message;
       }
     };
     searchBoxFetch();
@@ -68,13 +67,13 @@ const Blog = () => {
     <div className="bg-blog 2xl:container 2xl:mx-auto overflow-x-hidden">
       <Navbar />
       <div className="lg:p-10 p-5 font-work">
-        <h1 className="text-5xl font-semibold">Blog</h1>
+        <h1 className="text-4xl font-semibold">Blog</h1>
         <div className="border-2 w-14 my-1 rounded-lg border-primary"></div>
 
         <div className="py-8 flex items-center">
-          <BsFilter className="w-9 h-9 mr-2" />
+          <BsFilter className="text-3xl mr-5" />
           <select
-            className="w-72 border h-10 rounded px-1 md:block hidden"
+            className="w-72 h-10 rounded bg-gray-100 border border-gray-200 px-1 md:block hidden"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           >
@@ -84,7 +83,7 @@ const Blog = () => {
           </select>
           <input
             placeholder="Search"
-            className="w-72 border ml-5 h-10 rounded px-4"
+            className="w-72 ml-5 h-10 rounded px-4 border border-gray-200  bg-gray-100"
             value={searchBox}
             onChange={(e) => setSearchBox(e.target.value)}
           />
@@ -101,6 +100,9 @@ const Blog = () => {
           </div>
         </section>
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

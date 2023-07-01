@@ -97,7 +97,7 @@ const ForgotPassword = () => {
             />
             <Button
               disabled={loading === true && user.email === ""}
-              className="bg-grey w-full  shadow-black text-black shadow-lg text-lg font-medium h-16 rounded-full my-10"
+              className="bg-grey w-full text-black text-lg font-medium h-16 rounded-full my-10"
             >
               Continue
             </Button>

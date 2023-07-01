@@ -27,17 +27,17 @@ const NotFound = () => {
           <p>Sorry...</p>
           <p className="py-1">This page you requested for was not found</p>
         </div>
-        <div className="py-6 md:text-xl">
+        <div className="py-6 md:text-xl flex items-center">
           <Button
-            className="bg-grey md:h-14 md:w-64 w-28 h-9  rounded-full shadow-lg shadow-black"
+            className="bg-grey md:h-14 md:w-64 w-32 h-9  rounded-full"
             onClick={() => router.back()}
           >
             Go back
           </Button>
 
-          <Button className="md:ml-10 ml-6 " onClick={() => router.push("/")}>
+          <div className="md:ml-10 ml-6 " onClick={() => router.push("/")}>
             Go Home
-          </Button>
+          </div>
         </div>
       </div>
     </div>

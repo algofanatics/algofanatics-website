@@ -18,16 +18,18 @@ const Team = () => {
             alt="Samson"
             twitter="https://twitter.com/samsonajulor"
             linkedin="https://linkedin.com/in/samsonajulor"
+            borderColor="gray-500"
           />
-            <TeamComponent
+          <TeamComponent
             name="Jessica Joseph"
             role="Frontend Developer"
             image="/assets/team/jessica.svg"
             alt="Jessica"
             twitter="https://twitter.com/forJessica_sake"
             linkedin="https://www.linkedin.com/in/jessica-joseph-/"
+            borderColor="gray-500"
           />
-         
+
           <TeamComponent
             name="Ololade Otemade"
             role="Frontend Developer"
@@ -35,6 +37,7 @@ const Team = () => {
             alt="Ololade"
             twitter="https://twitter.com/cavemann__"
             linkedin="https://www.linkedin.com/in/ololade-otemade-72959613a/"
+            borderColor="gray-500"
           />
           <TeamComponent
             name="Foluso Kayode"
@@ -43,16 +46,18 @@ const Team = () => {
             alt="Foluso"
             twitter="https://twitter.com/folusokayode"
             linkedin="https://www.linkedin.com/in/folusokayodefavour/"
+            borderColor="gray-500"
           />
-           <TeamComponent
+          <TeamComponent
             name="Nobei Joan"
             role="Product Designer"
             image="/assets/team/joan.svg"
             alt="Joan"
             twitter="https://twitter.com/nobei_joan"
             linkedin="https://www.linkedin.com/in/joan-nobei-2704b6227"
+            borderColor="gray-500"
           />
-        
+
           <TeamComponent
             name="Mujeeb Adebowale"
             role="Backend Developer"
@@ -60,6 +65,7 @@ const Team = () => {
             alt="Mujeeb"
             twitter="/"
             linkedin="https://www.linkedin.com/in/mujeeb-adebowale-794762199"
+            borderColor="gray-500"
           />
         </section>
       </div>

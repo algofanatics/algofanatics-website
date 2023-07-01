@@ -42,20 +42,23 @@ const ResetPassword = () => {
   const handleReset = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-
-    if (
-      !numberPattern ||
-      !letterPattern ||
-      !specialCharPattern ||
-      password.length < 8
-    ) {
-      toast.error(
-        "Password must be at least 8 characters and should contain uppercace, special character & number"
-      );
-    } else if (passCheck) {
-      toast.error("Passwords do not match");
-    } else {
-      handlePost(details);
+    try {
+      if (
+        !numberPattern ||
+        !letterPattern ||
+        !specialCharPattern ||
+        password.length < 8
+      ) {
+        toast.error(
+          "Password must be at least 8 characters and should contain uppercace, special character & number"
+        );
+      } else if (passCheck) {
+        toast.error("Passwords do not match");
+      } else {
+        handlePost(details);
+      }
+    } catch (error) {
+      toast.error("Password reset failed, please try again");
     }
   };
 
@@ -124,6 +127,7 @@ const ResetPassword = () => {
                 } bg-signup w-full h-16 rounded-lg placeholder:text-backend px-5 my-5`}
                 placeholder="Enter Password"
                 required
+                type="password"
                 value={details.password}
                 onChange={(e) => {
                   setDetails({ ...details, password: e.target.value });
@@ -156,7 +160,7 @@ const ResetPassword = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-              <Button className="bg-grey w-full  shadow-black text-black shadow-lg text-lg font-medium h-14 rounded-full my-10">
+              <Button className="bg-grey w-full text-black text-lg font-medium h-14 rounded-full my-10">
                 Continue
               </Button>
 

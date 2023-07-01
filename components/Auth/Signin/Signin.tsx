@@ -147,10 +147,10 @@ const Signin = () => {
               Forgot password?
             </Link>
 
-            <Button className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10">
+            <button className="bg-black w-full lg:block hidden text-white font-medium h-16 rounded-lg my-10">
               Login
-            </Button>
-            <Button className="bg-grey w-full lg:hidden block shadow-black text-black shadow-lg text-lg font-medium h-16 rounded-full my-10">
+            </button>
+            <Button className="bg-grey w-full lg:hidden block  text-black  text-lg font-medium h-16 rounded-full my-10">
               Sign In
             </Button>
             <p className="flex justify-center text-Text items-center">

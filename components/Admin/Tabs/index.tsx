@@ -97,7 +97,7 @@ const Tabs = () => {
 
   return (
     <main className="2xl:container 2xl:mx-auto">
-      <div className="grid flex-grow w-full gap-x-1  md:grid-cols-4">
+      <div className="grid flex-grow w-full gap-x-1 md:grid-cols-5">
         <section className=" mb-5 md:bg-white bg-black w-full p-5">
           <div className="items-center md:flex hidden justify-between">
             <Link href="/">
@@ -132,7 +132,7 @@ const Tabs = () => {
             />
           </div>
           <ul
-            className={` flex md:pt-10 h-full md:h-fit md:static absolute px-5 left-0 top-[86px] w-8/12 bg-white  cursor-pointer flex-col md:items-start md:space-x-0 ${
+            className={` flex md:pt-10 h-full md:h-fit md:static absolute px-5 left-0 top-[86px] bg-white  cursor-pointer flex-col md:items-start md:space-x-0 ${
               !tabNavigation ? "hidden md:block" : "block"
             }`}
           >
@@ -150,7 +150,7 @@ const Tabs = () => {
           </ul>
         </section>
 
-        <section className="w-full h-full md:p-5 px-5 py-2 md:px-5 md:col-span-3">
+        <section className="w-full h-full md:p-5 px-5 py-2 md:px-5 md:col-span-4">
           <nav className="xl:flex hidden justify-between items-center pb-5">
             <h1 className="text-3xl font-semibold py-4">
               {CurrentTab.charAt(0).toUpperCase() + CurrentTab.slice(1)}

@@ -35,7 +35,7 @@ const Header = () => {
           </p>
           <div>
             <Link href="/signup">
-              <Button className="shadow-lg lg:text-xl text-sm font-normal shadow-black lg:w-[280px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
+              <Button className=" lg:text-2xl text-sm font-normal lg:w-[280px] lg:h-[63px] w-[147px] h-[35px] rounded-full bg-grey text-black">
                 Get Started
               </Button>
             </Link>

@@ -9,9 +9,10 @@ import { RiShareForwardLine } from "react-icons/ri";
 import { BsDownload, BsFillTagFill } from "react-icons/bs";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { IdCard } from "@/components/Micro/Blog/Card/IdCard";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
+import Form from "@/components/Form/Form";
+import { IdCard } from "@/components/Micro/Blog/Card/Card";
 
 const id = () => {
   const router = useRouter();
@@ -54,8 +55,7 @@ const id = () => {
     <main className="bg-blog">
       <Navbar />
       <article className="mx-auto container flex flex-col w-full lg:items-center lg:justify-center md:p-10 p-5">
-        <div className=" md:max-w-4xl max-w-full ">
-          {isLoading && <h1>Loading</h1>}
+        <div className=" md:max-w-4xl max-w-full">
           {singleBlog?.details && (
             <div>
               <div>
@@ -66,11 +66,11 @@ const id = () => {
                   {singleBlog?.details.title}
                 </h1>
                 <div className="flex justify-between items-center w-full border-b border-gray-200 py-2 ">
-                  <div className="flex justify-between text-grayBlack w-7/12 md:w-[32%] text-sm items-center">
+                  <div className="flex justify-between text-grayBlack w-7/12 py-2 md:w-[32%] text-sm items-center">
                     <p>4 mins read</p>
                     <div className="h-1 w-1 bg-black rounded-full"></div>
                     <p>
-                      {singleBlog?.details.createdAt &&
+                      {singleBlog?.details?.createdAt &&
                         new Date(
                           singleBlog?.details.createdAt
                         ).toLocaleDateString("en-US", options)}
@@ -111,7 +111,7 @@ const id = () => {
                         : "bg-signin"
                     } rounded-md p-2 text-sm ml-3 w-fit`}
                   >
-                    {singleBlog.details.tags[0]}
+                    {singleBlog?.details.tags[0]}
                   </p>
                 )}
               </div>
@@ -142,6 +142,9 @@ const id = () => {
           </div>
         </div>
       </article>
+      <div className="mx-10">
+        <Form />
+      </div>
       <footer>
         <Footer />
       </footer>

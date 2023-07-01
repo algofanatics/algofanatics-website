@@ -12,7 +12,6 @@ const Blog = () => {
   const userInformation = React.useContext(userInfoContext);
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/blog";
-
   const { data } = UseFetch(endPoint, {
     headers: {
       Authorization: `Bearer ${userInformation?.token}`,
@@ -37,7 +36,7 @@ const Blog = () => {
         const data = await res.json();
         setFiltered(data);
       } catch (error: any) {
-        toast.error(error.message)
+        return error.message
       }
     };
     searchFetch();
@@ -58,7 +57,7 @@ const Blog = () => {
         const data = await res.json();
         setFiltered(data);
       } catch (error: any) {
-        toast.error(error.message);
+        return error.message
       }
     };
     searchBoxFetch();
@@ -70,7 +69,7 @@ const Blog = () => {
         <h1 className="text-3xl font-bold">Blog</h1>
         <div className="border-2 border-primary w-10"></div>
         <Link href="/admin?tab=create">
-          <Button className="flex justify-center h-11 w-40 rounded-full text-sm items-center shadow-lg shadow-black bg-grey my-8">
+          <Button className="flex justify-center h-11 w-40 rounded-full text-sm items-center bg-grey my-8">
             <AiOutlinePlus /> Add new blog
           </Button>
         </Link>
@@ -99,7 +98,7 @@ const Blog = () => {
         </div>
         <div className="hidden justify-end xl:flex">
           <Link href="/admin?tab=create">
-            <Button className="bg-grey w-44 md:block shadow-black text-black shadow-lg text-base font-medium h-10  rounded-full my-4">
+            <Button className="bg-grey w-44 md:block text-black text-base font-medium h-10  rounded-full my-4">
               Add new post
             </Button>
           </Link>
