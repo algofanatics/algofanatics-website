@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Button from "../Micro/Button/Button";
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 const NotFound = () => {
   const router = useRouter();
@@ -29,13 +29,15 @@ const NotFound = () => {
         </div>
         <div className="py-6 md:text-xl flex items-center">
           <Button
-            className="bg-grey md:h-14 md:w-64 w-32 h-9  rounded-full"
+            className="bg-grey md:h-14 md:w-64 w-32 h-9 cursor-pointer rounded-full"
             onClick={() => router.back()}
           >
             Go back
           </Button>
-
-          <div className="md:ml-10 ml-6 " onClick={() => router.push("/")}>
+          <div
+            className="md:ml-10 ml-6 cursor-pointer"
+            onClick={() => router.push("/")}
+          >
             Go Home
           </div>
         </div>

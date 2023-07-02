@@ -1,9 +1,8 @@
-import Image from "next/image";
 import Tabs from "./Tabs";
 
 const Admin = () => {
   return (
-    <div className="">
+    <div>
       <Tabs />
     </div>
   );

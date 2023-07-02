@@ -41,7 +41,6 @@ const Blog = () => {
     searchFetch();
   }, [search]);
 
-
   return (
     <main className="">
       <div className="w-full xl:hidden">

@@ -27,9 +27,6 @@ const id = () => {
     },
   });
 
-  console.log(id)
-
-
   React.useEffect(() => {
     const blogFetch = async () => {
       const res = axios

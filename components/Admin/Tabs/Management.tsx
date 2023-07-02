@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Management = () => {
-  return (
-    <div>User Management component</div>
-  )
-}
+  return <div>User Management component</div>;
+};
 
-export default Management
+export default Management;

@@ -85,9 +85,7 @@ const Create = () => {
               }
             ></textarea>
           </label>
-          <Button className="bg-grey h-12rounded-full w-52 my-7">
-            Save
-          </Button>
+          <Button className="bg-grey h-12rounded-full w-52 my-7">Save</Button>
         </form>
       </div>
     </main>

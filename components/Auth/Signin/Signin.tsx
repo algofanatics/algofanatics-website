@@ -27,12 +27,7 @@ const Signin = () => {
   //regex for email verification
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user?.email);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
-  const { handlePost } = UsePost(
-    user,
-    "Welcome back!",
-    endPoint,
-    "/admin"
-  );
+  const { handlePost } = UsePost(user, "Welcome back!", endPoint, "/admin");
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
