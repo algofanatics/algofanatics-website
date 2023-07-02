@@ -9,7 +9,6 @@ const About = () => {
             About Us
           </h1>
         </div>
-
         <div className="flex lg:flex-row flex-col-reverse lg:justify-evenly lg:items-center">
           <div>
             <div>
@@ -17,7 +16,6 @@ const About = () => {
                 About Us
               </h1>
             </div>
-
             <p className="lg:max-w-md py-8 text-lg leading-9 first-letter:text-3xl">
               At Algofanatics, we understand the challenges that aspiring
               developers face in the tech industry, including the need to gain

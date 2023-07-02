@@ -78,9 +78,9 @@ export const Card = ({ blogDetails }: Props) => {
                   <button className="h-8 bg-danger hover:bg-none rounded-md text-sm w-16">
                     Delete
                   </button>
-                  <button className="h-8 bg-algorithm rounded-md text-sm w-20">
+                  {/* <button className="h-8 bg-algorithm rounded-md text-sm w-20">
                     Unpublish
-                  </button>
+                  </button> */}
                 </div>
               </section>
             </section>

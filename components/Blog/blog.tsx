@@ -11,7 +11,7 @@ const Blog = () => {
   const userInformation = useContext(userInfoContext);
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/auth/blog";
-  const { data, isLoading } = UseFetch(endPoint, {
+  const { data } = UseFetch(endPoint, {
     headers: {
       Authorization: `Bearer ${userInformation?.token}`,
     },

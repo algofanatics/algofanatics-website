@@ -111,7 +111,7 @@ const Signup = () => {
 
         <section className="lg:hidden block py-10">
           <h1 className="text-3xl md:text-5xl font-semibold">
-            Sign in to <span className="font-medium">AlgoFanatics</span>{" "}
+            Sign up to <span className="font-medium">AlgoFanatics</span>{" "}
           </h1>
           <div className="pt-5 text-sm md:text-base">
             <p>If you don’t have an account register</p>

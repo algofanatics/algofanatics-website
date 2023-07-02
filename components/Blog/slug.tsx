@@ -1,6 +1,5 @@
 import React from "react";
 import md from "markdown-it";
-import UseFetch from "@/hooks/get/UseFetch";
 import { userInfoContext } from "@/pages/_app";
 import { useRouter } from "next/router";
 import Navbar from "@/components/Navbar/Navbar";
@@ -10,8 +9,6 @@ import { BsDownload, BsFillTagFill } from "react-icons/bs";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Footer from "@/components/Footer/Footer";
-import Link from "next/link";
-import Form from "@/components/Form/Form";
 import { IdCard } from "@/components/Micro/Blog/Card/Card";
 
 type Post = {
@@ -95,10 +92,8 @@ const Slug = () => {
     <main className="bg-blog">
       <Navbar />
       <article className="mx-auto container overflow-x-hidden flex flex-col w-full lg:items-center lg:justify-center md:p-10 p-5">
-        <div className=" md:max-w-4xl max-w-full">
-          <Link href="/blog">
-            <HiArrowLeft className="text-3xl" />
-          </Link>
+        <div className=" md:max-w-3xl max-w-full">
+            <HiArrowLeft className="text-4xl cursor-pointer"  onClick={()=>router.back()}/>
           <div>
             <div>
               <h1 className="text-4xl font-bold py-10">{post?.title}</h1>
