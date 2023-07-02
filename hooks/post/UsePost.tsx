@@ -13,7 +13,6 @@ const UsePost = (
   const postMutation = useMutation((user) =>
     axios.post(endPoint, user, header).then((res) => res.data)
   );
-
   const handlePost = async (user: any) => {
     try {
       const data = await postMutation.mutateAsync(user);

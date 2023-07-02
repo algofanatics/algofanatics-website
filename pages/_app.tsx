@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { getCookie } from "cookies-next";
+
 const queryClient = new QueryClient();
 type UserInfo = {
   email: string;
