@@ -18,14 +18,14 @@ const Blog = () => {
   });
 
   //search functionality
-  const [searchBox, setSearchBox] = React.useState("");
   const [search, setSearch] = React.useState("");
   const [filtered, setFiltered] = React.useState(data);
   React.useEffect(() => {
     const searchFetch = async () => {
       try {
         const res = await fetch(
-          process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL + `/auth/blog?tag=${search}`,
+          process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL +
+            `/auth/blog?tag=${search}`,
           {
             headers: {
               Authorization: `Bearer ${userInformation?.token}`,
@@ -35,32 +35,12 @@ const Blog = () => {
         const data = await res.json();
         setFiltered(data);
       } catch (error: any) {
-        return error.message
+        return error.message;
       }
     };
     searchFetch();
   }, [search]);
 
-  React.useEffect(() => {
-    const searchBoxFetch = async () => {
-      try {
-        const res = await fetch(
-          process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL +
-            `/auth/blog?tag=${searchBox}`,
-          {
-            headers: {
-              Authorization: `Bearer ${userInformation?.token}`,
-            },
-          }
-        );
-        const data = await res.json();
-        setFiltered(data);
-      } catch (error: any) {
-        return error.message
-      }
-    };
-    searchBoxFetch();
-  }, [searchBox]);
 
   return (
     <main className="">
@@ -86,13 +66,8 @@ const Blog = () => {
               <option value="">All</option>
               <option value="frontend">Frontend development</option>
               <option value="backend">Backend development</option>
+              <option value="backend">algorithms</option>
             </select>
-            <input
-              placeholder="Search"
-              className="w-full  xl:w-72 border bg-gray-100 my-3 xl:my-0 xl:ml-5 h-10 rounded px-4"
-              value={searchBox}
-              onChange={(e) => setSearchBox(e.target.value)}
-            />
           </div>
         </div>
         <div className="hidden justify-end xl:flex">

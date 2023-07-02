@@ -63,7 +63,6 @@ export const Card = ({ blogDetails }: Props) => {
               <section>
                 <div>
                   <h3 className="py-2 font-semibold">{blog.title}</h3>
-
                   <div className="border-gray-100 border"></div>
                   <p className="font-medium text-sm py-2 text-recent">
                     {blog.createdAt &&
@@ -73,17 +72,16 @@ export const Card = ({ blogDetails }: Props) => {
                       )}
                   </p>
                 </div>
-
                 <div className="space-x-3 py-2">
-                  <Button className="h-8 bg-teal-100 rounded-md text-sm w-16">
+                  <button className="h-8 bg-teal-100 rounded-md text-sm w-16">
                     Edit
-                  </Button>
-                  <Button className="h-8 bg-danger rounded-md text-sm w-16">
+                  </button>
+                  <button className="h-8 bg-danger hover:bg-none rounded-md text-sm w-16">
                     Delete
-                  </Button>
-                  <Button className="h-8 bg-algorithm rounded-md text-sm w-20">
+                  </button>
+                  <button className="h-8 bg-algorithm rounded-md text-sm w-20">
                     Unpublish
-                  </Button>
+                  </button>
                 </div>
               </section>
             </section>
@@ -113,7 +111,7 @@ export const Recent = ({ blogDetails }: Props) => {
                         "en-US",
                         options
                       )}
-                  </p>{" "}
+                  </p>
                 </div>
                 <hr />
               </div>
@@ -131,8 +129,7 @@ export const IdCard = ({ blogDetails, prop }: Props & { prop: string }) => {
   };
   return (
     <article
-      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${prop} gap-6 cursor-pointer w-full`}
-    >
+      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${prop} gap-6 cursor-pointer w-full`}>
       {Array.isArray(blogDetails) &&
         blogDetails
           ?.slice()

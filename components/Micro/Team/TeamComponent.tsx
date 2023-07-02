@@ -38,7 +38,6 @@ const TeamComponent = ({
             <CiLinkedin className="text-primary w-7 h-6" />
           </a>
         </Link>
-
         <Link href={twitter} legacyBehavior>
           <a target="_blank">
             <CiTwitter className="text-primary w-7 h-6" />

@@ -61,7 +61,7 @@ const Success = () => {
             </p>
 
             <Link href="/signin" legacyBehavior>
-              <Button className="bg-grey w-full text-black text-lg font-medium h-14 rounded-full my-4">
+              <Button className="bg-grey w-full text-black text-lg font-medium h-14 rounded-full my-4 border-black border hover:bg-btn">
                 Continue
               </Button>
             </Link>

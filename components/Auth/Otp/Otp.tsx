@@ -82,7 +82,7 @@ const Otp = () => {
 
             <Button
               onClick={handleVerify}
-              className="bg-grey w-full text-black text-lg font-medium h-16 rounded-full my-10"
+              className="bg-grey w-full text-black text-lg font-medium h-16 rounded-full my-10 border-black border hover:bg-btn"
             >
               Continue
             </Button>

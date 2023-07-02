@@ -2,8 +2,9 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 const UseFetch = (endpoint: string, header?: object) => {
-  const { isLoading, error, data } = useQuery("repodata", () =>
-    axios.get(endpoint, header).then((res) => res.data)
+  const { isLoading, error, data } = useQuery(
+    "repodata",
+    () => axios.get(endpoint, header).then((res) => res.data)
   );
 
   return {

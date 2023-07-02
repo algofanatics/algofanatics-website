@@ -98,7 +98,7 @@ const Tabs = () => {
   return (
     <main className="2xl:container 2xl:mx-auto">
       <div className="grid flex-grow w-full gap-x-1 md:grid-cols-5">
-        <section className=" mb-5 md:bg-white bg-black w-full p-5">
+        <section className=" mb-5 md:bg-white bg-black w-full p-2">
           <div className="items-center md:flex hidden justify-between">
             <Link href="/">
               <Image
@@ -110,7 +110,7 @@ const Tabs = () => {
             </Link>
           </div>
 
-          <div className="items-center md:hidden text-white w-full flex justify-between">
+          <div className="items-center md:hidden text-white w-full  flex justify-between">
             <div
               onClick={() => setTabNavigation(!tabNavigation)}
               className="text-3xl"
@@ -132,8 +132,8 @@ const Tabs = () => {
             />
           </div>
           <ul
-            className={` flex md:pt-10 h-full md:h-fit md:static absolute px-5 left-0 top-[86px] bg-white  cursor-pointer flex-col md:items-start md:space-x-0 ${
-              !tabNavigation ? "hidden md:block" : "block"
+            className={` flex md:pt-10 h-full md:h-fit md:static md:w-full absolute px-5 w-8/12 left-0 top-[86px] bg-white  cursor-pointer flex-col md:items-start md:space-x-0 ${
+              !tabNavigation ? "hidden md:block" : " block"
             }`}
           >
             {tabs.map((tab) => (
