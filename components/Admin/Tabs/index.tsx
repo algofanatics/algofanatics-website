@@ -98,7 +98,7 @@ const Tabs = () => {
   return (
     <main className="2xl:container 2xl:mx-auto">
       <div className="grid flex-grow w-full gap-x-1 md:grid-cols-5">
-        <section className=" mb-5 md:bg-white bg-black w-full p-2">
+        <section className=" mb-5 md:bg-white bg-black w-full p-5">
           <div className="items-center md:flex hidden justify-between">
             <Link href="/">
               <Image
