@@ -13,7 +13,6 @@ type UserInfo = {
   username: string;
 };
 export const userInfoContext = React.createContext<UserInfo | null>(null);
-
 export default function App({ Component, pageProps }: AppProps) {
   const userDetails = getCookie("details");
   const details = typeof userDetails === "string" ? JSON.parse(userDetails) : null;
@@ -25,7 +24,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <QueryClientProvider client={queryClient}>
           <Component {...pageProps} />
         </QueryClientProvider>
-
         <ToastContainer
           position="top-right"
           autoClose={5000}

@@ -39,7 +39,6 @@ const calculateReadingTime = (content: string) => {
 };
 
 export const Card = ({ blogDetails }: Props) => {
-  console.log(blogDetails);
   return (
     <article className="grid grid-cols-1 lg:grid-cols-3 py-2 sm:grid-cols-2 gap-5 rounded-sm cursor-pointer w-full">
       {Array.isArray(blogDetails) &&
