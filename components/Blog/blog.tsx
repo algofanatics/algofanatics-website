@@ -63,7 +63,6 @@ const Blog = () => {
 
         <section className="flex justify-between">
           <div className="xl:w-9/12 w-full">
-            {isLoading && <p>Loading</p>}
             <div>
               {data && <IdCard blogDetails={filtered?.details} prop="3" />}
             </div>
