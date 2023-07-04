@@ -6,12 +6,13 @@ import UseFetch from "@/hooks/get/UseFetch";
 import { useContext } from "react";
 import { userInfoContext } from "@/pages/_app";
 import Footer from "../Footer/Footer";
+import Skeleton from "../Micro/Skeleton/Skeleton";
 
 const Blog = () => {
   const userInformation = useContext(userInfoContext);
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/auth/blog";
-  const { data } = UseFetch(endPoint, {
+  const { data, isLoading } = UseFetch(endPoint, {
     headers: {
       Authorization: `Bearer ${userInformation?.token}`,
     },
@@ -64,6 +65,16 @@ const Blog = () => {
         <section className="flex justify-between">
           <div className="xl:w-9/12 w-full">
             <div>
+              <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
+                {isLoading
+                  ? [1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, index) => (
+                      <Skeleton
+                        key={index}
+                        className="zl:w-72 h-72 sm:w-full rounded-xl"
+                      />
+                    ))
+                  : null}
+              </div>
               {data && <IdCard blogDetails={filtered?.details} prop="3" />}
             </div>
           </div>

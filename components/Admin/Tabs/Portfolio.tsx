@@ -2,7 +2,7 @@ import TeamComponent from "@/components/Micro/Team/TeamComponent";
 
 const Portfolio = () => {
   return (
-    <section className="grid pt-0 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 place-items-center">
+    <section className="grid pt-0 lg:grid-cols-3 grid-cols-1 gap-4 place-items-center">
       <TeamComponent
         name="Samson Ajulor"
         role="Backend Developer"

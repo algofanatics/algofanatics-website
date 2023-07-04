@@ -74,7 +74,7 @@ const Slug = () => {
           },
         })
         .then((res) => {
-          setRelatedPosts(res?.data?.details?.slice(-4));
+          setRelatedPosts(res?.data?.details?.slice(0, 4));
         })
         .catch((error) => {
           toast.error(error);

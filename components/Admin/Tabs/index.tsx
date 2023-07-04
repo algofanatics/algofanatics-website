@@ -97,7 +97,7 @@ const Tabs = () => {
 
   return (
     <main className="2xl:container 2xl:mx-auto">
-      <div className="grid flex-grow w-full gap-x-1 md:grid-cols-5">
+      <div className="grid flex-grow w-full gap-x-1 md:grid-cols-3 lg:grid-cols-5">
         <section className=" mb-5 md:bg-white bg-black w-full p-5">
           <div className="items-center md:flex hidden justify-between">
             <Link href="/">
@@ -150,12 +150,15 @@ const Tabs = () => {
           </ul>
         </section>
 
-        <section className="w-full h-full md:p-5 px-5 py-2 md:px-5 md:col-span-4">
-          <nav className="xl:flex hidden justify-between items-center pb-5">
-            <h1 className="text-3xl font-semibold py-4">
-              {CurrentTab.charAt(0).toUpperCase() + CurrentTab.slice(1)}
-            </h1>
-            <div className="flex space-x-5 items-center">
+        <section className="w-full h-full md:p-5 px-5 py-2 md:px-5 md:col-span-2 lg:col-span-4">
+          <nav className="flex justify-between items-center pb-5">
+            <div className="md:py-4 block">
+              <h1 className="text-3xl font-semibold">
+                {CurrentTab.charAt(0).toUpperCase() + CurrentTab.slice(1)}
+              </h1>
+              <div className="border-2 border-primary w-10"></div>
+            </div>
+            <div className="md:flex hidden space-x-5 items-center">
               <Image
                 src="/assets/avartar.svg"
                 alt="algofanatics logo"
@@ -173,6 +176,7 @@ const Tabs = () => {
                 </p>
               </div>
             </div>
+
           </nav>
           <div className="font-nunito">
             <Component />

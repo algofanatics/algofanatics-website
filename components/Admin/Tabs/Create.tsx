@@ -39,10 +39,7 @@ const Create = () => {
   return (
     <main>
       <div className="">
-        <div className="w-full xl:hidden">
-          <h1 className="text-3xl font-bold">Blog</h1>
-          <div className="border-2 border-primary w-10"></div>
-        </div>
+       
         <form className="grid-cols-1 pt-5 grid" onSubmit={handleSubmit}>
           <label className="flex text-xl flex-col">
             Title
