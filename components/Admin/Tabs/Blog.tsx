@@ -82,7 +82,7 @@ const Blog = () => {
             ? [1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, index) => (
                 <Skeleton
                   key={index}
-                  className="zl:w-72 h-72 sm:w-full rounded-xl"
+                  className="w-72 h-72 sm:w-full rounded-lg"
                 />
               ))
             : null}
