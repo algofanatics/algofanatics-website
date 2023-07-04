@@ -18,7 +18,6 @@ const Blog = () => {
     },
   });
 
-  //search functionality
   const [search, setSearch] = React.useState("");
   const [filtered, setFiltered] = React.useState(data);
   React.useEffect(() => {

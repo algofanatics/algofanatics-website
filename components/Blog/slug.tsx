@@ -56,24 +56,6 @@ const Slug = () => {
           },
         })
         .then((res) => {
-          setRelatedPosts(res?.data?.details?.slice(-4));
-        })
-        .catch((error) => {
-          toast.error(error);
-        });
-    };
-    blogFetch();
-  }, []);
-
-  React.useEffect(() => {
-    const blogFetch = async () => {
-      const res = axios
-        .get(process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL + `/auth/blog`, {
-          headers: {
-            Authorization: `Bearer ${userInformation?.token}`,
-          },
-        })
-        .then((res) => {
           setRelatedPosts(res?.data?.details?.slice(0, 4));
         })
         .catch((error) => {
