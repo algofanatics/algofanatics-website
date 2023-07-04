@@ -57,14 +57,14 @@ const Blog = () => {
           <BsFilter className="w-9 h-9 mr-2 xl:block hidden" />
           <div className="max-w-sm">
             <select
-              className=" h-10 w-full bg-gray-100 border rounded px-1"
+              className=" h-10 w-full lg:w-72 bg-gray-100 border rounded px-1"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             >
               <option value="">All</option>
               <option value="frontend">Frontend development</option>
               <option value="backend">Backend development</option>
-              <option value="backend">algorithms</option>
+              <option value="algorithms">algorithms</option>
             </select>
           </div>
         </div>

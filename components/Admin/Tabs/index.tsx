@@ -176,7 +176,6 @@ const Tabs = () => {
                 </p>
               </div>
             </div>
-
           </nav>
           <div className="font-nunito">
             <Component />
