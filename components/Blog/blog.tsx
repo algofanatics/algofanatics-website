@@ -70,7 +70,7 @@ const Blog = () => {
                   ? [1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, index) => (
                       <Skeleton
                         key={index}
-                        className="zl:w-72 h-72 sm:w-full rounded-xl"
+                        className=":w-72 h-72 sm:w-full rounded-xl"
                       />
                     ))
                   : null}
@@ -79,6 +79,17 @@ const Blog = () => {
             </div>
           </div>
           <div className="xl:w-3/12 xl:block hidden text-xl font-semibold pl-10">
+            <div className="grid grid-cols-1 gap-5">
+              {isLoading
+                ? [1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, index) => (
+                    <Skeleton
+                      key={index}
+                      className="w-72 h-16 sm:w-full rounded-xl"
+                    />
+                  ))
+                : null}
+            </div>
+
             {data && <Recent blogDetails={data?.details} />}
           </div>
         </section>
