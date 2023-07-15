@@ -1,41 +1,102 @@
+const theme = require("./src/config/theme.json");
+
+let font_base = Number(theme.fonts.font_size.base.replace("px", ""));
+let font_scale = Number(theme.fonts.font_size.scale);
+let h6 = font_base / font_base;
+let h5 = h6 * font_scale;
+let h4 = h5 * font_scale;
+let h3 = h4 * font_scale;
+let h2 = h3 * font_scale;
+let h1 = h2 * font_scale;
+let fontPrimary, fontPrimaryType, fontSecondary, fontSecondaryType;
+if (theme.fonts.font_family.primary) {
+  fontPrimary = theme.fonts.font_family.primary
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
+  fontPrimaryType = theme.fonts.font_family.primary_type;
+}
+if (theme.fonts.font_family.secondary) {
+  fontSecondary = theme.fonts.font_family.secondary
+    .replace(/\+/g, " ")
+    .replace(/:[ital,]*[ital@]*[wght@]*[0-9,;]+/gi, "");
+  fontSecondaryType = theme.fonts.font_family.secondary_type;
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/layouts/**/*.{js,ts,jsx,tsx}",
+    "./src/content/**/*.{md,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [{ pattern: /^swiper-/ }],
+  darkMode: "class",
   theme: {
+    screens: {
+      sm: "540px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
+    container: {
+      center: true,
+      padding: "2rem",
+    },
     extend: {
       colors: {
-        grey: "#E3F2F2",
-        avatar: "92E3A93B",
-        career: "#A6A6A6",
-        background: "#E7E5E5",
-        blog: "#F4F4F4",
-        primary: "#47D7AC",
-        services: "#F7F7F8",
-        backend: "#92E3A9",
-        frontend: "#0000001A",
-        algorithm: "#473BF01A",
-        systemDesign: "#FFA50026",
-        cardBorder: "#F3F4F5",
-        signin: "#EDFFFA",
-        signinText: "#A4E0B5",
-        signup: "#EDF5F3",
-        Text: "#B0B0B0",
-        recent: "#DDDCDC",
-        danger: "#EB5757",
-        dangerBackground: "#FFF3F2",
+        text: theme.colors.default.text_color.default,
+        light: theme.colors.default.text_color.light,
+        dark: theme.colors.default.text_color.dark,
+        primary: theme.colors.default.theme_color.primary,
+        secondary: theme.colors.default.theme_color.secondary,
+        body: theme.colors.default.theme_color.body,
+        border: theme.colors.default.theme_color.border,
+        "theme-light": theme.colors.default.theme_color.theme_light,
+        "theme-dark": theme.colors.default.theme_color.theme_dark,
+        darkmode: {
+          text: theme.colors.darkmode.text_color.default,
+          light: theme.colors.darkmode.text_color.light,
+          dark: theme.colors.darkmode.text_color.dark,
+          primary: theme.colors.darkmode.theme_color.primary,
+          secondary: theme.colors.darkmode.theme_color.secondary,
+          body: theme.colors.darkmode.theme_color.body,
+          border: theme.colors.darkmode.theme_color.border,
+          "theme-light": theme.colors.darkmode.theme_color.theme_light,
+          "theme-dark": theme.colors.darkmode.theme_color.theme_dark,
+        },
+      },
+      fontSize: {
+        base: font_base + "px",
+        h1: h1 + "rem",
+        "h1-sm": h1 * 0.8 + "rem",
+        h2: h2 + "rem",
+        "h2-sm": h2 * 0.8 + "rem",
+        h3: h3 + "rem",
+        "h3-sm": h3 * 0.8 + "rem",
+        h4: h4 + "rem",
+        h5: h5 + "rem",
+        h6: h6 + "rem",
       },
       fontFamily: {
-        nunito: ["Nunito", "sans-serif"],
-        work: ["Work Sans", "sans-serif"],
-        poppins: ["Poppins", "sans-serif"],
+        primary: [fontPrimary, fontPrimaryType],
+        secondary: [fontSecondary, fontSecondaryType],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("tailwind-bootstrap-grid")({
+      generateContainer: false,
+      gridGutterWidth: "2rem",
+      gridGutters: {
+        1: "0.25rem",
+        2: "0.5rem",
+        3: "1rem",
+        4: "1.5rem",
+        5: "3rem",
+      },
+    }),
+  ],
 };
