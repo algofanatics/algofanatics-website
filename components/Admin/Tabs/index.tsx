@@ -10,6 +10,7 @@ import { IoIosSettings } from "react-icons/io";
 import { AiFillDatabase } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
 import { userInfoContext } from "@/pages/_app";
+import Link from "next/link";
 
 export type TabsTypes = {
   title: React.ReactNode;
@@ -93,35 +94,28 @@ const Tabs = () => {
   }, [CurrentTab]);
 
   return (
-    <main className="container mx-auto grid flex-grow w-full gap-x-1  md:grid-cols-4 rounded-xl ">
-      <section className="bg-white mb-5 w-full p-8">
-        <Image
-          src="/assets/navbar/Logo2.svg"
-          alt="algofanatics logo"
-          width={155}
-          height={65}
-        />
-        <ul className="flex items-center py-10 space-x-5 cursor-pointer md:flex-col md:items-start md:space-x-0">
+    <main className='container mx-auto grid flex-grow w-full gap-x-1  md:grid-cols-4 rounded-xl '>
+      <section className='bg-white mb-5 w-full p-8'>
+        <Link href='/'>
+          <Image src='/assets/navbar/Logo2.svg' alt='algofanatics logo' width={155} height={65} />
+        </Link>
+        <ul className='flex items-center py-10 space-x-5 cursor-pointer md:flex-col md:items-start md:space-x-0'>
           {tabs.map((tab) => (
             <div key={tab.query} onClick={() => handleTabChange(tab.query)}>
-              <li className="py-4 text-gray-400 text-xl">{tab.title}</li>
+              <li className='py-4 text-gray-400 text-xl'>{tab.title}</li>
             </div>
           ))}
         </ul>
       </section>
 
-      <section className="w-full h-full p-8 md:px-5 md:col-span-3">
-        <nav className="flex justify-between items-center pb-5">
-          <h1 className="text-3xl font-semibold py-4">
-            {CurrentTab.charAt(0).toUpperCase() + CurrentTab.slice(1)}
-          </h1>
-          <div className="flex space-x-5 items-center">
-            <RxAvatar className="text-2xl" />
-            <div className="flex flex-col">
-              {information && (
-                <p className="text-lg font-semibold">{information?.username}</p>
-              )}
-              <p className="text-sm text-Text">{information?.isAdmin ? "Admin" : "User"}</p>
+      <section className='w-full h-full p-8 md:px-5 md:col-span-3'>
+        <nav className='flex justify-between items-center pb-5'>
+          <h1 className='text-3xl font-semibold py-4'>{CurrentTab.charAt(0).toUpperCase() + CurrentTab.slice(1)}</h1>
+          <div className='flex space-x-5 items-center'>
+            <RxAvatar className='text-2xl' />
+            <div className='flex flex-col'>
+              {information && <p className='text-lg font-semibold'>{information?.username}</p>}
+              <p className='text-sm text-Text'>{information?.isAdmin ? 'Admin' : 'User'}</p>
             </div>
           </div>
         </nav>

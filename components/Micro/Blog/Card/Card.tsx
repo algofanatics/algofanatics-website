@@ -81,6 +81,7 @@ export const Card = ({ blogDetails }: { blogDetails: blogType[] }) => {
 };
 
 export const Recent = ({ blogDetails }: { blogDetails: blogType[] }) => {
+  console.log(blogDetails, "blogDetails");
   return (
     <section>
       <h1 className="border-b border-primary">Recent Stories</h1>

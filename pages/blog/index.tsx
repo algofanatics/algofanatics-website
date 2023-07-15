@@ -6,7 +6,7 @@ import UseFetch from "@/hooks/get/UseFetch";
 import { useContext } from "react";
 import { userInfoContext } from "../_app";
 
-const index = () => {
+const Index = () => {
   const userInformation = useContext(userInfoContext);
   const baseURL = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL;
   const endPoint = baseURL + "/blog";
@@ -49,4 +49,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

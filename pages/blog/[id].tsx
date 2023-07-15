@@ -4,11 +4,12 @@ import UseFetch from "@/hooks/get/UseFetch";
 import { userInfoContext } from "../_app";
 import { useRouter } from "next/router";
 
-const id = () => {
+const Id = () => {
   const router = useRouter();
   const { id } = router.query;
+  console.log("id", id);
   const userInformation = React.useContext(userInfoContext);
-  const endPoint = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL + `/blog?blogId=${id}`;
+  const endPoint = process.env.NEXT_PUBLIC_ALGOFANATICS_BASE_URL + `/auth/blog?blogId=${id}`;
 
   const { data } = UseFetch(endPoint, {
     headers: {
@@ -36,4 +37,4 @@ const id = () => {
     </article>
   );
 };
-export default id;
+export default Id;
