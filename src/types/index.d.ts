@@ -53,9 +53,9 @@ export type Feature = {
   title: string;
 };
 
-export type Testimonial = {
-  name: string;
-  designation: string;
+export type Service = {
+  title: string;
+  tag: string;
   avatar: string;
   content: string;
 };
