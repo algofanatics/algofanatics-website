@@ -2,7 +2,7 @@
 title: Samson Ajulor
 email: samsonajulor@gmail.com
 image: "/assets/team/samson.svg"
-description: Backend Developer
+description: Lead Engineer
 social:
 - name: github
   icon: FaGithub
@@ -17,4 +17,4 @@ social:
   link: https://linkedin.com/in/samsonajulor
 ---
 
-Backend Developer.
+Lead Engineer.
