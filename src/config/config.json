@@ -5,8 +5,8 @@
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/favicon.ico",
-    "logo": "/assets/navbar/Logo.svg",
-    "logo_darkmode": "/assets/navbar/Logo.svg",
+    "logo": "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/navbar/ig9amksuzgp25xvqz4pd",
+    "logo_darkmode": "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/navbar/ig9amksuzgp25xvqz4pd",
     "logo_width": "150",
     "logo_height": "27",
     "logo_text": "algofanatics"
