@@ -1,7 +1,7 @@
 ---
 title: Mujeeb Mustapha
 email: joannobei@gmail.com
-image: "/assets/team/mujeeb.svg"
+image: "https://res.cloudinary.com/samsonajulor/image/upload/v1689853229/algofanatics_assets/assets/team/om3uunm0kburyvynsh1s.svg"
 description: Backend Developer
 social:
 - name: github

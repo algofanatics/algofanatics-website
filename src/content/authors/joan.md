@@ -1,7 +1,7 @@
 ---
 title: Joan Nobei
 email: joannobei@gmail.com
-image: "/assets/team/joan.svg"
+image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/team/mx66vnej4fhpwmnjqeqv"
 description: Product Designer
 social:
 - name: github

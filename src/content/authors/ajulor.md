@@ -1,7 +1,7 @@
 ---
 title: Samson Ajulor
 email: samsonajulor@gmail.com
-image: "/assets/team/samson.svg"
+image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/team/jnrltd8rq484rzsfexig"
 description: Lead Engineer
 social:
 - name: github

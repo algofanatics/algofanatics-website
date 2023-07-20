@@ -1,7 +1,7 @@
 ---
 title: Lolade Otemade
 email: joannobei@gmail.com
-image: "/assets/team/lolade.svg"
+image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/team/gfyxgitkcamun5mieuxy"
 description: Frontend Developer
 social:
 - name: github

@@ -1,7 +1,7 @@
 ---
 title: Foluso Kayode
 email: joannobei@gmail.com
-image: "/assets/team/folu.svg"
+image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/team/ys22i8apriil7iqp1sxa"
 description: Fullstack Developer
 social:
 - name: github

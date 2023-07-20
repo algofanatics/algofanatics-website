@@ -3,7 +3,7 @@ title: "How to deploy a LAMP stack website in AWS Cloud!"
 meta_title: ""
 description: "deploying a LAMP stack website in AWS Cloud!"
 date: 2022-04-04T05:00:00Z
-image: "/assets/blog/random.svg"
+image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/xyruli9slbwtazplckgs"
 categories: ["devops"]
 author: "Samson Ajulor"
 tags: ["aws", "lamp stack", "PHP"]
@@ -23,7 +23,7 @@ To verify that apache2 is running as a Service in our OS, use following command
 
 `sudo systemctl status apache2`
 
-![Install the apache2 package](/assets/blog/deploy-lamp/installing_apache.jpg)
+![Install the apache2 package](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/skflvaslnmhg7rbbsvnu)
 
 Test apache2 from a browser
 `http://<Public-IP-Address>:80`
@@ -31,7 +31,7 @@ Test apache2 from a browser
 get ip address from the console
 `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
 
-![APACHE](/assets/blog/deploy-lamp/installing_apache.jpg)
+![APACHE](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/skflvaslnmhg7rbbsvnu)
 
 # Step 2 - Install SQL
 `$ sudo apt install mysql-server`
@@ -41,7 +41,7 @@ When the installation is finished, log in to the MySQL console by typing:
 
 `$ sudo mysql`
 
-![install](/assets/blog/deploy-lamp/sql_installed.jpg)
+![install](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/vh8k0yqudadj8escylqr)
 
 It’s recommended that you run a security script that comes pre-installed with MySQL. This script will remove some insecure default settings and lock down access to your database system. Before running the script you will set a password for the root user, using mysql_native_password as default authentication method. We’re defining this user’s password as PassWord.1.
 
@@ -62,7 +62,7 @@ Notice the -p flag in this command, which will prompt you for the password used 
 To exit the MySQL console, type:
 `mysql> exit`
 
-![sql-console](/assets/blog/deploy-lamp/sql_installed.jpg)
+![sql-console](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/vh8k0yqudadj8escylqr)
 
 # Step 3 - INSTALLING PHP
 PHP is the component of our setup that will process code to display dynamic content to the end user. In addition to the php package, you’ll need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. You’ll also need libapache2-mod-php to enable Apache to handle PHP files. Core PHP packages will automatically be installed as dependencies.
@@ -115,7 +115,7 @@ You can use the ls command to show the new file in the sites-available directory
 
 `sudo ls /etc/apache2/sites-available`
 
-![Apache Host](/assets/blog/deploy-lamp/apache_host.jpg)
+![Apache Host](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/ku9aguddn7hmaj3ug1iu)
 
 With this VirtualHost configuration, we’re telling Apache to serve projectlamp using /var/www/projectlampl as its web root directory. If you would like to test Apache without a domain name, you can remove or comment out the options ServerName and ServerAlias by adding a # character in the beginning of each option’s lines. Adding the # character there will tell the program to skip processing the instructions on those lines.
 
@@ -140,7 +140,7 @@ Your new website is now active, but the web root /var/www/projectlamp is still e
 
 Now go to your browser and try to open your website URL using IP address
 
-![site is running](/assets/blog/deploy-lamp/apache_host_first_page.jpg)
+![site is running](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/jucmzw3kyqipb4xreemn)
 
 ps: remember to remove or rename the index.html file from your document root after setting up index.php, as it would take precedence over an index.php file by default.
 
@@ -171,7 +171,7 @@ This will open a blank file. Add the following text, which is valid PHP code, in
 
 When you are finished, save and close the file, refresh the page and you will see a page similar to this:
 
-![apache_index.php](/assets/blog/deploy-lamp/apache_index.php.jpg)
+![apache_index.php](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/tms1qmjldzwc5f7mtkl0)
 
 
 remove the file as it contains sensitive information about your PHP environment -and your Ubuntu server.

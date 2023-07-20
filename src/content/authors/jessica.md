@@ -1,7 +1,7 @@
 ---
 title: Jessica Joseph
 email: jessicajoseph1807@gmail.com
-image: "/assets/team/jessica.svg"
+image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/team/woidnxd3kc9xo6bymj3n"
 description: Frontend Developer
 social:
 - name: github

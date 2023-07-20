@@ -2,7 +2,7 @@
 title: "About Us"
 meta_title: "About"
 description: "about algofanatics"
-image: "/assets/about/about.svg"
+image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/about/cwimfes53htrl6qrrkjm"
 layout: "about"
 draft: false
 ---
