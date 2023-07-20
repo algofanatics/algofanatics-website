@@ -31,7 +31,7 @@ Test apache2 from a browser
 get ip address from the console
 `curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
 
-![APACHE](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/skflvaslnmhg7rbbsvnu)
+![APACHE](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/wua1oqy1i1tivd3y07km)
 
 # Step 2 - Install SQL
 `$ sudo apt install mysql-server`
@@ -62,7 +62,7 @@ Notice the -p flag in this command, which will prompt you for the password used 
 To exit the MySQL console, type:
 `mysql> exit`
 
-![sql-console](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/vh8k0yqudadj8escylqr)
+![sql-console](https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/deploy-lamp/eh23oyckomxf0foobnrz)
 
 # Step 3 - INSTALLING PHP
 PHP is the component of our setup that will process code to display dynamic content to the end user. In addition to the php package, you’ll need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. You’ll also need libapache2-mod-php to enable Apache to handle PHP files. Core PHP packages will automatically be installed as dependencies.
