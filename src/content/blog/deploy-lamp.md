@@ -3,7 +3,7 @@ title: "How to deploy a LAMP stack website in AWS Cloud!"
 meta_title: ""
 description: "deploying a LAMP stack website in AWS Cloud!"
 date: 2022-04-04T05:00:00Z
-image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/xyruli9slbwtazplckgs"
+# image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/xyruli9slbwtazplckgs"
 categories: ["devops"]
 author: "Samson Ajulor"
 tags: ["aws", "lamp stack", "PHP"]
