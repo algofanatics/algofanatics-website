@@ -524,7 +524,7 @@ After following the above steps, you should have a running Kubernetes cluster an
 
 ## Phase three - Dockerize the application and push to docker hub
 
-- Create a `Dockerfile` for node in the root of the express applications application:
+- Create a `Dockerfile` for node in the root of the express applications:
 
 ```Dockerfile
 FROM node:14
@@ -662,7 +662,7 @@ b. `values.yaml`: Define the default values for your application:
 replicaCount: 1
 
 image:
-  repository: your-docker-repo/helm-auth
+  repository: your-docker-repo/helm-auth #change this
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -674,7 +674,7 @@ ingress:
   enabled: false
   annotations: {}
   hosts:
-    - host: chart-example.local
+    - host: chart-example.local # change this
       paths: ["/"]
 
 resources:
