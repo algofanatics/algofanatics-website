@@ -1,5 +1,5 @@
 # Use a Node.js image as the base image
-FROM node:16
+FROM node:18
 
 # Set the working directory
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies
-RUN yarn
+RUN npm install
 
 # start app
-CMD ["yarn", "dev"]
+CMD ["npm", "run", "dev"]
