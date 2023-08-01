@@ -6,7 +6,7 @@ date: 2023-08-01T05:00:00Z
 # image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/xyruli9slbwtazplckgs"
 categories: ["blockchain", "cryptocurrency"]
 author: "Samson Ajulor"
-tags: ["algorithms", "ethereum", "bitcoin", ]
+tags: ["algorithms", "ethereum", "bitcoin", "web3bridge" ]
 draft: false
 ---
 
