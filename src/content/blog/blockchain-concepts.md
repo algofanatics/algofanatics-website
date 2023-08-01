@@ -280,7 +280,7 @@ In a state machine, a transaction helps to make updates on the state by ensuring
 💼 In the context of databases and distributed systems, transactions are commonly used to update the state of the system, ensuring that complex operations or state changes are performed atomically and consistently, which is essential for maintaining data integrity and correctness. For example, in a banking application, a transaction ensures that a fund transfer is treated as a single logical operation, preventing the possibility of money being lost or unaccounted for.
 
 
-## 📊 What makes the blockchain tick
+## 23. 📊 What makes the blockchain tick
 
 Several key components and principles work together to make the blockchain tick and function as a secure and decentralized system:
 
@@ -304,7 +304,7 @@ Several key components and principles work together to make the blockchain tick 
 
 These principles and components work together to create a secure, transparent, and tamper-resistant blockchain system, enabling the decentralized and reliable operation of cryptocurrencies and various other applications and use cases.
 
-## 23. 💡 Difference between Bitcoin and Ethereum
+## 24. 💡 Difference between Bitcoin and Ethereum
 
 **Bitcoin** and **Ethereum** are two of the most well-known and widely used cryptocurrencies, but they have some fundamental differences in their design, purpose, and capabilities.
 
@@ -322,7 +322,7 @@ These principles and components work together to create a secure, transparent, a
 
 Both Bitcoin and Ethereum have played significant roles in the growth and adoption of blockchain technology, each catering to different use cases and user needs. Bitcoin remains a leading digital currency and store of value, while Ethereum's smart contract capabilities have enabled a wide range of decentralized applications and DeFi (Decentralized Finance) projects.
 
-## 24. 📚 What are smart contracts?
+## 25. 📚 What are smart contracts?
 
 **Smart contracts** are self-executing contracts with the terms of the agreement directly written into code. They run on decentralized blockchain platforms, such as Ethereum, and automatically execute when specific conditions are met. The concept of smart contracts was first proposed by computer scientist Nick Szabo in 1994, and they have gained significant popularity and adoption with the rise of blockchain technology.
 
@@ -340,7 +340,7 @@ Both Bitcoin and Ethereum have played significant roles in the growth and adopti
 
 6. **Immutable Execution**: Once a smart contract is deployed to the blockchain, its code and execution cannot be altered or stopped. It will execute as programmed, providing a guarantee of adherence to the contract's terms.
 
-## 25. 🔧 Use cases of smart contracts include:
+🔧 Use cases of smart contracts include:
 
 1. **Decentralized Finance (DeFi)**
 
