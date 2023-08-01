@@ -64,8 +64,6 @@ To find the previous hash of block #10950174 on the Ethereum blockchain, you can
 
 To determine how many Ethers were transferred in the transaction with the hash 0xd321eee53fad00f0fa5cb9eb43d0417700d3fe562f1f628206a75b769e2d08e5, you can look at the "Value" field in the transaction details on Etherscan.
 
-By following the provided link and looking at the transaction details, you can see that approximately 6.54 Ether (ETH) were transferred in this transaction.
-
 ## 11. What is the correct sequence involved in a block creation? 1. Transactions validated, 2. Transactions bundled and broadcasted, 3. Transaction initiated, 4. Block added to the local chain and propagated to the network, 5. Proof of work consensus problem solved. 🧱
 
 The correct sequence involved in a block creation in a Proof of Work (PoW) blockchain, like Bitcoin and Ethereum, is as follows:
