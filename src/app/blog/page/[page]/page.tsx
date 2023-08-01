@@ -45,6 +45,7 @@ const Posts = ({ params }: { params: { page: number } }) => {
   const postIndex: Post = getListPage(`${blog_folder}/_index.md`);
   const { title, meta_title, description, image } = postIndex.frontmatter;
   const posts: Post[] = getSinglePage(blog_folder);
+  console.log(posts.length, 'post')
   const allCategories = getAllTaxonomy(blog_folder, "categories");
   const categories = getTaxonomy(blog_folder, "categories");
   const tags = getTaxonomy(blog_folder, "tags");
