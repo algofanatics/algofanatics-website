@@ -12,7 +12,17 @@ draft: false
 
 ## 1. Explain the EVM 💻
 
-The Ethereum Virtual Machine (EVM) is a decentralized virtual machine capable of handling scripts using the public nodes network. It is Turing complete, which means it can compute anything that can be computed algorithmically. Additionally, it uses gas as an internal pricing mechanism to allocate resources and prioritize transactions on the Ethereum network. However, its state is not maintained by the founder; rather, the state of the EVM is maintained and updated by the nodes running the Ethereum network through a consensus mechanism.
+The EVM (Ethereum Virtual Machine) is a decentralized machine and this means that it is not controlled or owned by a single entity and anyone or everyone has equal rights and access to it.
+
+The concept of the EVM was introduced by Vitalik Buterin in a whitepaper published in late 2013. 
+
+It is capable of any form of algorithmic computation which makes us refer to it as a Turing complete machine.
+
+Since everyone has access and can connect to it, it has to allocate and prioritize transaction. It does this by using gas as an internal pricing mechanism.
+
+It goes without saying that "too many hands spoil the broth". With that in mind, we can conclude that if inputs are not controlled and managed properly, there will be chaos since anyone and everyone has access to the machine.
+
+Fortunately, the state of the machine is maintained by nodes running on the Ethereum network through a consensus mechanism.
 
 ## 2.  What is the differentiating factor between the Ethereum Blockchain and the Bitcoin blockchain? 🔄
 
