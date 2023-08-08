@@ -12,15 +12,15 @@ draft: false
 
 ## 1. Explain the EVM 💻
 
-The EVM (Ethereum Virtual Machine) is a decentralized machine and this means that it is not controlled or owned by a single entity and anyone or everyone has equal rights and access to it.
+The EVM (Ethereum Virtual Machine) is a decentralized machine and this means that it is not controlled or owned by a single entity and anyone or everyone has equal rights and access to it. <br>
 
-The concept of the EVM was introduced by Vitalik Buterin in a whitepaper published in late 2013. 
+The concept of the EVM was introduced by Vitalik Buterin in a whitepaper published in late 2013.  <br>
 
-It is capable of any form of algorithmic computation which makes us refer to it as a Turing complete machine.
+It is capable of any form of algorithmic computation which makes us refer to it as a Turing complete machine. <br>
 
-Since everyone has access and can connect to it, it has to allocate and prioritize transaction. It does this by using gas as an internal pricing mechanism.
+Since everyone has access and can connect to it, it has to allocate and prioritize transaction. It does this by using gas as an internal pricing mechanism. <br>
 
-It goes without saying that "too many hands spoil the broth". With that in mind, we can conclude that if inputs are not controlled and managed properly, there will be chaos since anyone and everyone has access to the machine.
+It goes without saying that "too many hands spoil the broth". With that in mind, we can conclude that if inputs are not controlled and managed properly, there will be chaos since anyone and everyone has access to the machine. <br>
 
 Fortunately, the state of the machine is maintained by nodes running on the Ethereum network through a consensus mechanism.
 
