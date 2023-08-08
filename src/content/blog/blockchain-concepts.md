@@ -24,11 +24,23 @@ It goes without saying that "too many hands spoil the broth". With that in mind,
 
 Fortunately, the state of the machine is maintained by nodes running on the Ethereum network through a consensus mechanism.
 
-## 2.  What is the differentiating factor between the Ethereum Blockchain and the Bitcoin blockchain? 🔄
+## 2. 💡 Difference between Bitcoin and Ethereum
 
-The differentiating factor between the Ethereum Blockchain and the Bitcoin blockchain is the presence of "Smart Contracts" in Ethereum. While both blockchains are distributed ledgers, and they have their respective cryptocurrencies for currency exchange (Bitcoin with BTC and Ethereum with Ether), the introduction of smart contracts is a unique feature of Ethereum.
+**Bitcoin** and **Ethereum** are two of the most well-known and widely used cryptocurrencies, but they have some fundamental differences in their design, purpose, and capabilities.
 
-Smart contracts are self-executing contracts with the terms of the agreement written directly into code. They automatically execute when predefined conditions are met, providing a way to program complex decentralized applications (DApps) and enable various functionalities like token creation, decentralized finance (DeFi) protocols, non-fungible tokens (NFTs), and more. This feature sets Ethereum apart from Bitcoin, which has a more limited scripting language and primarily focuses on peer-to-peer electronic cash transactions.
+1. **Purpose and Use Cases**: Bitcoin was created as a digital currency and primarily serves as a decentralized peer-to-peer payment system. Its main purpose is to enable secure and censorship-resistant transactions, allowing users to transfer value (bitcoins) without the need for intermediaries like banks. On the other hand, Ethereum is a decentralized platform that goes beyond simple currency use. It enables the creation and execution of smart contracts and decentralized applications (DApps). Ethereum's native cryptocurrency is called Ether (ETH), which is used to power the execution of smart contracts on the network.
+
+2. **Smart Contracts and DApps**: Bitcoin does not have built-in support for smart contracts. It is primarily designed for transferring value, and its scripting language is limited in functionality compared to Ethereum. In contrast, Ethereum is specifically designed to support smart contracts, which are self-executing programs that can automate processes, enforce rules, and facilitate complex transactions without intermediaries. This capability allows developers to build decentralized applications and services on the Ethereum platform.
+
+3. **Consensus Mechanism**: Both Bitcoin and Ethereum use Proof of Work (PoW) as their current consensus mechanism. However, Ethereum is in the process of transitioning to a Proof of Stake (PoS) consensus mechanism through Ethereum 2.0. PoW relies on miners solving complex puzzles to validate transactions and add new blocks to the blockchain, while PoS selects validators to propose and validate blocks based on the amount of cryptocurrency they "stake" as collateral.
+
+4. **Block Time and Scalability**: Bitcoin has a block time of approximately 10 minutes, while Ethereum's block time is much faster, averaging around 15 seconds. However, both networks face scalability challenges with their respective consensus mechanisms, leading to network congestion during periods of high demand.
+
+5. **Total Supply**: Bitcoin has a fixed supply cap of 21 million coins, making it deflationary. In contrast, Ethereum does not have a fixed supply cap, but there are plans to transition Ethereum to a deflationary model in the future with the introduction of Ethereum Improvement Proposal (EIP) 1559.
+
+6. **Community and Development**: Bitcoin has a strong and well-established community, with a focus on digital gold and a store of value. Its development is more conservative and primarily focused on maintaining security and stability. Ethereum, on the other hand, has a vibrant and active community, with a focus on innovation and the development of decentralized applications. It has undergone significant upgrades and improvements, with Ethereum 2.0 being a major milestone.
+
+Both Bitcoin and Ethereum have played significant roles in the growth and adoption of blockchain technology, each catering to different use cases and user needs. Bitcoin remains a leading digital currency and store of value, while Ethereum's smart contract capabilities have enabled a wide range of decentralized applications and DeFi (Decentralized Finance) projects.
 
 ## 3. How can blockchain technology best help securing identity data? 🔒
 
@@ -220,77 +232,8 @@ Here's how transactions work in the context of a state machine:
 
 In the context of databases and distributed systems, transactions are commonly used to update the state of the system. The use of transactions ensures that complex operations or state changes are performed atomically and consistently, which is essential for maintaining data integrity and correctness.
 
-## 19. What is Proof of Work (PoW)? ⚒️
 
-Proof of Work (PoW) is a consensus mechanism used in various blockchain networks, including Bitcoin and Ethereum, to achieve distributed consensus and validate transactions.
-
-In a PoW system, miners compete to solve a computationally intensive cryptographic puzzle. The first miner to find the solution to the puzzle gets the right to add a new block of transactions to the blockchain and is rewarded with newly created cryptocurrency (in the case of Bitcoin, it's newly minted bitcoins). This process is often referred to as "mining."
-
-Key features of PoW include:
-
-1. Security: PoW is secure because finding the solution to the cryptographic puzzle requires significant computational effort. It would be very difficult and computationally expensive for an attacker to rewrite the blockchain's history or perform fraudulent activities.
-
-2. Decentralization: PoW is designed
-
- in the network. This adjustment ensures that new blocks are added at a relatively constant rate.
-
-4. Energy Intensive: PoW is known for its energy-intensive nature, as miners compete by performing numerous calculations until they find the correct solution to the puzzle. This aspect has led to concerns about the environmental impact of PoW-based blockchains.
-
-Despite its security and decentralization benefits, PoW requires substantial energy consumption due to the computational work involved. As a result, other consensus mechanisms, such as Proof of Stake (PoS) and Practical Byzantine Fault Tolerance (PBFT), have been developed to address the energy consumption and scalability challenges associated with PoW. Each consensus mechanism has its advantages and use cases, and their adoption depends on the specific requirements of the blockchain network.
-
-
-## 20. 🔒 Describe PoS
-
-**Proof of Stake (PoS)** is a consensus mechanism used in some blockchain networks as an alternative to Proof of Work (PoW). Instead of miners competing to solve computationally intensive puzzles, PoS relies on validators who are chosen to create new blocks and validate transactions based on the amount of cryptocurrency they hold and are willing to "stake" as collateral.
-
-🔑 Key features of PoS include:
-
-1. **Energy Efficiency**: PoS is considered more energy-efficient than PoW because it doesn't require the intensive computational work performed by miners in PoW-based systems.
-
-2. **Decentralization**: PoS aims to promote decentralization by allowing any participant with a minimum stake of cryptocurrency to become a validator and participate in block creation and transaction validation.
-
-3. **Security**: PoS relies on the economic incentives of validators to act honestly since they have "skin in the game" (their staked coins) and may lose them if they engage in malicious behavior.
-
-4. **Finality**: PoS blockchains can achieve faster transaction finality since block creation and validation are based on stake and not on solving computationally intensive puzzles.
-
-🪙 Popular cryptocurrencies that use or plan to adopt PoS include Ethereum (transitioning from PoW to PoS through Ethereum 2.0), Cardano, Tezos, and others.
-
-## 21. 🔄 Describe Practical Byzantine Fault Tolerance
-
-**Practical Byzantine Fault Tolerance (PBFT)** is a consensus algorithm designed to achieve consensus in distributed systems even in the presence of faulty or malicious nodes. It was introduced by Miguel Castro and Barbara Liskov in their 1999 paper titled "Practical Byzantine Fault Tolerance."
-
-⚙️ Key features of PBFT include:
-
-1. **Fault Tolerance**: PBFT can tolerate a certain number (up to one-third) of faulty or malicious nodes in the network. As long as the majority of nodes are honest and correctly follow the protocol, consensus can be reached.
-
-2. **Asynchronous Network**: PBFT can operate in asynchronous networks, meaning there are no strict time bounds on message delivery or network delays.
-
-3. **Optimized for High Throughput**: PBFT is optimized for high transaction throughput and low latency, making it suitable for applications that require fast consensus and response times.
-
-4. **Three Phases**: The PBFT consensus process consists of three phases: Pre-prepare, Prepare, and Commit. These phases involve exchanging messages and votes among nodes to agree on the order and validity of transactions.
-
-5. **Replica Model**: PBFT operates in a replica model, where each node (replica) has a copy of the state and participates in the consensus process.
-
-💡 While PBFT offers several benefits, it also has some drawbacks, such as the need for a known and fixed set of nodes and higher communication overhead compared to PoW and PoS. Additionally, PBFT is more suited for systems with a relatively small number of participants, as the communication complexity increases as the number of nodes grows.
-
-## 22. 🔄 How does a transaction help make updates on a state machine?
-
-In a state machine, a transaction helps to make updates on the state by ensuring that state changes are performed in a consistent and reliable manner.
-
-🔑 Here's how transactions work in the context of a state machine:
-
-1. **Atomicity**: Transactions are designed to be atomic, meaning that either all the state changes within the transaction are applied, or none of them are. If any part of the transaction fails or encounters an error, the entire transaction is rolled back, preserving data integrity.
-
-2. **Consistency**: Transactions ensure consistency by enforcing certain rules or constraints on the state machine. Before a transaction is committed, the system checks if the state changes are valid and adhere to the defined rules. If any changes violate the constraints, the transaction is rolled back.
-
-3. **Isolation**: Transactions provide isolation, meaning that each transaction is executed independently and does not interfere with other concurrent transactions. This prevents conflicts and maintains a consistent state.
-
-4. **Durability**: Once a transaction is successfully committed, its changes become permanent and durable. Even in the event of system failures, the committed state changes will be preserved.
-
-💼 In the context of databases and distributed systems, transactions are commonly used to update the state of the system, ensuring that complex operations or state changes are performed atomically and consistently, which is essential for maintaining data integrity and correctness. For example, in a banking application, a transaction ensures that a fund transfer is treated as a single logical operation, preventing the possibility of money being lost or unaccounted for.
-
-
-## 23. 📊 What makes the blockchain tick
+## 19. 📊 What makes the blockchain tick
 
 Several key components and principles work together to make the blockchain tick and function as a secure and decentralized system:
 
@@ -314,25 +257,7 @@ Several key components and principles work together to make the blockchain tick 
 
 These principles and components work together to create a secure, transparent, and tamper-resistant blockchain system, enabling the decentralized and reliable operation of cryptocurrencies and various other applications and use cases.
 
-## 24. 💡 Difference between Bitcoin and Ethereum
-
-**Bitcoin** and **Ethereum** are two of the most well-known and widely used cryptocurrencies, but they have some fundamental differences in their design, purpose, and capabilities.
-
-1. **Purpose and Use Cases**: Bitcoin was created as a digital currency and primarily serves as a decentralized peer-to-peer payment system. Its main purpose is to enable secure and censorship-resistant transactions, allowing users to transfer value (bitcoins) without the need for intermediaries like banks. On the other hand, Ethereum is a decentralized platform that goes beyond simple currency use. It enables the creation and execution of smart contracts and decentralized applications (DApps). Ethereum's native cryptocurrency is called Ether (ETH), which is used to power the execution of smart contracts on the network.
-
-2. **Smart Contracts and DApps**: Bitcoin does not have built-in support for smart contracts. It is primarily designed for transferring value, and its scripting language is limited in functionality compared to Ethereum. In contrast, Ethereum is specifically designed to support smart contracts, which are self-executing programs that can automate processes, enforce rules, and facilitate complex transactions without intermediaries. This capability allows developers to build decentralized applications and services on the Ethereum platform.
-
-3. **Consensus Mechanism**: Both Bitcoin and Ethereum use Proof of Work (PoW) as their current consensus mechanism. However, Ethereum is in the process of transitioning to a Proof of Stake (PoS) consensus mechanism through Ethereum 2.0. PoW relies on miners solving complex puzzles to validate transactions and add new blocks to the blockchain, while PoS selects validators to propose and validate blocks based on the amount of cryptocurrency they "stake" as collateral.
-
-4. **Block Time and Scalability**: Bitcoin has a block time of approximately 10 minutes, while Ethereum's block time is much faster, averaging around 15 seconds. However, both networks face scalability challenges with their respective consensus mechanisms, leading to network congestion during periods of high demand.
-
-5. **Total Supply**: Bitcoin has a fixed supply cap of 21 million coins, making it deflationary. In contrast, Ethereum does not have a fixed supply cap, but there are plans to transition Ethereum to a deflationary model in the future with the introduction of Ethereum Improvement Proposal (EIP) 1559.
-
-6. **Community and Development**: Bitcoin has a strong and well-established community, with a focus on digital gold and a store of value. Its development is more conservative and primarily focused on maintaining security and stability. Ethereum, on the other hand, has a vibrant and active community, with a focus on innovation and the development of decentralized applications. It has undergone significant upgrades and improvements, with Ethereum 2.0 being a major milestone.
-
-Both Bitcoin and Ethereum have played significant roles in the growth and adoption of blockchain technology, each catering to different use cases and user needs. Bitcoin remains a leading digital currency and store of value, while Ethereum's smart contract capabilities have enabled a wide range of decentralized applications and DeFi (Decentralized Finance) projects.
-
-## 25. 📚 What are smart contracts?
+## 20. 📚 What are smart contracts?
 
 **Smart contracts** are self-executing contracts with the terms of the agreement directly written into code. They run on decentralized blockchain platforms, such as Ethereum, and automatically execute when specific conditions are met. The concept of smart contracts was first proposed by computer scientist Nick Szabo in 1994, and they have gained significant popularity and adoption with the rise of blockchain technology.
 
@@ -366,7 +291,7 @@ Both Bitcoin and Ethereum have played significant roles in the growth and adopti
 
 💼 It's important to note that while smart contracts are powerful tools, they are only as good as the code written by their developers. Bugs or vulnerabilities in the code can lead to unexpected outcomes or security risks. As such, extensive testing and auditing are essential to ensure the reliability and security of smart contracts.
 
-## 26. 📃 Describe the types of transaction in Ethereum
+## 21. 📃 Describe the types of transaction in Ethereum
 
 In Ethereum, there are two main types of transactions:
 
@@ -376,11 +301,13 @@ In Ethereum, there are two main types of transactions:
 
 Both types of transactions are integral to the functioning of the Ethereum network and enable a wide range of applications, including decentralized finance (DeFi), non-fungible tokens (NFTs), decentralized applications (DApps), and more. Regular transactions handle the transfer of value, while smart contract transactions enable the decentralized execution of business logic and automation of processes on the Ethereum platform.
 
-## 27. 💡 What do you understand by the term NODE and CLIENTS?
+## 22. 💡 What do you understand by the term NODE and CLIENTS?
 
 In the context of blockchain, a **NODE** refers to a computer or device that participates in the network, maintaining a copy of the blockchain, validating transactions, and relaying information to other nodes. Nodes play a crucial role in the decentralized nature of the blockchain, as they collectively contribute to achieving consensus and ensuring the integrity of the network.
 
-On the other hand, **CLIENTS** refer to software applications that interact with the blockchain network. Clients can be categorized into different types based on their functionality and level of interaction with the blockchain:
+On the other hand, **CLIENTS** refer to software applications that interact with the blockchain network.
+
+Nodes can be categorized into different types based on their functionality and level of interaction with the blockchain:
 
 1. **Full Nodes**: Full nodes are clients that download and store the entire blockchain. They validate all transactions and blocks, ensuring the accuracy and security of the blockchain. Full nodes actively participate in the consensus process and are essential for the decentralization and trustworthiness of the network.
 
@@ -392,7 +319,7 @@ On the other hand, **CLIENTS** refer to software applications that interact with
 
 In summary, nodes are the network participants that maintain and validate the blockchain, while clients are the software applications used to interact with the blockchain network, providing various levels of access and functionality.
 
-## 28. 🔄 **Describe Transaction Lifecycle in Ethereum**
+## 23. 🔄 **Describe Transaction Lifecycle in Ethereum**
 
 The transaction lifecycle in Ethereum is a multi-step process that facilitates secure and decentralized value transfer and smart contract execution on the blockchain.
 
