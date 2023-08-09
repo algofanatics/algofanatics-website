@@ -12,17 +12,19 @@ draft: false
 
 ## 1. Explain the EVM 💻
 
-The EVM (Ethereum Virtual Machine) is a decentralized machine and this means that it is not controlled or owned by a single entity and anyone or everyone has equal rights and access to it. <br/>
+The EVM (Ethereum Virtual Machine) is a decentralized stateful machine and this means that it is not controlled or owned by a single entity and anyone or everyone has equal rights and access to it. <br/>
 
 The concept of the EVM was introduced by Vitalik Buterin in a whitepaper published in late 2013.  <br/>
 
 It is capable of any form of algorithmic computation which makes us refer to it as a Turing complete machine. <br/>
 
-Since everyone has access and can connect to it, it has to allocate and prioritize transaction. It does this by using gas as an internal pricing mechanism. <br/>
+Since everyone has access and can connect to it, it has to allocate and prioritize transaction. It does this by using gas as an internal pricing mechanism. This is referred to as an incentivization scheme <br/>
 
 It goes without saying that "too many hands spoil the broth". With that in mind, we can conclude that if inputs are not controlled and managed properly, there will be chaos since anyone and everyone has access to the machine. <br/>
 
-Fortunately, the state of the machine is maintained by nodes running on the Ethereum network through a consensus mechanism.
+Fortunately, the state of the machine is maintained by nodes running on the Ethereum network through a consensus mechanism. Ethereum tracks both the state of currency ownership and the state transitions of a general-purpose data-store.
+
+The main concepts around the EVM include: Consensus rules, Transactions, State machine, Data structures, Consensus Algorithm,  and cryptographically secure blocks.
 
 ## 2. 💡 Difference between Bitcoin and Ethereum
 
@@ -320,6 +322,46 @@ Nodes can be categorized into different types based on their functionality and l
 In summary, nodes are the network participants that maintain and validate the blockchain, while clients are the software applications used to interact with the blockchain network, providing various levels of access and functionality.
 
 ## 23. 🔄 **Describe Transaction Lifecycle in Ethereum**
+
+The transaction lifecycle in Ethereum is a multi-step process that facilitates secure and decentralized value transfer and smart contract execution on the blockchain.
+
+📝 **Step 1: Transaction Creation** 🏁
+
+The process begins with the creation of a transaction. Users initiate transactions by specifying the sender's address, recipient's address, the amount of cryptocurrency (Ether) to be sent, and any additional data or parameters required for smart contract execution.
+
+🔏 **Step 2: Transaction Signing** ✍️
+
+Once the transaction details are defined, it needs to be signed with the sender's private key. This cryptographic signature proves ownership and authorizes the transaction, ensuring that only the rightful owner can execute it.
+
+📡 **Step 3: Transaction Propagation** 🚀
+
+The signed transaction is then propagated across the Ethereum network. It is broadcasted to multiple nodes, ensuring that the information is disseminated throughout the network.
+
+💾 **Step 4: Transaction Pool** 💧
+
+Upon reaching the network nodes, the transaction is temporarily stored in the transaction pool. This pool contains pending transactions waiting to be included in a block for confirmation.
+
+🔍 **Step 5: Transaction Validation** 🧾
+
+Nodes in the network validate each transaction in the pool to ensure its legitimacy. This validation process involves verifying the transaction's signature, confirming that the sender has sufficient funds to perform the transaction, and checking for any potential errors or inconsistencies.
+
+⚙️ **Step 6: Block Inclusion and Mining** ⛏️
+
+Valid transactions are selected by miners to be included in a new block. Miners are participants who compete to solve a Proof of Work (PoW) puzzle. The first miner to solve the puzzle gets the right to add the new block to the blockchain.
+
+🌐 **Step 7: Block Confirmation** ✔️
+
+Once a miner successfully adds a block to the blockchain, the transactions it contains are confirmed. At this point, the value transfers or smart contract executions specified in the transactions are executed and become part of the immutable blockchain history.
+
+⏰ **Step 8: Waiting for Confirmations** ⏳
+
+For critical or high-value transactions, users often wait for multiple block confirmations to ensure the transaction's finality and irreversibility. Each additional block added to the blockchain further strengthens the validity of the transactions within it.
+
+🔒 **Ensuring Transparency, Security, and Immutability** 🔐
+
+The transaction lifecycle in Ethereum ensures transparency, security, and immutability, making it a powerful platform for various decentralized applications and financial activities. By following this lifecycle, Ethereum creates a trustworthy and decentralized environment for its users.
+
+## 24. 🔄 **Describe Transaction Lifecycle in Ethereum**
 
 The transaction lifecycle in Ethereum is a multi-step process that facilitates secure and decentralized value transfer and smart contract execution on the blockchain.
 
