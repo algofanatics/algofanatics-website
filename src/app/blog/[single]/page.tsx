@@ -6,7 +6,7 @@ import ImageFallback from "@/helpers/ImageFallback";
 import MDXContent from "@/helpers/MDXContent";
 import { getSinglePage } from "@/lib/contentParser";
 import dateFormat from "@/lib/utils/dateFormat";
-import similerItems from "@/lib/utils/similarItems";
+import similarItems from "@/lib/utils/similarItems";
 import { humanize, markdownify, slugify } from "@/lib/utils/textConverter";
 import SeoMeta from "@/partials/SeoMeta";
 import { Post } from "@/types";
@@ -48,7 +48,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
     date,
     tags,
   } = frontmatter;
-  const similarPosts = similerItems(post, posts, post.slug!);
+  const similarPosts = similarItems(post, posts, post.slug!);
 
   return (
     <>
@@ -58,7 +58,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
         description={description}
         image={image}
       />
-      <section className="section pt-7">
+      <section className="section-sm pt-7 bg-blue-500">
         <div className="container">
           <div className="row justify-center">
             <article className="lg:col-10">
@@ -103,7 +103,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
                   </li>
                 )}
               </ul>
-              <div className="content mb-10">
+              <div className="content mb-10 max-w-full overflow-x-hidden">
                 <MDXContent content={content} />
               </div>
               <div className="row items-start justify-between">
