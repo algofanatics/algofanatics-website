@@ -540,13 +540,15 @@ An off-chain transaction occurs outside the main blockchain. Instead of recordin
 **Transaction Payment:**
 Transaction payment in the context of Ethereum refers to the fees paid to miners or validators for processing and including a transaction in a block on the blockchain. When you want to send Ether (ETH) or interact with a smart contract, you need to pay a transaction fee to incentivize the network participants to validate and process your transaction. This fee is typically calculated based on the amount of computational resources your transaction consumes, measured in gas units, and the gas price you're willing to pay for each unit of computation. Transaction payment ensures that your transaction is prioritized and processed by the network in a timely manner.
 
+Transaction payment mostly has to do with transfers.
+
 **Transaction Invocation:**
 Transaction invocation is the act of calling and executing a function within a smart contract on the Ethereum blockchain. Smart contracts consist of functions that can be triggered by transactions. When you send a transaction to interact with a smart contract, you're invoking a specific function within that contract. The function's code is executed on the blockchain's decentralized network of nodes, and the outcome is recorded on the blockchain's public ledger. This enables various actions, such as transferring tokens, updating data, or triggering complex operations, to be executed autonomously according to the predefined rules and logic coded into the smart contract.
 
 ## 34 What is the challenge associated with a turing complete system?
 The challenge associated with a Turing complete system is the "Halting Problem."
 
-The "Halting Problem" is a challenge in computing where it's difficult to predict if a program (or script) will stop running or keep running indefinitely. In a Turing complete system, like Ethereum's smart contracts, this becomes significant because a contract's behavior can be complex and unpredictable. It's hard to guarantee if a smart contract will finish executing its code or get stuck in an infinite loop, which could impact the blockchain's stability and functionality. This challenge requires careful design and testing to avoid unintended consequences.
+The "Halting Problem" is a challenge in computing where it's difficult to predict if a program (or script) will stop running or keep running indefinitely. In a Turing complete system, like Ethereum's smart contracts, this becomes significant because a contract's behavior can be complex and unpredictable. It's hard to guarantee if a smart contract will finish executing its code or get stuck in an infinite loop, which could impact the blockchain's stability and functionality. In order to avoid this, the concept of gas fees was introduced.
 
 ## 35 What Data structure model powers the EVM.
 The Data structure model that powers the Ethereum Virtual Machine (EVM) is the "Stack."
