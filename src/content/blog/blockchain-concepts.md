@@ -566,46 +566,32 @@ A smart contract's ABI (Application Binary Interface) is a JSON representation o
 The two artifacts produced by the Solidity compiler when compiling a smart contract are **ABI (Application Binary Interface)** and **Bytecode**.
 
 ## 40 What is a stablecoin, and how does it differ from other cryptocurrencies like Bitcoin and Ethereum?
-A stablecoin is a type of cryptocurrency designed to have a relatively stable value, usually pegged to a real-world asset like a currency (USD, EUR), a commodity (gold), or maintained through algorithmic mechanisms. The main goal of stablecoins is to reduce the volatility commonly associated with other cryptocurrencies like Bitcoin and Ethereum.
+A stablecoin is a type of cryptocurrency designed to have a relatively stable value, usually pegged to a real-world asset like a currency (USD, EUR), a commodity (gold), or maintained through algorithmic mechanisms. The main goal of stablecoin is to reduce the volatility commonly associated with other cryptocurrencies like Bitcoin and Ethereum.
 
 Differences from other cryptocurrencies:
 
-1. **Value Stability:** Stablecoins aim to maintain a consistent value, often equal to a specific real-world asset. In contrast, cryptocurrencies like Bitcoin and Ethereum can experience significant price fluctuations.
+1. **Value Stability:** Stablecoin aim to maintain a consistent value, often equal to a specific real-world asset. In contrast, cryptocurrencies like Bitcoin and Ethereum can experience significant price fluctuations.
 
-2. **Use Cases:** Stablecoins are often used for transactions, settlements, and as a store of value. Bitcoin and Ethereum, on the other hand, are used for a broader range of purposes, including investment, smart contracts, and decentralized applications.
+2. **Use Cases:** Stablecoin are often used for transactions, settlements, and as a store of value. Bitcoin and Ethereum, on the other hand, are used for a broader range of purposes, including investment, smart contracts, and decentralized applications.
 
-3. **Volatility:** Stablecoins' value doesn't swing wildly, making them more suitable for day-to-day transactions. Bitcoin and Ethereum can have rapid and substantial price changes, making them riskier for everyday use.
+3. **Volatility:** Stablecoin's value doesn't fluctuate much, making them more suitable for day-to-day transactions. Bitcoin and Ethereum can have rapid and substantial price changes, making them riskier for everyday use.
 
-4. **Decentralization:** Bitcoin and Ethereum are decentralized by design, with no central authority controlling them. Some stablecoins, like Tether (USDT), have faced criticism regarding centralization and transparency of reserves.
+4. **Decentralization:** Bitcoin and Ethereum are decentralized by design, with no central authority controlling them. Some Stablecoin, like Tether (USDT), have faced criticism regarding centralization and transparency of reserves.
 
-5. **Market Maturity:** Stablecoins are relatively newer in the market, aiming to address the volatility issues faced by earlier cryptocurrencies. Bitcoin and Ethereum have been around longer and have established broader ecosystems.
+5. **Market Maturity:** Stablecoin are relatively newer in the market, aiming to address the volatility issues faced by earlier cryptocurrencies. Bitcoin and Ethereum have been around longer and have established broader ecosystems.
 
-6. **Investment vs. Utility:** Bitcoin and Ethereum are often considered investment assets, while stablecoins are more focused on utility as a medium of exchange.
+6. **Investment vs. Utility:** Bitcoin and Ethereum are often considered investment assets, while Stablecoin are more focused on utility as a medium of exchange.
 
-In summary, stablecoins stand out for their stability, aiming to provide a cryptocurrency that's less subject to price swings. This makes them better suited for practical transactions and settlements. In contrast, Bitcoin and Ethereum have broader use cases, with their values driven by supply and demand dynamics and speculative investment.
+## 41 Describe main types of Stablecoin, and how do they function differently from one another?
+The main types of Stablecoin are:
 
-## 41 Describe main types of stablecoins, and how do they function differently from one another?
-The main types of stablecoins are:
+1. **Fiat-Collateralized Stablecoin:** These Stablecoin are backed by traditional assets like actual currency (USD, EUR, etc.) held in reserves. Each stablecoin is issued when an equivalent amount of the backing asset is deposited. Examples include USDC, USDT, and EURS.
 
-1. **Fiat-Collateralized Stablecoins:** These stablecoins are backed by traditional assets like actual currency (USD, EUR, etc.) held in reserves. Each stablecoin is issued when an equivalent amount of the backing asset is deposited. Examples include USDC, USDT, and EURS.
+2. **Crypto-Collateralized Stablecoin:** These Stablecoin are backed by other cryptocurrencies. Users lock up a certain amount of cryptocurrency (like Ether) as collateral, and Stablecoin are generated against this collateral. If the value of the collateral drops, there are mechanisms in place to liquidate it. DAI is a notable example.
 
-2. **Crypto-Collateralized Stablecoins:** These stablecoins are backed by other cryptocurrencies. Users lock up a certain amount of cryptocurrency (like Ether) as collateral, and stablecoins are generated against this collateral. If the value of the collateral drops, there are mechanisms in place to liquidate it. DAI is a notable example.
+3. **Algorithmic Stablecoin:** These Stablecoin don't rely on traditional assets or collateral. Instead, they use algorithms and smart contracts to control the supply based on market demand. Their value is maintained through mechanisms like expanding or contracting supply, interest rates, and incentives. Examples include Ampleforth and Terra.
 
-3. **Algorithmic Stablecoins:** These stablecoins don't rely on traditional assets or collateral. Instead, they use algorithms and smart contracts to control the supply based on market demand. Their value is maintained through mechanisms like expanding or contracting supply, interest rates, and incentives. Examples include Ampleforth and Terra.
-
-4. **Commodity-Collateralized Stablecoins:** These stablecoins are backed by physical assets like precious metals (gold, silver). The value is linked to the underlying commodity's market price, providing stability. However, storage and auditing challenges are associated with this type.
-
-These stablecoins function differently due to their backing and mechanisms:
-
-- **Fiat-Collateralized:** Directly linked to traditional currencies, maintained through reserve management.
-
-- **Crypto-Collateralized:** Value stability is maintained through collateral and liquidation mechanisms. It's tied to cryptocurrency market volatility.
-
-- **Algorithmic:** Relies on complex algorithms to adjust supply, potentially leading to less direct stability.
-
-- **Commodity-Collateralized:** Value is tied to the price of a physical asset, so market fluctuations of the asset affect the stablecoin's value.
-
-Each type has its advantages and drawbacks, influencing factors like stability, security, decentralization, and underlying assets.
+4. **Commodity-Collateralized Stablecoin:** These Stablecoin are backed by physical assets like precious metals (gold, silver). The value is linked to the underlying commodity's market price, providing stability. However, storage and auditing challenges are associated with this type.
 
 ## 42 What are some scaling solutions in the context of blockchain technology, and could you describe them briefly?
 
@@ -700,3 +686,13 @@ A nibble is a term used in computing to refer to 4 bits. In a binary number syst
 
 ## 47 how many bytes make a word in ethereum system
 In the Ethereum system, a "word" refers to 32 bytes or 256 bits. This is a fundamental data size used within the Ethereum Virtual Machine (EVM) for storage, memory, and computational operations. Ethereum's EVM is designed to work with words of this size, and many of its operations are based on 256-bit values.
+
+## Explain the difference between Optimistic rollups and ZK rollups
+
+Optimistic rollups trade security for speed while ZK (Zero Knowledge) rollups trade speed for security.
+
+Rollups in general are layer 2 scalability solutions where the execution of transactions is taken off the main chain. The layer 1 chain will be used to keep ledger state and provide consensus. It can execute many more transactions within the same block period. Rollups have to put some sort of deposit on the layer one chain so that they can have economic security.
+
+In **Optimistic rollups** the transaction execution is verified by other verifiers and they can submit a fraud-proof if they find any thing wrong with the transaction. The withdrawal of funds only happens if there is no dispute.
+
+In **ZK rollups** a cryptographic proof of correct execution of transactions is also submitted along with the updated state and transaction data. This proof is automatically verified at the layer one so that no dispute or fraud proof is necessary.
