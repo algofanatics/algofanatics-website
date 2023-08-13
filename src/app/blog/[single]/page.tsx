@@ -58,7 +58,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
         description={description}
         image={image}
       />
-      <section className="section-sm pt-7 bg-blue-500">
+      <section className="section-sm pt-7">
         <div className="container">
           <div className="row justify-center">
             <article className="lg:col-10">
