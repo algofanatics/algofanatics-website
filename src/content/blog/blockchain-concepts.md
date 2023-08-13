@@ -557,7 +557,7 @@ The Data structure model that powers the Ethereum Virtual Machine (EVM) is the "
 Tools for testing Solidity code include Truffle, Hardhat, Remix, Brownie, Waffle, and SolUnit.
 
 ## 37 What is EVM bytecode?
-EVM bytecode is the low-level, machine-readable representation of smart contract code written in languages like Solidity. It's a series of hexadecimal instructions that the Ethereum Virtual Machine (EVM) understands and executes. When you compile a high-level programming language like Solidity, it's transformed into EVM bytecode, which is the code that runs on the Ethereum blockchain.
+EVM bytecode is the low-level, machine-readable representation of smart contract code written in languages like Solidity. It's a series of hexadecimal instructions that the Ethereum Virtual Machine (EVM) understands and executes. When you compile a high-level programming language like Solidity, it's transformed into EVM bytecode, which is the code that runs on the Ethereum blockchain. The machine executes this bytecode using predefined opcodes that are 1-byte long. As I like to say, 'one byte of bytecode is an opcode.'
 
 ## 38 What is a smart contract’s ABI?
 A smart contract's ABI (Application Binary Interface) is a JSON representation of the contract's functions, their inputs, outputs, and other essential information. It allows external applications to understand and interact with the smart contract, enabling communication between different parts of the Ethereum ecosystem.
