@@ -530,15 +530,11 @@ The attacker created a malicious contract that, when called, repeatedly requeste
 As a result, the attacker was able to drain a substantial amount of Ether from The DAO, exploiting this flaw in its code. It led to a hard fork of the Ethereum blockchain to reverse the effects of the hack and recover the stolen funds.
 
 ## 32 Explain the difference between an on-chain transaction and an off-chain transaction?
-An on-chain transaction and an off-chain transaction differ in where and how they occur within a blockchain ecosystem:
-
 **On-Chain Transaction:**
 An on-chain transaction takes place directly on the blockchain network. It involves recording transaction details, like sending digital assets or executing smart contracts, as part of the blockchain's permanent public ledger. These transactions are processed and validated by the network's nodes, and their details are visible to all participants. On-chain transactions require blockchain resources like processing power and network consensus.
 
 **Off-Chain Transaction:**
 An off-chain transaction occurs outside the main blockchain. Instead of recording every detail on the public ledger, only the result of the transaction is eventually recorded. Off-chain transactions can happen instantaneously, with lower fees and higher scalability compared to on-chain transactions. They often involve intermediary systems or layer-2 solutions to facilitate faster and more efficient transactions, while maintaining the security and integrity of the main blockchain.
-
-In summary, on-chain transactions happen directly on the blockchain with all details recorded, while off-chain transactions occur outside the blockchain's main structure, often leveraging various techniques to achieve faster and more scalable transaction processing.
 
 ## 33 Describe the following terms Transaction Payment and Transaction Invocation
 **Transaction Payment:**
