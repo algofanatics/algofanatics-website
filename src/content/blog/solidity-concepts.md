@@ -71,7 +71,7 @@ This process involves calling and executing a function within a deployed smart c
 4. change of state.
 5. Return values or data.
 
-## 8. HWhen was base fee, max fee and max priority fee introduced?
+## 8. When was base fee, max fee and max priority fee introduced?
 
 These concepts were introduced in EIP 1559 which aims to improve the predictability and efficiency of transaction fees on the ethereum network.
 
