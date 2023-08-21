@@ -6,7 +6,7 @@ const nextConfig = {
   basePath: config.base_path !== "/" ? config.base_path : "",
   trailingSlash: config.site.trailing_slash,
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ["res.cloudinary.com", "www.freepik.com"],
   },
 };
 
