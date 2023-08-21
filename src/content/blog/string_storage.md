@@ -3,13 +3,13 @@ title: "String Storage in Solidity (A very short read)"
 meta_title: ""
 description: "How string interact with the evm"
 date: 2023-08-17T05:00:00Z
-# image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/xyruli9slbwtazplckgs"
+image: "https://www.freepik.com/free-vector/abstract-modern-wavy-stripe-background-vector-graphic-design-from-colorful-curved-wave-lines_1269841.htm#query=string&position=44&from_view=keyword&track=sph"
 categories: ["blockchain", "cryptocurrency", "web3"]
 author: "Samson Ajulor"
 tags: ["algorithms", "ethereum", "strings", "web3bridge" ]
 draft: false
 ---
-
+<a href="https://www.freepik.com/free-vector/abstract-modern-wavy-stripe-background-vector-graphic-design-from-colorful-curved-wave-lines_1269841.htm#query=string&position=44&from_view=keyword&track=sph">Image by davidzydd</a> on Freepik
 - In Solidity, strings are a reference type of data that stores the position of the data rather than the data itself.
 - They consist of various characters like alphabets, numbers, special characters, and spaces.
 - Strings in Solidity are stored using UTF-8 encoding.
