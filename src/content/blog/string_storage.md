@@ -3,7 +3,7 @@ title: "String Storage in Solidity (A very short read)"
 meta_title: ""
 description: "How string interact with the evm"
 date: 2023-08-17T05:00:00Z
-image: "https://www.freepik.com/free-vector/abstract-modern-wavy-stripe-background-vector-graphic-design-from-colorful-curved-wave-lines_1269841.htm#query=string&position=44&from_view=keyword&track=sph"
+image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/ziwoaqupqbqu7atligdy"
 categories: ["blockchain", "cryptocurrency", "web3"]
 author: "Samson Ajulor"
 tags: ["algorithms", "ethereum", "strings", "web3bridge" ]
