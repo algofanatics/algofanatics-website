@@ -51,7 +51,7 @@ Therefore, Solidity can be considered a compiled language in the sense that the 
 
 ## 6. Explain the relationships between the eth units
 
-1. Wei: This is the smallest and indivisible unit of ether. one ether is equal to 1e18 wei
+1. Wei: This is the smallest and indivisible unit of ether.
 2. Kwei (Babbage) 1 kwei = 10^3 wei.
 3. Mwei (Shannon) 1 mwei = 10^6 wei
 4. Gwei (Szabo) 1Gwei = 10^9 wei
