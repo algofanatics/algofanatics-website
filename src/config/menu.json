@@ -1,0 +1,37 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Services",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Blog",
+          "url": "/blog"
+        },
+        {
+          "name": "Authors",
+          "url": "/authors"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "name": "Terms of Use",
+      "url": "/terms-of-use"
+    },
+    {
+      "name": "Privacy Policy",
+      "url": "/privacy-policy"
+    }
+  ]
+}

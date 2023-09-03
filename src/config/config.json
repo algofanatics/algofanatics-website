@@ -1,0 +1,47 @@
+{
+  "site": {
+    "title": "algofanatics",
+    "base_url": "https://www.algofanatics.com",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/favicon.ico",
+    "logo": "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/navbar/ig9amksuzgp25xvqz4pd",
+    "logo_darkmode": "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/navbar/ig9amksuzgp25xvqz4pd",
+    "logo_width": "150",
+    "logo_height": "27",
+    "logo_text": "algofanatics"
+  },
+
+  "settings": {
+    "search": true,
+    "sticky_header": true,
+    "theme_switcher": true,
+    "default_theme": "system",
+    "pagination": 2,
+    "summary_length": 200,
+    "blog_folder": "blog"
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "Algofanatics 2023"
+  },
+
+  "navigation_button": {
+    "enable": false,
+    "label": "Get Started",
+    "link": "#"
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "algofanatics",
+    "settings": {}
+  },
+
+  "metadata": {
+    "meta_author": "Algofanatics",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Algofanatics"
+  }
+}
