@@ -33,3 +33,10 @@ Yes! Multithreading simulation is possible via the following methods.
 4. Cluster Module: This module is capable of creating a pool of worker processes, where each process runs a copy of the same server code. The main process distributes incoming requests across the worker processes.
 
 Creating and managing threads and processes are resource intensive methods which can lead to performance trade-offs.
+
+#### what is a callstack
+This is a data structure that is used by computer programs to keep track of the sequence of function calls during the execution of a program. Each level of the stack contains information about the function's parameters, local variables, and return address.
+
+Whenever a function is called, nodejs pushes the function call frame onto the top of the call stack and subsequently, when the function completes execution, its call-frame is popped of the stack.
+
+The call stack allows programs to maintain the order of function calls and to properly handle function returns. It also ensures that functions are executed in the correct order and prevents them from overlapping or interfering with each other.
