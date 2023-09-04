@@ -14,7 +14,7 @@ This is an opensource, javascript runtime environment that allows developers to 
 
 It was designed to run in a non-blocking manner by default. On the other hand, it can as well handle I/O operations asynchronously by making use of the event loop. This way it can handle concurrent connections without making use of multiple threads. i.e. single threaded.
 
-#### Is Node.js single or multi-threaded
+#### Is Node.js single or multi-threaded?
 Node.js uses only one thread to execute javascript code. However it make use of the event loop to handle multiple requests and events simultaeneously without making use of additional threads.
 
 Additionally, developers can make use of the cluster mode to create multiple Node.js processes and utilize multiple cpu cores in the process to create a network of processes that can work together to handle incoming requests.
@@ -33,7 +33,7 @@ Yes! Multithreading simulation is possible via the following methods.
 
 Creating and managing threads and processes are resource intensive methods which can lead to performance trade-offs.
 
-#### what is a callstack
+#### what is a callstack?
 This is a data structure that is used by computer programs to keep track of the sequence of function calls during the execution of a program. Each level of the stack contains information about the function's parameters, local variables, and return address.
 
 Whenever a function is called, nodejs pushes the function call frame onto the top of the call stack and subsequently, when the function completes execution, its call-frame is popped of the stack.
@@ -41,7 +41,7 @@ Whenever a function is called, nodejs pushes the function call frame onto the to
 The call stack allows programs to maintain the order of function calls and to properly handle function returns. It also ensures that functions are executed in the correct order and prevents them from overlapping or interfering with each other.
 
 
-#### What is the difference between websockets and RESTful APIs
+#### What is the difference between websockets and RESTful APIs?
 
 Both are popular approaches for building web applications, but they differ in their communication protocols, data formats, and performance characteristics.
 
@@ -51,7 +51,7 @@ RESTful apis stand for Representational State Transfer. It utilizes http request
 
 REST is stateless. This means that there is no persistent connection between the client and the server and thus require less resources compared to websockets.
 
-#### what are event emitters and how are they utilized in node.js
+#### what are event emitters and how are they utilized in node.js?
 
 An event emitter in Node.js is an object that emits events and enables other objects to subscribe to them so they can be notified when they happen. It is the foundation of Node.js.
 
