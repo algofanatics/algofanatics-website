@@ -68,9 +68,7 @@ theEmitter.on('event', () => {
   console.log('event occurred');
 });
 
-theEmitter.emit('event', 'foo', 'bar');
+theEmitter.emit('event');
 ```
 
 In this example, we first use the EventEmitter constructor to create a brand-new event emitter. The on method is then used to associate a listener function with the event occurrence. Finally, we use the emit function to broadcast the event event with two arguments.
-
-The listener function will be called with the arguments supplied to the emit method when the event event is released. The listener function will record "event occurred with arguments: foo bar" to the console in this scenario.
