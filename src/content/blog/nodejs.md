@@ -1,9 +1,8 @@
 ---
 title: "A Spice of Node (Not the computer!)"
 meta_title: ""
-description: "How strings interact with the evm"
+description: "Basic things you should know about node js."
 date: 2023-09-03T05:00:00Z
-# image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/ziwoaqupqbqu7atligdy"
 categories: ["backend", "node.js", "web2"]
 author: "Samson Ajulor"
 tags: ["interview questions" ]
@@ -51,3 +50,27 @@ We use websockets to design applications that require realtime communications be
 RESTful apis stand for Representational State Transfer. It utilizes http requests to transfer data between the client and the server typically making use of request methods like Get, Post, Put, Delete etc.
 
 REST is stateless. This means that there is no persistent connection between the client and the server and thus require less resources compared to websockets.
+
+#### what are event emitters and how are they utilized in node.js
+
+An event emitter in Node.js is an object that emits events and enables other objects to subscribe to them so they can be notified when they happen. It is the foundation of Node.js.
+
+In node.js, we make use of the events module's EventEmitter class as event emitters in Node.js.
+
+Let us analyze the sample code below:
+
+```
+const IWillEmitEvent = require('events');
+
+const theEmitter = new IWillEmitEvent();
+
+theEmitter.on('event', () => {
+  console.log('event occurred');
+});
+
+theEmitter.emit('event', 'foo', 'bar');
+```
+
+In this example, we first use the EventEmitter constructor to create a brand-new event emitter. The on method is then used to associate a listener function with the event occurrence. Finally, we use the emit function to broadcast the event event with two arguments.
+
+The listener function will be called with the arguments supplied to the emit method when the event event is released. The listener function will record "event occurred with arguments: foo bar" to the console in this scenario.
