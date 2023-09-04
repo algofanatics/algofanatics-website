@@ -40,3 +40,14 @@ This is a data structure that is used by computer programs to keep track of the 
 Whenever a function is called, nodejs pushes the function call frame onto the top of the call stack and subsequently, when the function completes execution, its call-frame is popped of the stack.
 
 The call stack allows programs to maintain the order of function calls and to properly handle function returns. It also ensures that functions are executed in the correct order and prevents them from overlapping or interfering with each other.
+
+
+#### What is the difference between websockets and RESTful APIs
+
+Both are popular approaches for building web applications, but they differ in their communication protocols, data formats, and performance characteristics.
+
+We use websockets to design applications that require realtime communications between the server and the client without the need for the server to repeatedly send requests to the server. Websockets are fast.
+
+RESTful apis stand for Representational State Transfer. It utilizes http requests to transfer data between the client and the server typically making use of request methods like Get, Post, Put, Delete etc.
+
+REST is stateless. This means that there is no persistent connection between the client and the server and thus require less resources compared to websockets.
