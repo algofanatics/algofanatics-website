@@ -4,9 +4,9 @@ meta_title: ""
 description: "How to deploy a Cairo Contract to Starknet!"
 date: 2023-09-21T05:00:00Z
 # image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/blog/xyruli9slbwtazplckgs"
-categories: ["web3"]
+categories: ["algos", "web3"]
 author: "Samson Ajulor"
-tags: ["smartcontracts", "blockchain"]
+tags: ["algos", "smartcontracts", "blockchain"]
 draft: false
 ---
 
