@@ -2,7 +2,7 @@
 title: Samson Ajulor
 email: samsonajulor@gmail.com
 image: "https://res.cloudinary.com/samsonajulor/image/upload/f_auto,q_auto/v1/algofanatics_assets/assets/team/jnrltd8rq484rzsfexig"
-description: Lead Engineer
+description: Lead Engineer and Smart-Contracts Developer.
 social:
 - name: github
   icon: FaGithub
