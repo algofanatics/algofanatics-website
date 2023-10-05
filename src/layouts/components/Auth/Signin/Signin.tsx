@@ -42,13 +42,7 @@ const Signin = () => {
 
   return (
     <div className="font-poppins container mx-auto pt-10 px-6">
-      <Link href="/" className="lg:block hidden">
-        <Logo />
-      </Link>
-
-      <Link href="/" className="lg:hidden block">
-      <Logo />
-      </Link>
+     <Logo />
 
       <div className="flex lg:flex-row flex-col lg:justify-between">
         <section className="lg:w-5/12 w-full flex-col py-32 lg:h-screen hidden lg:flex">
