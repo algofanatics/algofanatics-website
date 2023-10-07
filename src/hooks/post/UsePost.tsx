@@ -1,3 +1,4 @@
+"use client"
 import { useMutation } from "react-query";
 import axios from "axios";
 import { setCookie } from "cookies-next";
