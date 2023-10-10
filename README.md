@@ -44,6 +44,13 @@ To complete password-reset, send an object conataining the token and the new pas
 
 {token, password} //Send this to the api
 
+# LOGOUT
+To signOut, import the signOut function at any client rendered page
+
+import {signOut} from "next-auth/react";
+
+<button onClick={()=>signOut()}> Sign Out </button> This button will log you out
+
 ENVIRONMENTAL VARIABLES
 NODE_ENV=
 MONGO_URI=
