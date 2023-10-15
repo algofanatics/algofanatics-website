@@ -1,3 +1,4 @@
+
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -17,6 +18,7 @@ const Home = () => {
     banner: { title: string; image: string; content?: string; button?: Button };
     features: Feature[];
   } = frontmatter;
+  
 
   return (
     <>

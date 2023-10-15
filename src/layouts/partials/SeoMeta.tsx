@@ -61,7 +61,7 @@ const SeoMeta = ({
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content={`${base_url}/${pathname.replace("/", "")}`}
+        content={`${base_url}/${pathname!.replace("/", "")}`}
       />
 
       {/* twitter-title */}
