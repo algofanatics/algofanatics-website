@@ -10,7 +10,7 @@ import {
 export type NavLinkProps = NextLinkProps &
   PropsWithChildren & {
     styles?: CSSProperties;
-    borderRadius?: ComponentProps<typeof NextLink>['style']['borderRadius'];
+    borderRadius?: number | string | undefined;
   };
 
 function NavLink({ className, children, styles, borderRadius, ...props }: any) {

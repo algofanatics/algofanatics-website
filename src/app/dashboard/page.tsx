@@ -5,7 +5,7 @@ import routes from '@/helpers/routes';
 import React from 'react';
 import Sidebar from '@/components/Sidebar';
 
-export default function Admin({ children }: { children: React.ReactNode }) {
+export default function Admin() {
   // states and functions
   const [open, setOpen] = useState(false);
   return (
@@ -20,9 +20,9 @@ export default function Admin({ children }: { children: React.ReactNode }) {
         >
           {/* Routes */}
           <div>
-            <div className="mx-auto min-h-screen p-2 !pt-[10px] md:p-2">
+            {/* <div className="mx-auto min-h-screen p-2 !pt-[10px] md:p-2">
               {children}
-            </div>
+            </div> */}
           </div>
         </main>
       </div>

@@ -4,7 +4,7 @@ import { IRoute } from "@/types/navigation";
 export const isWindowAvailable = () => typeof window !== "undefined";
 
 export const findCurrentRoute = (
-  routes: IRoute[],
+  routes: any[],
   pathname: string,
 ): IRoute | undefined => {
   if (!isWindowAvailable()) return undefined;
