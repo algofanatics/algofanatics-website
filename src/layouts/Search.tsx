@@ -110,7 +110,7 @@ const Search = ({ searchList }: Props) => {
             <div className="mx-auto pt-5 text-center">
               <ImageFallback
                 className="mx-auto mb-6"
-                src="/images/no-search-found.png"
+                src="/img/no-search-found.png"
                 alt="no-search-found"
                 width={211}
                 height={184}
