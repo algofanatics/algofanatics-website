@@ -7,6 +7,7 @@ import { BsFacebook, BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button/Button";
 import UsePost from "@/hooks/post/UsePost";
+import PageHeader from "@/partials/PageHeader";
 
 type Props = {
   email: string;
@@ -66,6 +67,8 @@ const Signup = () => {
   };
 
   return (
+    <>
+     <PageHeader title="Sign up" />
     <div className=" container lg:mb-[8rem]  mx-auto pt-10 px-6">
       <div className="flex lg:flex-row flex-col justify-between">
         <section className="lg:w-5/12 w-full relative bottom-[8rem] flex-col py-20 md:py-0 lg:h-screen hidden lg:flex">
@@ -216,10 +219,12 @@ const Signup = () => {
               </p>
             ) : null}
 
-            <button className="bg-black w-full text-white dark:bg-gray-100 lg:block hidden dark:text-black  font-medium h-16 rounded-lg my-10">
+            <button className="bg-black w-full text-white
+             dark:bg-gray-100 lg:block hidden dark:text-black  font-medium h-16 rounded-lg my-10">
               Sign Up
             </button>
-            <Button className="dark:bg-gray-100 w-full text-white  lg:hidden block dark:text-black text-xl font-medium h-16 rounded-full my-10">
+            <Button className="dark:bg-gray-100
+             bg-black w-full text-white  lg:hidden block dark:text-black text-xl font-medium h-16 rounded-full my-10">
               Sign Up
             </Button>
             <p className="flex justify-center text-Text items-center my-4">
@@ -248,6 +253,7 @@ const Signup = () => {
         `}
       </style>
     </div>
+    </>
   );
 };
 

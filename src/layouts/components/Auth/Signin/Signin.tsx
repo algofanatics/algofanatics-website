@@ -1,9 +1,4 @@
-"use client";
-// import AuthorCard from "@/components/AuthorCard";
-// import { getListPage, getSinglePage } from "@/lib/contentParser";
 import PageHeader from "@/partials/PageHeader";
-import SeoMeta from "@/partials/SeoMeta";
-// import { Author } from "@/types";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,10 +15,8 @@ type Props = {
   password: string | number;
 };
 
-const Authors = () => {
-  // const authorIndex: Author = getListPage("authors/_index.md");
-  // const authors: Author[] = getSinglePage("authors");
-  // const { title, meta_title, description, image } = authorIndex.frontmatter;
+const Signin = () => {
+
   const [user, setUser] = React.useState<Props>({
     email: "",
     password: "",
@@ -49,15 +42,10 @@ const Authors = () => {
       handlePost(user);
     }
   };
+
   return (
     <>
-      <SeoMeta
-        title="Hello World"
-        meta_title="Blog"
-        description="Here is my blog description"
-        image="This is an image"
-      />
-      {/* <PageHeader title="Hello" /> */}
+      <PageHeader title="Sign in" />
       <div className="font-poppins container mx-auto pt-10 px-6">
         <div className="flex lg:flex-row flex-col lg:justify-between">
           <section className="lg:w-5/12 w-full flex-col  lg:h-screen hidden lg:flex">
@@ -101,7 +89,10 @@ const Authors = () => {
             </div>
           </section>
 
-          <form className="lg:w-5/12  flex flex-col lg:relative bottom-12" onSubmit={handleLogin}>
+          <form
+            className="lg:w-5/12  flex flex-col lg:relative bottom-12"
+            onSubmit={handleLogin}
+          >
             <div className="lg:max-w-sm max-w-full">
               <h1 className="text-3xl py-7  font-medium hidden lg:block">
                 Sign in
@@ -159,7 +150,7 @@ const Authors = () => {
               <button className="bg-black text-white dark:bg-gray-100 w-full lg:block hidden dark:text-black  font-medium h-16 rounded-lg my-10">
                 Login
               </button>
-              <Button className="dark:bg-gray-100 text-white w-full lg:hidden block dark:text-black  text-lg font-medium h-16 rounded-full my-10">
+              <Button className="dark:bg-gray-100 text-white w-full lg:hidden block dark:text-black bg-black  text-lg font-medium h-16 rounded-full my-10">
                 Sign In
               </Button>
               <p className="flex justify-center text-Text items-center">
@@ -183,4 +174,4 @@ const Authors = () => {
   );
 };
 
-export default Authors;
+export default Signin;

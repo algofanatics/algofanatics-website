@@ -3,9 +3,11 @@ import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import path from "path";
 
+
 const contentPath = "src/content";
 
 // Helper function to read file content
+
 const readFile = (filePath: string) => {
   return fs.readFileSync(filePath, "utf-8");
 };
@@ -15,6 +17,7 @@ const parseFrontmatter = (frontmatter: any) => {
   const frontmatterString = JSON.stringify(frontmatter);
   return JSON.parse(frontmatterString);
 };
+
 
 // get list page data, ex: _index.md
 export const getListPage = (filePath: string) => {
