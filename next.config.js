@@ -8,6 +8,8 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com", "www.freepik.com"],
   },
+  
 };
+ 
 
 module.exports = nextConfig;
